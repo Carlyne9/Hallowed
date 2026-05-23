@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2190B4303859B5A584458711 /* HallowedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54A65C4011351F55BB784 /* HallowedApp.swift */; };
+		2B3EB36E13929B4C4F16580C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBF18A6D33EE70F644E988 /* Assets.xcassets */; };
+		2DBD5217E05392BC817D9981 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3EDE50C07AAFEF64644148 /* SessionView.swift */; };
+		356B52BF38A1B13D808C4D0F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2481896C7447CA7B6A50F1E5 /* HomeView.swift */; };
+		3C6C9ED3D2268834055DB093 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F9FE4972D32D147B31F2 /* Prayer.swift */; };
+		40C892B786EE4103898BD507 /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7495EDE6860EE5F0BFBD68 /* Scripture.swift */; };
+		49F0D36B26B2F9F6BB3062B0 /* PrayerPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B70ECD9FBA83877A0911A /* PrayerPeriod.swift */; };
+		60CC9D82CEA19CD693C2B937 /* TopicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA6E8FFB43D970BE84206D /* TopicDetailView.swift */; };
+		695ACA0C6B5DF9F87A8318E8 /* PrayerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB6D340DFB0A7531602877 /* PrayerTheme.swift */; };
+		6A719A3F5A6B54147735B200 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84B25DF2650CA80868C2F8 /* AppEnvironment.swift */; };
+		8AD5EE22113C0103254695CE /* PrayerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A85373655A0A824768C22 /* PrayerSession.swift */; };
+		90D2563E04404A76ABC30043 /* ThemeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B233F0576D3BEF32B98678 /* ThemeListView.swift */; };
+		9DF91CB17DD630E2C9674BC6 /* ScreenOverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E790F31E6CDF442D626A5 /* ScreenOverlayManager.swift */; };
+		A495E54790F49188744EE6D7 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A75A73E84AF57DC6B5DDC /* Color+Hex.swift */; };
+		A5561B0E3E6517B7B830A160 /* PrayerRandomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D1650FF694E6A32478897 /* PrayerRandomizer.swift */; };
+		AC1601114A8AD8F57562905A /* PrayerTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5873039F52353EED355F21C /* PrayerTopic.swift */; };
+		AD41FEAD68D9BC800FF5D982 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C10855166D6E1244273EC /* NotificationScheduler.swift */; };
+		BF481C3C4E686D0616F1602E /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = FAB62D8A62256F54FB043A68 /* Supabase */; };
+		BFCAA0A9265CD7BCBEF91EF7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA60D5658DBBBE4773EE9 /* Secrets.swift */; };
+		C6D4728182DA683D217FE75C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1AA6866E904D99DCE29F8 /* AuthView.swift */; };
+		882651CA84AB472EAF798799 /* BibleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340F52710894401A939237F /* BibleService.swift */; };
+		D5A8B4EED1419E4AA2DA5422 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257CB9F5E0242FC59EFCDD7 /* SupabaseService.swift */; };
+		EDFCFC1BB4240E79718179D3 /* PeriodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8243972F6EF6F4DFAD343 /* PeriodListView.swift */; };
+		EEF52BD468FDEA2E27BCFFFF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1638AE1430B59C41BC6713 /* SettingsView.swift */; };
+		F7846D72E395612782D764C1 /* PeriodEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A822AB0FA686C3262A958D9 /* PeriodEditorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A3FA60D5658DBBBE4773EE9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		1D48403090802E04EDB71A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1FC8243972F6EF6F4DFAD343 /* PeriodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodListView.swift; sourceTree = "<group>"; };
+		2481896C7447CA7B6A50F1E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A66D9C6A9191BFD5AEFE2C1 /* Hallowed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hallowed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		370D1650FF694E6A32478897 /* PrayerRandomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRandomizer.swift; sourceTree = "<group>"; };
+		4D1638AE1430B59C41BC6713 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4EFBF18A6D33EE70F644E988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E84B25DF2650CA80868C2F8 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		7D4B70ECD9FBA83877A0911A /* PrayerPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerPeriod.swift; sourceTree = "<group>"; };
+		84D9F9FE4972D32D147B31F2 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		88B54A65C4011351F55BB784 /* HallowedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallowedApp.swift; sourceTree = "<group>"; };
+		8ABA6E8FFB43D970BE84206D /* TopicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailView.swift; sourceTree = "<group>"; };
+		91B233F0576D3BEF32B98678 /* ThemeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeListView.swift; sourceTree = "<group>"; };
+		95B1AA6866E904D99DCE29F8 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		9A822AB0FA686C3262A958D9 /* PeriodEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodEditorView.swift; sourceTree = "<group>"; };
+		6340F52710894401A939237F /* BibleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleService.swift; sourceTree = "<group>"; };
+		A257CB9F5E0242FC59EFCDD7 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		B08E790F31E6CDF442D626A5 /* ScreenOverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOverlayManager.swift; sourceTree = "<group>"; };
+		B5873039F52353EED355F21C /* PrayerTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTopic.swift; sourceTree = "<group>"; };
+		C44A75A73E84AF57DC6B5DDC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		CE3EDE50C07AAFEF64644148 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		DB7495EDE6860EE5F0BFBD68 /* Scripture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
+		DD0A85373655A0A824768C22 /* PrayerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerSession.swift; sourceTree = "<group>"; };
+		E27D87FE38F95D481075D428 /* Hallowed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hallowed.entitlements; sourceTree = "<group>"; };
+		EFAB6D340DFB0A7531602877 /* PrayerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTheme.swift; sourceTree = "<group>"; };
+		F35C10855166D6E1244273EC /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42F7FFE6806A06DAF7EC5EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF481C3C4E686D0616F1602E /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0313EC7E6107B5EB918BADCB /* Hallowed */ = {
+			isa = PBXGroup;
+			children = (
+				6E84B25DF2650CA80868C2F8 /* AppEnvironment.swift */,
+				88B54A65C4011351F55BB784 /* HallowedApp.swift */,
+				EDD818640C944E78AE9F044E /* Config */,
+				FAE69629DCA519DA425B5F99 /* Extensions */,
+				1CE8C001D41A2EA0C7934174 /* Features */,
+				F5360630B814471E9917888A /* Models */,
+				92379774A955960E25BAAB2C /* Resources */,
+				3C1723E5BA6F3D66147FDF05 /* Services */,
+			);
+			path = Hallowed;
+			sourceTree = "<group>";
+		};
+		1CE8C001D41A2EA0C7934174 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				28AC52AB9AB230FFB2FC24E9 /* Auth */,
+				8BF7A19CDEA15924CCDA822D /* Home */,
+				A6A63741A82EB0B1F4F2A7B4 /* Library */,
+				332F4029FB843AA0A1D01EDC /* PrayerPeriod */,
+				DBC7DECEB05EE72BF2FE6B99 /* PrayerSession */,
+				6DC88E8AE7022FCCC64FE79C /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		28AC52AB9AB230FFB2FC24E9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				95B1AA6866E904D99DCE29F8 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		332F4029FB843AA0A1D01EDC /* PrayerPeriod */ = {
+			isa = PBXGroup;
+			children = (
+				9A822AB0FA686C3262A958D9 /* PeriodEditorView.swift */,
+				1FC8243972F6EF6F4DFAD343 /* PeriodListView.swift */,
+			);
+			path = PrayerPeriod;
+			sourceTree = "<group>";
+		};
+		3C1723E5BA6F3D66147FDF05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6340F52710894401A939237F /* BibleService.swift */,
+				F35C10855166D6E1244273EC /* NotificationScheduler.swift */,
+				370D1650FF694E6A32478897 /* PrayerRandomizer.swift */,
+				B08E790F31E6CDF442D626A5 /* ScreenOverlayManager.swift */,
+				A257CB9F5E0242FC59EFCDD7 /* SupabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6CF6CACBD164D2EDA0D21696 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A66D9C6A9191BFD5AEFE2C1 /* Hallowed.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DC88E8AE7022FCCC64FE79C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4D1638AE1430B59C41BC6713 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8BF7A19CDEA15924CCDA822D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2481896C7447CA7B6A50F1E5 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		92379774A955960E25BAAB2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4EFBF18A6D33EE70F644E988 /* Assets.xcassets */,
+				E27D87FE38F95D481075D428 /* Hallowed.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		927D8D560AA9077754C22CC8 = {
+			isa = PBXGroup;
+			children = (
+				0313EC7E6107B5EB918BADCB /* Hallowed */,
+				6CF6CACBD164D2EDA0D21696 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6A63741A82EB0B1F4F2A7B4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				91B233F0576D3BEF32B98678 /* ThemeListView.swift */,
+				8ABA6E8FFB43D970BE84206D /* TopicDetailView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		DBC7DECEB05EE72BF2FE6B99 /* PrayerSession */ = {
+			isa = PBXGroup;
+			children = (
+				CE3EDE50C07AAFEF64644148 /* SessionView.swift */,
+			);
+			path = PrayerSession;
+			sourceTree = "<group>";
+		};
+		EDD818640C944E78AE9F044E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1D48403090802E04EDB71A0B /* Info.plist */,
+				1A3FA60D5658DBBBE4773EE9 /* Secrets.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F5360630B814471E9917888A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84D9F9FE4972D32D147B31F2 /* Prayer.swift */,
+				7D4B70ECD9FBA83877A0911A /* PrayerPeriod.swift */,
+				DD0A85373655A0A824768C22 /* PrayerSession.swift */,
+				EFAB6D340DFB0A7531602877 /* PrayerTheme.swift */,
+				B5873039F52353EED355F21C /* PrayerTopic.swift */,
+				DB7495EDE6860EE5F0BFBD68 /* Scripture.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAE69629DCA519DA425B5F99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C44A75A73E84AF57DC6B5DDC /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F47A86D7D6116FE86189129 /* Hallowed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F02171DADF9C2147447C5A5A /* Build configuration list for PBXNativeTarget "Hallowed" */;
+			buildPhases = (
+				420D71C8670936F94C07E35D /* Sources */,
+				18639FE45915E19E92C6473A /* Resources */,
+				42F7FFE6806A06DAF7EC5EA8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hallowed;
+			packageProductDependencies = (
+				FAB62D8A62256F54FB043A68 /* Supabase */,
+			);
+			productName = Hallowed;
+			productReference = 2A66D9C6A9191BFD5AEFE2C1 /* Hallowed.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73CE8C2DDE07286D276056EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					1F47A86D7D6116FE86189129 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5CA210B3CEABC33A3F157369 /* Build configuration list for PBXProject "Hallowed" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 927D8D560AA9077754C22CC8;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6CF6CACBD164D2EDA0D21696 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F47A86D7D6116FE86189129 /* Hallowed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18639FE45915E19E92C6473A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B3EB36E13929B4C4F16580C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		420D71C8670936F94C07E35D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A719A3F5A6B54147735B200 /* AppEnvironment.swift in Sources */,
+				C6D4728182DA683D217FE75C /* AuthView.swift in Sources */,
+				A495E54790F49188744EE6D7 /* Color+Hex.swift in Sources */,
+				2190B4303859B5A584458711 /* HallowedApp.swift in Sources */,
+				356B52BF38A1B13D808C4D0F /* HomeView.swift in Sources */,
+				882651CA84AB472EAF798799 /* BibleService.swift in Sources */,
+				AD41FEAD68D9BC800FF5D982 /* NotificationScheduler.swift in Sources */,
+				F7846D72E395612782D764C1 /* PeriodEditorView.swift in Sources */,
+				EDFCFC1BB4240E79718179D3 /* PeriodListView.swift in Sources */,
+				3C6C9ED3D2268834055DB093 /* Prayer.swift in Sources */,
+				49F0D36B26B2F9F6BB3062B0 /* PrayerPeriod.swift in Sources */,
+				A5561B0E3E6517B7B830A160 /* PrayerRandomizer.swift in Sources */,
+				8AD5EE22113C0103254695CE /* PrayerSession.swift in Sources */,
+				695ACA0C6B5DF9F87A8318E8 /* PrayerTheme.swift in Sources */,
+				AC1601114A8AD8F57562905A /* PrayerTopic.swift in Sources */,
+				9DF91CB17DD630E2C9674BC6 /* ScreenOverlayManager.swift in Sources */,
+				40C892B786EE4103898BD507 /* Scripture.swift in Sources */,
+				BFCAA0A9265CD7BCBEF91EF7 /* Secrets.swift in Sources */,
+				2DBD5217E05392BC817D9981 /* SessionView.swift in Sources */,
+				EEF52BD468FDEA2E27BCFFFF /* SettingsView.swift in Sources */,
+				D5A8B4EED1419E4AA2DA5422 /* SupabaseService.swift in Sources */,
+				90D2563E04404A76ABC30043 /* ThemeListView.swift in Sources */,
+				60CC9D82CEA19CD693C2B937 /* TopicDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5B504165A28A7A4F1B5F611A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6702C175CE61D4BA44EAFFA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hallowed/Resources/Hallowed.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Hallowed/Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hallowed.macos;
+				PRODUCT_NAME = Hallowed;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				xcconfig = Secrets.xcconfig;
+			};
+			name = Release;
+		};
+		97E15D0AF31A0BEFE0BC174B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hallowed/Resources/Hallowed.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Hallowed/Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hallowed.macos;
+				PRODUCT_NAME = Hallowed;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				xcconfig = Secrets.xcconfig;
+			};
+			name = Debug;
+		};
+		9FDE92B7568523395C9558AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CA210B3CEABC33A3F157369 /* Build configuration list for PBXProject "Hallowed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B504165A28A7A4F1B5F611A /* Debug */,
+				9FDE92B7568523395C9558AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F02171DADF9C2147447C5A5A /* Build configuration list for PBXNativeTarget "Hallowed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97E15D0AF31A0BEFE0BC174B /* Debug */,
+				6702C175CE61D4BA44EAFFA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAB62D8A62256F54FB043A68 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 73CE8C2DDE07286D276056EE /* Project object */;
+}

@@ -1,0 +1,25 @@
+# ── Secrets ──────────────────────────────────────────────
+apps/mobile/.env.local
+apps/mobile/.env
+apps/backend/.env
+apps/macos/**/**/Secrets.xcconfig
+
+# ── macOS / Xcode ─────────────────────────────────────────
+*.xcuserdata/
+**/DerivedData/
+**/.build/
+**/Packages/
+*.swiftpm/
+*.swp
+.DS_Store
+
+# ── Mobile / Node ─────────────────────────────────────────
+node_modules/
+apps/mobile/.expo/
+apps/mobile/dist/
+apps/mobile/build/
+*.log
+npm-debug.log*
+
+# ── Supabase ──────────────────────────────────────────────
+apps/backend/.supabase/

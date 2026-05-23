@@ -1,0 +1,3611 @@
+[
+  {
+    "id": "09515eab-43ee-53db-8f0e-d00cd0c92a35",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 4,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Psalm 4:4"
+  },
+  {
+    "id": "7cff8a7b-6999-512f-8391-74c1546a8a71",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 26,
+    "verse_end": 27,
+    "reference": "Ephesians 4:26-27"
+  },
+  {
+    "id": "3ac10952-0e68-5608-bb4b-02cb53c8dc2b",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 31,
+    "verse_end": 32,
+    "reference": "Ephesians 4:31-32"
+  },
+  {
+    "id": "197f5e1d-e267-527e-8229-4af1fd87a012",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 18,
+    "verse_start": 21,
+    "verse_end": 22,
+    "reference": "Matthew 18:21-22"
+  },
+  {
+    "id": "d9a803bf-9a69-584e-8bb0-cd63fe825b11",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 13,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 13:1-2"
+  },
+  {
+    "id": "d1111041-6b0e-51dd-b811-4d370048aa4f",
+    "book": "Lamentations",
+    "book_code": "LAM",
+    "chapter": 3,
+    "verse_start": 32,
+    "verse_end": 33,
+    "reference": "Lamentations 3:32-33"
+  },
+  {
+    "id": "965f70b9-46bf-58ac-ad41-062fa42faa02",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 12,
+    "verse_start": 17,
+    "verse_end": 19,
+    "reference": "Romans 12:17-19"
+  },
+  {
+    "id": "da2c0fee-cda8-5878-8700-f1346c0ea63c",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 23,
+    "verse_end": 24,
+    "reference": "Matthew 5:23-24"
+  },
+  {
+    "id": "128881ce-977d-59df-b16b-d69f89dc6898",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 12,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Hebrews 12:15"
+  },
+  {
+    "id": "cebd6c77-24b8-5fab-b028-0575b59d4cc0",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 8,
+    "verse_start": 23,
+    "verse_end": null,
+    "reference": "Acts 8:23"
+  },
+  {
+    "id": "0bf1f4bc-9541-5f7b-b624-0b40fe781bd1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 97,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Psalm 97:10"
+  },
+  {
+    "id": "dce1ef75-b10a-5eb0-add7-2677e92bff78",
+    "book": "Amos",
+    "book_code": "AMO",
+    "chapter": 5,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Amos 5:15"
+  },
+  {
+    "id": "8051f3f0-edf7-52c7-b4a2-cef2fb8ac493",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 14,
+    "verse_start": 29,
+    "verse_end": null,
+    "reference": "Proverbs 14:29"
+  },
+  {
+    "id": "36d089fc-8daf-5476-8bb7-f9fc91e77714",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 1,
+    "verse_start": 19,
+    "verse_end": 20,
+    "reference": "James 1:19-20"
+  },
+  {
+    "id": "ca333917-5684-5ff4-9ba5-c2e3e0e7563e",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Colossians 3:19"
+  },
+  {
+    "id": "72841d16-6fb8-5193-9c26-1ae9af89078a",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 15,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Proverbs 15:1"
+  },
+  {
+    "id": "8a9bebdc-2edc-508d-97db-f35a952c5219",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 37,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Psalm 37:8"
+  },
+  {
+    "id": "5c1b8af9-bd60-5ba8-b134-711b40daaf33",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 22,
+    "verse_start": 24,
+    "verse_end": 25,
+    "reference": "Proverbs 22:24-25"
+  },
+  {
+    "id": "425d19f5-394b-57e8-8040-9ac101a54a1a",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 44,
+    "verse_end": null,
+    "reference": "Matthew 5:44"
+  },
+  {
+    "id": "d01fd930-189d-5218-b922-233fb0da466b",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 6,
+    "verse_start": 27,
+    "verse_end": 28,
+    "reference": "Luke 6:27-28"
+  },
+  {
+    "id": "16aaa714-7b7f-5b32-8e69-f359f212453e",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 12,
+    "verse_start": 2,
+    "verse_end": 3,
+    "reference": "Genesis 12:2-3"
+  },
+  {
+    "id": "9dd4ab62-2eac-5c42-b493-7b8de2503ee5",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 3,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Galatians 3:14"
+  },
+  {
+    "id": "7893f9fc-75f7-50b0-a2b3-44396eb0d1be",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 1,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Psalm 1:3"
+  },
+  {
+    "id": "16f8662c-4eac-50f2-b7e2-f9ab62a04917",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 15,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "John 15:16"
+  },
+  {
+    "id": "7a8d5757-83da-5adc-b04a-ee62fdddbcf6",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 28,
+    "verse_start": 2,
+    "verse_end": 6,
+    "reference": "Deuteronomy 28:2-6"
+  },
+  {
+    "id": "553e1f8e-89d3-5e57-9079-34d21c5d0ccb",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 1,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Ephesians 1:3"
+  },
+  {
+    "id": "5230a2c5-0f97-53e1-9fa0-b5c722d42981",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 92,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Psalm 92:10"
+  },
+  {
+    "id": "57c7857a-346f-5f6b-a9fc-3e2c712d36ed",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 10,
+    "verse_start": 38,
+    "verse_end": null,
+    "reference": "Acts 10:38"
+  },
+  {
+    "id": "c0f5de17-9e3e-558f-8424-6c2f3d642769",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 1,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Deuteronomy 1:11"
+  },
+  {
+    "id": "f21960a0-71c2-5885-9be9-f605e9377aa2",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 6,
+    "verse_start": 38,
+    "verse_end": null,
+    "reference": "Luke 6:38"
+  },
+  {
+    "id": "8dd87ec5-31ab-5c61-9f81-6621f6bf6e37",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 3,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Revelation 3:8"
+  },
+  {
+    "id": "8cc1c064-ef86-5958-aa2f-5ee5f5f73848",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 22,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Isaiah 22:22"
+  },
+  {
+    "id": "c37e41c8-93fd-5c0f-8f87-f5b81ec02f96",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 13,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Proverbs 13:22"
+  },
+  {
+    "id": "0afc4a0a-a8d8-5b41-872d-3102f84e9d96",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 112,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 112:1-2"
+  },
+  {
+    "id": "2cae8ae3-cb2b-563c-9b0d-96f14839508c",
+    "book": "Malachi",
+    "book_code": "MAL",
+    "chapter": 3,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Malachi 3:10"
+  },
+  {
+    "id": "3f835a22-625f-583e-a675-f211ed5a0c90",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 16,
+    "verse_start": 10,
+    "verse_end": 11,
+    "reference": "Luke 16:10-11"
+  },
+  {
+    "id": "b925ba2f-2e75-5cb1-93c7-18309f091932",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 58,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Isaiah 58:11"
+  },
+  {
+    "id": "0be856c8-4b1c-5a71-9d2b-96b1c822b30c",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 17,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Jeremiah 17:8"
+  },
+  {
+    "id": "602b1a29-f88f-55a7-82e0-5e52bd381b53",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 113,
+    "verse_start": 7,
+    "verse_end": 8,
+    "reference": "Psalm 113:7-8"
+  },
+  {
+    "id": "4abf310c-9378-5863-b105-48fe221fa2e8",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 4,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Luke 4:18"
+  },
+  {
+    "id": "de1ac09d-c417-58e5-992b-3c1d4b01ef7f",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 16,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Proverbs 16:18"
+  },
+  {
+    "id": "4952839b-9f73-50e5-bfa3-997cb3ebe8ed",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 4,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "James 4:6"
+  },
+  {
+    "id": "ef440154-5f2f-5724-96d8-707dffdd2517",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 6,
+    "verse_start": 14,
+    "verse_end": 15,
+    "reference": "Matthew 6:14-15"
+  },
+  {
+    "id": "a0df87f1-7fb3-53e4-b95e-6d617adb4779",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 32,
+    "verse_end": null,
+    "reference": "Ephesians 4:32"
+  },
+  {
+    "id": "f33796e0-b410-575e-bc4f-5c9f42fce6cf",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 8,
+    "verse_start": 26,
+    "verse_end": null,
+    "reference": "Matthew 8:26"
+  },
+  {
+    "id": "bf312160-55d2-5427-8592-bd6ebcce3fed",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 11,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Hebrews 11:6"
+  },
+  {
+    "id": "a9d6042e-65ae-55ac-8e58-a92bf278f2f9",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 8,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Deuteronomy 8:3"
+  },
+  {
+    "id": "b3945379-e837-51ae-8192-94df0a9e463b",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 119,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Psalm 119:11"
+  },
+  {
+    "id": "eba4c132-99fd-5116-bff7-9e477c9ac49e",
+    "book": "Exodus",
+    "book_code": "EXO",
+    "chapter": 20,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Exodus 20:3"
+  },
+  {
+    "id": "d5ba5ac8-d3b1-572b-bb91-984b01ae67a8",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 5,
+    "verse_start": 21,
+    "verse_end": null,
+    "reference": "1 John 5:21"
+  },
+  {
+    "id": "23999393-5d33-5561-a76b-fa5d9e5d6a29",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 1,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "1 John 1:9"
+  },
+  {
+    "id": "dff6b479-170d-572f-ba83-3bc58aa9bf93",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 51,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 51:1-2"
+  },
+  {
+    "id": "f2260709-e837-5760-83d9-470b00335349",
+    "book": "1 Thessalonians",
+    "book_code": "1TH",
+    "chapter": 5,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "1 Thessalonians 5:17"
+  },
+  {
+    "id": "5c4bcade-033b-502c-b994-fdc3461c6644",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 18,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Luke 18:1"
+  },
+  {
+    "id": "4ce5024f-c4dc-5e5f-96f8-cc2a312bba37",
+    "book": "1 Thessalonians",
+    "book_code": "1TH",
+    "chapter": 5,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "1 Thessalonians 5:18"
+  },
+  {
+    "id": "15e2c985-acdb-5fe0-ac17-a11d153fc4bd",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Colossians 3:15"
+  },
+  {
+    "id": "0e1da2cc-0adf-539f-bb07-be42ea65a961",
+    "book": "Daniel",
+    "book_code": "DAN",
+    "chapter": 9,
+    "verse_start": 4,
+    "verse_end": 5,
+    "reference": "Daniel 9:4-5"
+  },
+  {
+    "id": "28229c21-4c2e-5c81-bf41-45daa06132e5",
+    "book": "2 Chronicles",
+    "book_code": "2CH",
+    "chapter": 7,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "2 Chronicles 7:14"
+  },
+  {
+    "id": "23aba324-1cde-5e6e-9056-d6307ef8f805",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 5,
+    "verse_start": 25,
+    "verse_end": 28,
+    "reference": "Ephesians 5:25-28"
+  },
+  {
+    "id": "ffd4b8c6-663c-5e20-922a-115dd21bba93",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 31,
+    "verse_start": 10,
+    "verse_end": 11,
+    "reference": "Proverbs 31:10-11"
+  },
+  {
+    "id": "f171c6a8-4596-50b6-97f3-e572b8799d3b",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 127,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Psalm 127:1"
+  },
+  {
+    "id": "014e5936-59bd-5f7f-b56b-d45fc3e5353f",
+    "book": "Joshua",
+    "book_code": "JOS",
+    "chapter": 24,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Joshua 24:15"
+  },
+  {
+    "id": "8c60181b-d6d0-5542-87f9-97ff41e5a8f4",
+    "book": "Song of Solomon",
+    "book_code": "SNG",
+    "chapter": 2,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "Song of Solomon 2:16"
+  },
+  {
+    "id": "1990ac10-11ec-522f-8e88-328a666918a5",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 2,
+    "verse_start": 24,
+    "verse_end": null,
+    "reference": "Genesis 2:24"
+  },
+  {
+    "id": "d34318d7-bbbf-5c0c-81df-884ec73a7f06",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 26,
+    "verse_end": null,
+    "reference": "Ephesians 4:26"
+  },
+  {
+    "id": "730ea0e4-0b93-5eaa-9ba4-1405adbca705",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 18,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Matthew 18:15"
+  },
+  {
+    "id": "71e23170-0ca2-5fe2-a42f-7bf07cf895a7",
+    "book": "Mark",
+    "book_code": "MRK",
+    "chapter": 10,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Mark 10:9"
+  },
+  {
+    "id": "5d2fba71-e4a8-5b90-8932-58fb66ac7160",
+    "book": "1 Peter",
+    "book_code": "1PE",
+    "chapter": 5,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "1 Peter 5:8"
+  },
+  {
+    "id": "5599abfd-ba3e-5948-9933-6aebc97e1154",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 18,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Proverbs 18:22"
+  },
+  {
+    "id": "dd8088fc-c8a7-51eb-ad4f-fcb2f342cae9",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 37,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Psalm 37:4"
+  },
+  {
+    "id": "364679fa-79a9-5016-a8bd-1b80f5f45c26",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 127,
+    "verse_start": 3,
+    "verse_end": 5,
+    "reference": "Psalm 127:3-5"
+  },
+  {
+    "id": "fe63e32e-d8f1-5577-9957-6f6a64b30ea2",
+    "book": "3 John",
+    "book_code": "3JN",
+    "chapter": 1,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "3 John 1:4"
+  },
+  {
+    "id": "cf86c5b0-a2e4-5e43-8f3e-96fa3001299d",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 15,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Luke 15:20"
+  },
+  {
+    "id": "26a37d02-3886-5ace-8c45-a931b3d22131",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 31,
+    "verse_start": 16,
+    "verse_end": 17,
+    "reference": "Jeremiah 31:16-17"
+  },
+  {
+    "id": "27c92e8f-ad25-5f5f-90bc-f62b114d27cd",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 17,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Proverbs 17:17"
+  },
+  {
+    "id": "5b9a917a-34fa-5f9d-9b62-c239babb25cd",
+    "book": "Ecclesiastes",
+    "book_code": "ECC",
+    "chapter": 4,
+    "verse_start": 9,
+    "verse_end": 10,
+    "reference": "Ecclesiastes 4:9-10"
+  },
+  {
+    "id": "a4752deb-2956-5eae-9738-3d2c8525b9a5",
+    "book": "Ruth",
+    "book_code": "RUT",
+    "chapter": 1,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "Ruth 1:16"
+  },
+  {
+    "id": "255f2bce-b0d8-5760-bbf5-999fbb979dba",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 18,
+    "verse_start": 24,
+    "verse_end": null,
+    "reference": "Proverbs 18:24"
+  },
+  {
+    "id": "0c5bfa2b-0caa-5f52-a873-e8b8883d834e",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 5,
+    "verse_start": 18,
+    "verse_end": 19,
+    "reference": "2 Corinthians 5:18-19"
+  },
+  {
+    "id": "3c21b15c-43fc-5f87-a73e-03be60fd25f6",
+    "book": "1 Timothy",
+    "book_code": "1TI",
+    "chapter": 5,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "1 Timothy 5:8"
+  },
+  {
+    "id": "cf5f5644-3564-506b-9add-13d6dd483e44",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 16,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Acts 16:31"
+  },
+  {
+    "id": "1ac991f0-9445-53df-8495-57526c958b82",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 56,
+    "verse_start": 3,
+    "verse_end": 4,
+    "reference": "Psalm 56:3-4"
+  },
+  {
+    "id": "ec793fd1-ab10-5e7c-b444-18744952725c",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 41,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Isaiah 41:10"
+  },
+  {
+    "id": "494937c4-a94e-5195-afb2-c80dcafa37b5",
+    "book": "1 Peter",
+    "book_code": "1PE",
+    "chapter": 5,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "1 Peter 5:7"
+  },
+  {
+    "id": "ef88c644-6867-50e6-b8ce-5a4c28f664bf",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 4,
+    "verse_start": 6,
+    "verse_end": 7,
+    "reference": "Philippians 4:6-7"
+  },
+  {
+    "id": "299d9316-983a-551c-a3e3-4a15535c6e82",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 6,
+    "verse_start": 25,
+    "verse_end": 27,
+    "reference": "Matthew 6:25-27"
+  },
+  {
+    "id": "c4902316-acba-5568-be00-b66677655d2d",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 12,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Luke 12:22"
+  },
+  {
+    "id": "394dc948-bbc7-55d7-bd93-7485442ac7f5",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 31,
+    "verse_start": 14,
+    "verse_end": 15,
+    "reference": "Psalm 31:14-15"
+  },
+  {
+    "id": "917eec9b-5c6a-5f91-8e3a-c915091d1b89",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 3,
+    "verse_start": 5,
+    "verse_end": 6,
+    "reference": "Proverbs 3:5-6"
+  },
+  {
+    "id": "ccd18e75-9535-5526-bf0f-bd867947a3c7",
+    "book": "2 Timothy",
+    "book_code": "2TI",
+    "chapter": 1,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "2 Timothy 1:7"
+  },
+  {
+    "id": "31d506a2-b918-553a-a254-2d57ff55f3e1",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Romans 8:31"
+  },
+  {
+    "id": "8477465b-6bf7-5218-82a6-5fa63617910e",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 11,
+    "verse_start": 28,
+    "verse_end": null,
+    "reference": "Matthew 11:28"
+  },
+  {
+    "id": "5de7ef9b-9b40-56c7-b428-5f241f267415",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 55,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Psalm 55:22"
+  },
+  {
+    "id": "972efffb-4f06-5b5a-b1cb-98e0c678f0dd",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 4,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "1 John 4:18"
+  },
+  {
+    "id": "0599939f-4473-52b6-82f6-73b78a7c97a0",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 27,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Psalm 27:1"
+  },
+  {
+    "id": "fbb7db4a-3e04-568d-b188-5dc8cffda212",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 29,
+    "verse_start": 25,
+    "verse_end": null,
+    "reference": "Proverbs 29:25"
+  },
+  {
+    "id": "1856e647-5ef3-59b5-aa0a-a886b8e7db21",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 1,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Galatians 1:10"
+  },
+  {
+    "id": "2d4df265-3e2d-5314-9be1-3ad013cd9724",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 23,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Psalm 23:4"
+  },
+  {
+    "id": "401e7d84-3eef-5d54-ac1b-390f8dcd39ca",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 11,
+    "verse_start": 25,
+    "verse_end": 26,
+    "reference": "John 11:25-26"
+  },
+  {
+    "id": "968fa605-1205-5c5b-8029-4fca2738a770",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 41,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Psalm 41:3"
+  },
+  {
+    "id": "fd92d2f3-25e4-5bcc-8cf6-43d4501574d3",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 30,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Jeremiah 30:17"
+  },
+  {
+    "id": "2151ed32-b7b6-5939-b705-acf4bbde37fd",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 1,
+    "verse_start": 17,
+    "verse_end": 18,
+    "reference": "Ephesians 1:17-18"
+  },
+  {
+    "id": "7229f277-df04-51f4-87f9-18d8de214429",
+    "book": "Daniel",
+    "book_code": "DAN",
+    "chapter": 2,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Daniel 2:22"
+  },
+  {
+    "id": "e11e026e-3a35-55ea-9361-395c419ad5f7",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 11,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Isaiah 11:2"
+  },
+  {
+    "id": "a4ed60c8-1449-565f-b538-7d8880683362",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 11,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Proverbs 11:14"
+  },
+  {
+    "id": "5c4940e6-fe02-588f-8f3d-4e75343461cd",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 32,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Psalm 32:8"
+  },
+  {
+    "id": "1daf1158-bd4c-558e-916c-fedb9e583f29",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 5,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Hebrews 5:14"
+  },
+  {
+    "id": "5138f8ce-9bc9-5979-8448-331534bc439e",
+    "book": "1 Kings",
+    "book_code": "1KI",
+    "chapter": 3,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "1 Kings 3:9"
+  },
+  {
+    "id": "a7e7b2c7-8233-5ff7-beca-fc9c11e96f38",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Romans 8:14"
+  },
+  {
+    "id": "bde468ac-cd8e-59ea-bb10-59384cb74cda",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 25,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Psalm 25:9"
+  },
+  {
+    "id": "4b5cdecd-2325-5e43-b068-4a142c272bf5",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 1,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "James 1:5"
+  },
+  {
+    "id": "83e35ef3-8298-5844-b0a5-ad136e20d46b",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 2,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Proverbs 2:6"
+  },
+  {
+    "id": "5ef9d953-1468-533f-9885-0e09e49fe067",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 16,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Luke 16:11"
+  },
+  {
+    "id": "eecf0b3f-7546-5933-b019-18186bba6e89",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 3,
+    "verse_start": 9,
+    "verse_end": 10,
+    "reference": "Proverbs 3:9-10"
+  },
+  {
+    "id": "540c09d9-4dac-51ec-993b-0f67e3f4cd17",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 30,
+    "verse_start": 21,
+    "verse_end": null,
+    "reference": "Isaiah 30:21"
+  },
+  {
+    "id": "7bfe27ee-8e2f-56ea-91bb-b32a15d75e1f",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 37,
+    "verse_start": 23,
+    "verse_end": null,
+    "reference": "Psalm 37:23"
+  },
+  {
+    "id": "fd99bdf9-0041-564f-96ba-c2285386fec5",
+    "book": "2 Chronicles",
+    "book_code": "2CH",
+    "chapter": 20,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "2 Chronicles 20:12"
+  },
+  {
+    "id": "3b606beb-7fd8-5a83-b172-d41cbe966b54",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 16,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Proverbs 16:9"
+  },
+  {
+    "id": "79fc9624-686f-555b-90be-093544858181",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 13,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Proverbs 13:20"
+  },
+  {
+    "id": "32c57423-a2a6-5448-98a3-0bf8ea43d00f",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 4,
+    "verse_start": 5,
+    "verse_end": 6,
+    "reference": "Colossians 4:5-6"
+  },
+  {
+    "id": "7d971472-864c-58b8-ae0a-12b782a998dd",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 5,
+    "verse_start": 14,
+    "verse_end": 15,
+    "reference": "James 5:14-15"
+  },
+  {
+    "id": "50f4c1f0-64c3-52f1-baf3-081a3cae532c",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 53,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Isaiah 53:5"
+  },
+  {
+    "id": "e7c5b58e-b602-5ca3-aa63-097cab984b32",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 34,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Psalm 34:18"
+  },
+  {
+    "id": "0fdf893b-9255-5e8f-aa61-8e841effad93",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 61,
+    "verse_start": 1,
+    "verse_end": 3,
+    "reference": "Isaiah 61:1-3"
+  },
+  {
+    "id": "800cfae7-1279-5d4b-94b9-dbcee92aed18",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 147,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Psalm 147:3"
+  },
+  {
+    "id": "913d57f4-32ce-50fe-a6bb-ef76500f658b",
+    "book": "Joel",
+    "book_code": "JOL",
+    "chapter": 2,
+    "verse_start": 25,
+    "verse_end": null,
+    "reference": "Joel 2:25"
+  },
+  {
+    "id": "e013dd79-c0f3-5c64-a1ae-4b6db16a7fd9",
+    "book": "Micah",
+    "book_code": "MIC",
+    "chapter": 7,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Micah 7:8"
+  },
+  {
+    "id": "e2a3ab12-150e-5726-b88c-d62add2458f7",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 51,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Psalm 51:17"
+  },
+  {
+    "id": "ecc6412d-ba3c-591f-a34b-d33af6317bbd",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 57,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Isaiah 57:15"
+  },
+  {
+    "id": "90023cb0-4556-596e-858c-31e33f8b5a94",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 43,
+    "verse_start": 18,
+    "verse_end": 19,
+    "reference": "Isaiah 43:18-19"
+  },
+  {
+    "id": "85e9c10f-fa83-5265-aa71-e9a6cfdbfe08",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 28,
+    "verse_end": null,
+    "reference": "Romans 8:28"
+  },
+  {
+    "id": "68235962-1e0e-5d58-a0c1-f4a116afa8f1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 46,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Psalm 46:1"
+  },
+  {
+    "id": "605da0a6-21e2-58a4-9714-911deb7b0cb9",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 1,
+    "verse_start": 3,
+    "verse_end": 4,
+    "reference": "2 Corinthians 1:3-4"
+  },
+  {
+    "id": "ab23c8de-7b15-5ee8-9ac6-9251c5ae5f01",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 21,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Revelation 21:4"
+  },
+  {
+    "id": "e825e20e-e758-5aa9-a8f3-da87ad8966c4",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 10,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "John 10:10"
+  },
+  {
+    "id": "0cdeedc2-0f65-5514-a501-55f82b311a07",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "Colossians 3:13"
+  },
+  {
+    "id": "bf6bb278-56b8-557a-b0a7-fd1056cfdaea",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 14,
+    "verse_start": 16,
+    "verse_end": 17,
+    "reference": "John 14:16-17"
+  },
+  {
+    "id": "d57fde43-bba1-5757-8358-ba9375e84e56",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 11,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "Luke 11:13"
+  },
+  {
+    "id": "86630328-ffa9-5900-a6a1-4db4311b4eb3",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 12,
+    "verse_start": 4,
+    "verse_end": 7,
+    "reference": "1 Corinthians 12:4-7"
+  },
+  {
+    "id": "5a740ed8-ad87-534c-8fbc-f456b1a4846e",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 14,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "1 Corinthians 14:1"
+  },
+  {
+    "id": "3c8bade8-a9d4-56e4-a052-77220c1b3bd1",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 1,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Acts 1:8"
+  },
+  {
+    "id": "f0b5b987-5f2d-5c60-b7f8-783bc197553f",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 3,
+    "verse_start": 22,
+    "verse_end": null,
+    "reference": "Luke 3:22"
+  },
+  {
+    "id": "eef9e255-8d96-5c43-b8f8-f099e08c84a4",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 5,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "Galatians 5:16"
+  },
+  {
+    "id": "090023df-5df3-5e7a-9fdf-621e225e676c",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 16,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "John 16:13"
+  },
+  {
+    "id": "36855059-e7ab-5148-a2e9-291c84628ab4",
+    "book": "Jude",
+    "book_code": "JUD",
+    "chapter": 1,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Jude 1:20"
+  },
+  {
+    "id": "22ba5bcc-a1db-5e23-82c1-c752c8c124dd",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 26,
+    "verse_end": 27,
+    "reference": "Romans 8:26-27"
+  },
+  {
+    "id": "6afd7580-a3b6-5e8f-80c0-eeca9c1337cb",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 5,
+    "verse_start": 22,
+    "verse_end": 23,
+    "reference": "Galatians 5:22-23"
+  },
+  {
+    "id": "ce23b8e1-2618-5c33-b628-59fc6290c8e7",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 15,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "John 15:5"
+  },
+  {
+    "id": "2bcf15cc-38b2-5745-bd7e-cdd2574328d5",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 5,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Ephesians 5:18"
+  },
+  {
+    "id": "ec308fef-509c-5073-b6ec-7e8ac40d0586",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 4,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Acts 4:31"
+  },
+  {
+    "id": "604cc706-5b08-5038-ad44-654d7bacdaae",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 10,
+    "verse_start": 27,
+    "verse_end": null,
+    "reference": "John 10:27"
+  },
+  {
+    "id": "f69ee79f-fa95-56d9-807c-34e2e4cf7d7d",
+    "book": "1 Kings",
+    "book_code": "1KI",
+    "chapter": 19,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "1 Kings 19:12"
+  },
+  {
+    "id": "2ad8dcb0-209d-5575-903f-a9920dab9f2b",
+    "book": "Lamentations",
+    "book_code": "LAM",
+    "chapter": 3,
+    "verse_start": 21,
+    "verse_end": 23,
+    "reference": "Lamentations 3:21-23"
+  },
+  {
+    "id": "7294d968-38fb-5b6b-92fe-cac497ebfb20",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 42,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Psalm 42:11"
+  },
+  {
+    "id": "f3ded104-f7b3-52c7-9c6c-b969ae096d16",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 6,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Hebrews 6:19"
+  },
+  {
+    "id": "a35500fc-db82-5193-9c7d-1ffb43f3fcf8",
+    "book": "2 Peter",
+    "book_code": "2PE",
+    "chapter": 1,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "2 Peter 1:4"
+  },
+  {
+    "id": "44fbf990-9b54-5e01-a340-91102faaff1d",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 15,
+    "verse_start": 20,
+    "verse_end": 22,
+    "reference": "1 Corinthians 15:20-22"
+  },
+  {
+    "id": "c47b3961-27a1-5df7-89c7-3a247bd7a762",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 27,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Psalm 27:14"
+  },
+  {
+    "id": "e2211cc4-09f4-546a-aca6-bac8a423c0f9",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 40,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Isaiah 40:31"
+  },
+  {
+    "id": "4d89d0d7-5ebe-590d-933c-c0ba4662273f",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 29,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Jeremiah 29:11"
+  },
+  {
+    "id": "6844e394-c966-559b-97a8-2ea82f22fcf8",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 15,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "Romans 15:13"
+  },
+  {
+    "id": "99b6feb9-c749-582e-ac1f-7c6ef985128a",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 78,
+    "verse_start": 4,
+    "verse_end": 7,
+    "reference": "Psalm 78:4-7"
+  },
+  {
+    "id": "5b0058b4-c9ad-5603-a45d-eb50baa4ba19",
+    "book": "Joel",
+    "book_code": "JOL",
+    "chapter": 2,
+    "verse_start": 28,
+    "verse_end": null,
+    "reference": "Joel 2:28"
+  },
+  {
+    "id": "32c9c697-68d2-5c62-ad5b-2f638683e568",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 6,
+    "verse_start": 18,
+    "verse_end": 20,
+    "reference": "Hebrews 6:18-20"
+  },
+  {
+    "id": "dd4fe9a2-a935-5d4d-bbaa-c675be65d561",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 5,
+    "verse_start": 2,
+    "verse_end": 5,
+    "reference": "Romans 5:2-5"
+  },
+  {
+    "id": "23af60a1-f71d-5687-9e3f-3c271838b347",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 13,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Proverbs 13:12"
+  },
+  {
+    "id": "cf534eec-e7d0-5da2-8df8-642f44ca352f",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 71,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Psalm 71:14"
+  },
+  {
+    "id": "c637b15d-8eff-5578-b0bc-f994de4916e9",
+    "book": "1 Thessalonians",
+    "book_code": "1TH",
+    "chapter": 1,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "1 Thessalonians 1:3"
+  },
+  {
+    "id": "1719160b-a8f0-5586-9412-2faa2c96f8fb",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 30,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Psalm 30:2"
+  },
+  {
+    "id": "1e322a27-cca8-51cb-b529-a731dbf0fd90",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 5,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "James 5:15"
+  },
+  {
+    "id": "a7ee5e18-832c-5b33-8408-fe00e6cba033",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 1,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Jeremiah 1:5"
+  },
+  {
+    "id": "52f742dc-929a-571a-a5f6-42bf8fbd7548",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 2,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Ephesians 2:10"
+  },
+  {
+    "id": "75835121-6307-5ccd-86ff-9ab7ae55ce77",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 15,
+    "verse_end": 16,
+    "reference": "Romans 8:15-16"
+  },
+  {
+    "id": "34a4632c-8ef6-5508-8af8-cc260f653213",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 3,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "1 John 3:1"
+  },
+  {
+    "id": "141d661a-e99c-5f4a-842f-70968de9a457",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 107,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Psalm 107:9"
+  },
+  {
+    "id": "e664cef8-2459-56f6-96c5-6577f31aab57",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 5,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "2 Corinthians 5:17"
+  },
+  {
+    "id": "bdaf9f71-1034-56cc-9eff-084f1d973e8d",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Colossians 3:3"
+  },
+  {
+    "id": "9624ba0d-5c5a-5397-a49c-acc2e7752597",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 19,
+    "verse_start": 21,
+    "verse_end": null,
+    "reference": "Proverbs 19:21"
+  },
+  {
+    "id": "6fd93016-138e-5d32-a666-942bb350f9b9",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 12,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Romans 12:2"
+  },
+  {
+    "id": "cfa0f76a-02be-571f-ad72-f513fd7a3d25",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 4,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Philippians 4:8"
+  },
+  {
+    "id": "4797da0b-a629-56b3-bb5c-603ede6d67d6",
+    "book": "1 Peter",
+    "book_code": "1PE",
+    "chapter": 2,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "1 Peter 2:9"
+  },
+  {
+    "id": "de0d254a-1d23-5377-8daf-7811f3a00d0a",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 1,
+    "verse_start": 4,
+    "verse_end": 6,
+    "reference": "Ephesians 1:4-6"
+  },
+  {
+    "id": "1b3891e4-1191-50cc-a923-cb92c21b8fdf",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 2,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Galatians 2:20"
+  },
+  {
+    "id": "161f1744-590d-5fa3-9a7c-fd28e0e71194",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 43,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Isaiah 43:1"
+  },
+  {
+    "id": "6f45de18-1d0c-5750-beba-6939712acd98",
+    "book": "Zephaniah",
+    "book_code": "ZEP",
+    "chapter": 3,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Zephaniah 3:17"
+  },
+  {
+    "id": "1318fb51-7c25-52c4-a6d3-b36733e67535",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 15,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Romans 15:7"
+  },
+  {
+    "id": "b1d7d458-1c43-5092-a32c-01e73fd8b6d2",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 1,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Ephesians 1:6"
+  },
+  {
+    "id": "a2d7517a-8029-5c2f-a16e-8f5259d5c1be",
+    "book": "1 Timothy",
+    "book_code": "1TI",
+    "chapter": 2,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "1 Timothy 2:1-2"
+  },
+  {
+    "id": "9c40ce5d-2fc8-568b-8804-dee13de29867",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 13,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Romans 13:1"
+  },
+  {
+    "id": "ae14df6f-5ee8-5915-8f39-955a9fd95aff",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 13,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Hebrews 13:3"
+  },
+  {
+    "id": "1c2709a0-a65d-55be-9aa1-44a778e153e5",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 12,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Acts 12:5"
+  },
+  {
+    "id": "58572cac-cc34-5cea-bb02-e536e2893a01",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 10,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Romans 10:1"
+  },
+  {
+    "id": "e54fcd1d-5a7f-57b7-b1cb-7be1c4c82913",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 9,
+    "verse_start": 37,
+    "verse_end": 38,
+    "reference": "Matthew 9:37-38"
+  },
+  {
+    "id": "5120915c-88df-510c-a055-5135d3a71cf1",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 4,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Colossians 4:3"
+  },
+  {
+    "id": "5316ee3e-1620-53f7-a457-654fb8b57ce4",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 6,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Ephesians 6:19"
+  },
+  {
+    "id": "f474b9f8-adea-59f6-a934-145c4d31083e",
+    "book": "Mark",
+    "book_code": "MRK",
+    "chapter": 16,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Mark 16:18"
+  },
+  {
+    "id": "745b847e-9c4c-528f-ad76-17f5ee8a3dca",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 29,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Jeremiah 29:7"
+  },
+  {
+    "id": "fe512a59-ba31-53fe-b569-df48797a0275",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 122,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Psalm 122:6"
+  },
+  {
+    "id": "7e42b7bb-2a8e-5980-87d2-c5a29c2e5df5",
+    "book": "2 Thessalonians",
+    "book_code": "2TH",
+    "chapter": 3,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "2 Thessalonians 3:1"
+  },
+  {
+    "id": "59d276b7-3e18-5431-9aad-be1617780cc8",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 4,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Colossians 4:12"
+  },
+  {
+    "id": "e8676baf-06e0-5f8b-9c45-48f220faa533",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 3,
+    "verse_start": 16,
+    "verse_end": 19,
+    "reference": "Ephesians 3:16-19"
+  },
+  {
+    "id": "14cb3d1b-0f32-5c6c-ac85-6d697de02dbd",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 17,
+    "verse_start": 21,
+    "verse_end": null,
+    "reference": "John 17:21"
+  },
+  {
+    "id": "f9f4d91d-48e0-5d5f-9ad8-f6537f2027bc",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 11,
+    "verse_start": 25,
+    "verse_end": 26,
+    "reference": "Romans 11:25-26"
+  },
+  {
+    "id": "8e4c713f-a357-5824-a69d-33aae721acec",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Matthew 5:14"
+  },
+  {
+    "id": "6f737a24-6f7a-519c-ac06-41c4242c328e",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 23,
+    "verse_end": null,
+    "reference": "Colossians 3:23"
+  },
+  {
+    "id": "293f3cf4-509f-5446-a0e0-a8aff0a2ee4a",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 22,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 22:1-2"
+  },
+  {
+    "id": "1329585e-3e48-56cf-86bf-2318fc8485c1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 88,
+    "verse_start": 13,
+    "verse_end": 14,
+    "reference": "Psalm 88:13-14"
+  },
+  {
+    "id": "7acf11c9-a583-5550-ac91-7fc401a9ec60",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 11,
+    "verse_start": 35,
+    "verse_end": null,
+    "reference": "John 11:35"
+  },
+  {
+    "id": "c4fa7ddc-f518-5935-8de1-b68ad0e3c865",
+    "book": "Lamentations",
+    "book_code": "LAM",
+    "chapter": 3,
+    "verse_start": 1,
+    "verse_end": 3,
+    "reference": "Lamentations 3:1-3"
+  },
+  {
+    "id": "ae4ccab5-229f-5c79-a0a9-71dbd4e78708",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 26,
+    "verse_end": null,
+    "reference": "Romans 8:26"
+  },
+  {
+    "id": "300e570d-513f-5ea4-8015-327f1774b1ad",
+    "book": "Habakkuk",
+    "book_code": "HAB",
+    "chapter": 1,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Habakkuk 1:2"
+  },
+  {
+    "id": "dc6b1fe3-d4a4-5fe3-887c-cd5084db288d",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 18,
+    "verse_start": 7,
+    "verse_end": 8,
+    "reference": "Luke 18:7-8"
+  },
+  {
+    "id": "7f5e04c3-ffa7-5ed5-b333-fb24cca546bb",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 32,
+    "verse_start": 26,
+    "verse_end": null,
+    "reference": "Genesis 32:26"
+  },
+  {
+    "id": "647ce521-4ebd-514d-9671-06cb921fb47a",
+    "book": "Hosea",
+    "book_code": "HOS",
+    "chapter": 12,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Hosea 12:4"
+  },
+  {
+    "id": "f5890926-f222-511e-8ff9-8c137b85e6a9",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 116,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Psalm 116:15"
+  },
+  {
+    "id": "6a792426-bb87-5d2d-8e39-37f453644ba1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 31,
+    "verse_start": 9,
+    "verse_end": 10,
+    "reference": "Psalm 31:9-10"
+  },
+  {
+    "id": "285a7a7d-ef59-56c3-b148-4e9d4ab91212",
+    "book": "Ezekiel",
+    "book_code": "EZK",
+    "chapter": 37,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Ezekiel 37:3"
+  },
+  {
+    "id": "94005bfa-ad10-5704-8aca-12056778c9fa",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 88,
+    "verse_start": 1,
+    "verse_end": 3,
+    "reference": "Psalm 88:1-3"
+  },
+  {
+    "id": "35e3a9b3-94c7-5421-9426-76ef24904c68",
+    "book": "Lamentations",
+    "book_code": "LAM",
+    "chapter": 3,
+    "verse_start": 55,
+    "verse_end": 57,
+    "reference": "Lamentations 3:55-57"
+  },
+  {
+    "id": "b6dbc93d-d2da-59f9-a180-d5778f4a913b",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 82,
+    "verse_start": 2,
+    "verse_end": 4,
+    "reference": "Psalm 82:2-4"
+  },
+  {
+    "id": "321f41b9-45b5-5bdc-b1af-d46a7da39ada",
+    "book": "Amos",
+    "book_code": "AMO",
+    "chapter": 5,
+    "verse_start": 24,
+    "verse_end": null,
+    "reference": "Amos 5:24"
+  },
+  {
+    "id": "60f14ab1-737b-59dd-9776-980c776a6068",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 61,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Isaiah 61:3"
+  },
+  {
+    "id": "5112bfcf-e430-5f6c-b342-027b2c5ea430",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 4,
+    "verse_start": 16,
+    "verse_end": 18,
+    "reference": "1 John 4:16-18"
+  },
+  {
+    "id": "11b4b8a5-4637-5868-98eb-1b3b9487bda0",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 38,
+    "verse_end": 39,
+    "reference": "Romans 8:38-39"
+  },
+  {
+    "id": "42445d20-7df6-5b1d-857f-d1a1d7ce7bde",
+    "book": "Mark",
+    "book_code": "MRK",
+    "chapter": 12,
+    "verse_start": 30,
+    "verse_end": null,
+    "reference": "Mark 12:30"
+  },
+  {
+    "id": "f629a14c-d374-5eb7-8b7b-48b2143bf1ae",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 6,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Deuteronomy 6:5"
+  },
+  {
+    "id": "5de6fd3e-287a-5e33-bce3-74cc0940ba1c",
+    "book": "Mark",
+    "book_code": "MRK",
+    "chapter": 12,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Mark 12:31"
+  },
+  {
+    "id": "ac27a636-a6eb-5820-b203-7e89bb14bf82",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 10,
+    "verse_start": 27,
+    "verse_end": null,
+    "reference": "Luke 10:27"
+  },
+  {
+    "id": "a4656228-2fe2-5dfb-979a-cce7e577444d",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 44,
+    "verse_end": 45,
+    "reference": "Matthew 5:44-45"
+  },
+  {
+    "id": "716d7597-5fec-59e5-a1bf-a2ad0cdf6930",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 12,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Romans 12:20"
+  },
+  {
+    "id": "e30ccf16-6d9b-5a6d-86c5-5c1ee2a6fc32",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 13,
+    "verse_start": 34,
+    "verse_end": 35,
+    "reference": "John 13:34-35"
+  },
+  {
+    "id": "e3ec1659-623d-51a5-8745-46dbe4f50478",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 13,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "1 Corinthians 13:13"
+  },
+  {
+    "id": "2a507afd-36f3-554e-9cf0-6b62aea054a9",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 13,
+    "verse_start": 4,
+    "verse_end": 7,
+    "reference": "1 Corinthians 13:4-7"
+  },
+  {
+    "id": "31df296f-42a3-5d45-8aca-7d3d66618593",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 2,
+    "verse_start": 3,
+    "verse_end": 4,
+    "reference": "Philippians 2:3-4"
+  },
+  {
+    "id": "0e411d80-6eca-5d4a-abc0-577a6b052dd6",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 3,
+    "verse_start": 17,
+    "verse_end": 19,
+    "reference": "Ephesians 3:17-19"
+  },
+  {
+    "id": "95f8b913-c75c-5867-82d9-a96ecb07d200",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Colossians 3:14"
+  },
+  {
+    "id": "94b2e87d-d263-5545-a472-e113847707b2",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 13,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "1 Corinthians 13:8"
+  },
+  {
+    "id": "cd309197-7ef7-554a-ae51-3aa7ef476ce0",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 31,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Jeremiah 31:3"
+  },
+  {
+    "id": "fa9ba234-6772-50d8-ae61-5f8cd118a0d9",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 6,
+    "verse_start": 32,
+    "verse_end": 33,
+    "reference": "Luke 6:32-33"
+  },
+  {
+    "id": "afb092b6-e1ec-540f-b22b-9253d0a0b028",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 25,
+    "verse_start": 40,
+    "verse_end": null,
+    "reference": "Matthew 25:40"
+  },
+  {
+    "id": "d8e37b23-89cf-5c36-83fb-afa7eef88985",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 139,
+    "verse_start": 13,
+    "verse_end": 14,
+    "reference": "Psalm 139:13-14"
+  },
+  {
+    "id": "38bab382-ca6d-5ed3-abee-d232767ff360",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 11,
+    "verse_start": 29,
+    "verse_end": null,
+    "reference": "Romans 11:29"
+  },
+  {
+    "id": "05e68182-61b2-5074-ace4-5530972a87bd",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 12,
+    "verse_start": 28,
+    "verse_end": null,
+    "reference": "1 Corinthians 12:28"
+  },
+  {
+    "id": "b35c1946-be82-5316-904f-04da85492cb2",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 11,
+    "verse_end": 12,
+    "reference": "Ephesians 4:11-12"
+  },
+  {
+    "id": "793abe92-e87a-5ff4-90b2-b2c479a75d9b",
+    "book": "Amos",
+    "book_code": "AMO",
+    "chapter": 3,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Amos 3:7"
+  },
+  {
+    "id": "07316f2e-0f99-5227-9a65-c48ed2b18fe3",
+    "book": "2 Timothy",
+    "book_code": "2TI",
+    "chapter": 4,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "2 Timothy 4:5"
+  },
+  {
+    "id": "6f6a0627-34c7-5d76-af67-843070eb2bf3",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 20,
+    "verse_start": 24,
+    "verse_end": null,
+    "reference": "Acts 20:24"
+  },
+  {
+    "id": "575a5773-539f-5a6f-b868-2c7045ce95e5",
+    "book": "Ezekiel",
+    "book_code": "EZK",
+    "chapter": 3,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Ezekiel 3:17"
+  },
+  {
+    "id": "47c4ca8b-67bb-5bb2-bb0b-0f45768d7bc6",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 62,
+    "verse_start": 6,
+    "verse_end": 7,
+    "reference": "Isaiah 62:6-7"
+  },
+  {
+    "id": "558eaf2d-ebe5-58c4-9bc4-e1ef6487e425",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 1,
+    "verse_start": 28,
+    "verse_end": 29,
+    "reference": "Colossians 1:28-29"
+  },
+  {
+    "id": "c46ea2e6-46e8-5798-aeea-9caaf4e86f04",
+    "book": "2 Timothy",
+    "book_code": "2TI",
+    "chapter": 2,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "2 Timothy 2:2"
+  },
+  {
+    "id": "46e2dd19-f443-5049-913a-502cf09d11d3",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "Matthew 5:16"
+  },
+  {
+    "id": "f71843fa-feda-59f5-9dad-cbcbb2a65506",
+    "book": "Colossians",
+    "book_code": "COL",
+    "chapter": 3,
+    "verse_start": 23,
+    "verse_end": 24,
+    "reference": "Colossians 3:23-24"
+  },
+  {
+    "id": "43f0b188-42d0-5417-933e-e744ace24778",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 6,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Galatians 6:9"
+  },
+  {
+    "id": "3e9ab2de-ce6d-5e06-a6d9-ae36b523768a",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 6,
+    "verse_start": 7,
+    "verse_end": 9,
+    "reference": "Galatians 6:7-9"
+  },
+  {
+    "id": "72967284-ab63-57ab-9322-bd78789699e4",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 2,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Psalm 2:8"
+  },
+  {
+    "id": "13f6a384-89ed-5926-9b51-a181eb35ff16",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 28,
+    "verse_start": 18,
+    "verse_end": 20,
+    "reference": "Matthew 28:18-20"
+  },
+  {
+    "id": "15f9ea00-7d24-5c96-921e-b12445eb3c95",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 15,
+    "verse_start": 20,
+    "verse_end": 21,
+    "reference": "Romans 15:20-21"
+  },
+  {
+    "id": "b054e289-f5e1-5edd-9581-d746b82c2b97",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 42,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Isaiah 42:4"
+  },
+  {
+    "id": "eafebe80-4ce0-5bbd-95cc-a28fbd8a00ef",
+    "book": "Habakkuk",
+    "book_code": "HAB",
+    "chapter": 3,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Habakkuk 3:2"
+  },
+  {
+    "id": "50d97786-dd74-556f-a1af-d6966bd62966",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 85,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Psalm 85:6"
+  },
+  {
+    "id": "5bda28c9-9dbf-5207-a238-bc02777e7c2c",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 10,
+    "verse_start": 14,
+    "verse_end": 15,
+    "reference": "Romans 10:14-15"
+  },
+  {
+    "id": "128dde21-cabd-56ff-96b1-9c3163ef31b5",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 14,
+    "verse_start": 34,
+    "verse_end": null,
+    "reference": "Proverbs 14:34"
+  },
+  {
+    "id": "4980639a-133d-55b6-bb2a-80f9b1bc0667",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 4,
+    "verse_start": 35,
+    "verse_end": null,
+    "reference": "John 4:35"
+  },
+  {
+    "id": "4d76acf9-7dd3-51f5-b27e-194e20d421d0",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 18,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Isaiah 18:7"
+  },
+  {
+    "id": "f757ebd0-4f91-5ea5-a229-9fc9ff05a0ea",
+    "book": "Zephaniah",
+    "book_code": "ZEP",
+    "chapter": 3,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Zephaniah 3:10"
+  },
+  {
+    "id": "6d8115fd-b2f1-5cce-8029-24753ead215f",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 19,
+    "verse_start": 24,
+    "verse_end": 25,
+    "reference": "Isaiah 19:24-25"
+  },
+  {
+    "id": "df3d67bd-7e90-5691-8680-d54faa19083a",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 7,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Revelation 7:9"
+  },
+  {
+    "id": "62623646-3503-5cb2-814d-aee671f069f8",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 22,
+    "verse_start": 27,
+    "verse_end": null,
+    "reference": "Psalm 22:27"
+  },
+  {
+    "id": "66ef4e65-ffe8-5b1c-8bab-c666a4952e12",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 13,
+    "verse_end": 14,
+    "reference": "Matthew 5:13-14"
+  },
+  {
+    "id": "163b60d6-5d59-5265-88f6-f63ed0ccaef0",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 14,
+    "verse_start": 27,
+    "verse_end": null,
+    "reference": "John 14:27"
+  },
+  {
+    "id": "958299b8-217d-577b-8674-f50c23d5549b",
+    "book": "Mark",
+    "book_code": "MRK",
+    "chapter": 4,
+    "verse_start": 39,
+    "verse_end": null,
+    "reference": "Mark 4:39"
+  },
+  {
+    "id": "3dc5ae8c-36ed-5793-90b6-1a557adbc57f",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 46,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Psalm 46:10"
+  },
+  {
+    "id": "1ed8992f-bc68-5747-aaa0-7d65090ca87a",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 11,
+    "verse_start": 28,
+    "verse_end": 30,
+    "reference": "Matthew 11:28-30"
+  },
+  {
+    "id": "54cf93c6-280c-5df5-8ebb-674e5e5e2511",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 62,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 62:1-2"
+  },
+  {
+    "id": "7c3885d1-6661-5495-9f9f-fb63e5ec8dde",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 32,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Isaiah 32:18"
+  },
+  {
+    "id": "a1aa2d7a-2adf-526e-9c20-6a17ea8d67c1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 122,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Psalm 122:7"
+  },
+  {
+    "id": "18b8a615-6d64-5552-80c1-ba8a9bf809dc",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Matthew 5:9"
+  },
+  {
+    "id": "41be67f9-21b9-5874-86db-f0601779dfbb",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 12,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Romans 12:18"
+  },
+  {
+    "id": "ee63080c-29fb-5b34-8a47-73dc41324803",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 26,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Isaiah 26:3"
+  },
+  {
+    "id": "735d0423-7ae3-5846-bfab-afdaabca22bf",
+    "book": "Numbers",
+    "book_code": "NUM",
+    "chapter": 6,
+    "verse_start": 24,
+    "verse_end": 26,
+    "reference": "Numbers 6:24-26"
+  },
+  {
+    "id": "0405bd84-6daf-59c2-bd7f-1288329e3db1",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 16,
+    "verse_start": 33,
+    "verse_end": null,
+    "reference": "John 16:33"
+  },
+  {
+    "id": "e0f99d39-ef83-5c79-a849-c4e1913b25f3",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 8,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Romans 8:1"
+  },
+  {
+    "id": "e7051a5e-7ba6-58d4-a2e8-876f046762db",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 4,
+    "verse_start": 29,
+    "verse_end": null,
+    "reference": "Ephesians 4:29"
+  },
+  {
+    "id": "191bed51-53e6-53a2-8492-31f520c3eab4",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 16,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Romans 16:20"
+  },
+  {
+    "id": "39d68062-8711-5481-9763-d8c757e46e68",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 3,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "Genesis 3:15"
+  },
+  {
+    "id": "e856c326-00fa-5f31-9aac-b718a4e652e7",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 4,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "James 4:10"
+  },
+  {
+    "id": "6de9c64f-b47a-50a0-9be1-23745d639942",
+    "book": "1 Peter",
+    "book_code": "1PE",
+    "chapter": 5,
+    "verse_start": 5,
+    "verse_end": 6,
+    "reference": "1 Peter 5:5-6"
+  },
+  {
+    "id": "2c24b641-3bc9-5448-93d3-2def3945a7fd",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 12,
+    "verse_start": 9,
+    "verse_end": 10,
+    "reference": "2 Corinthians 12:9-10"
+  },
+  {
+    "id": "65ede2d7-fc1d-500e-96da-0ae070ab9b5b",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 8,
+    "verse_start": 17,
+    "verse_end": 18,
+    "reference": "Deuteronomy 8:17-18"
+  },
+  {
+    "id": "3b4d5b8f-c309-50d7-8bff-da87704c3f65",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 4,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "1 Corinthians 4:7"
+  },
+  {
+    "id": "7222afaa-c229-58ed-8072-61c57c18bc58",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 14,
+    "verse_start": 12,
+    "verse_end": 14,
+    "reference": "Isaiah 14:12-14"
+  },
+  {
+    "id": "47f9563c-9ad3-553d-9d24-0b5d818f12c3",
+    "book": "Ecclesiastes",
+    "book_code": "ECC",
+    "chapter": 4,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Ecclesiastes 4:10"
+  },
+  {
+    "id": "5c36b10b-b8db-515f-8a01-183d2c7988cf",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 15,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Romans 15:1"
+  },
+  {
+    "id": "0b6ffab7-0c1c-5cad-a996-a590b4ef74df",
+    "book": "Micah",
+    "book_code": "MIC",
+    "chapter": 6,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Micah 6:8"
+  },
+  {
+    "id": "8fb7dde5-a4d0-5233-ac48-324779157243",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 23,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Matthew 23:12"
+  },
+  {
+    "id": "f2b6fe86-5eed-5dfc-ab1b-36b55985fffc",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 12,
+    "verse_start": 43,
+    "verse_end": null,
+    "reference": "John 12:43"
+  },
+  {
+    "id": "db19c771-8d06-52e1-a2c1-8573dbf53b49",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 5,
+    "verse_start": 26,
+    "verse_end": null,
+    "reference": "Galatians 5:26"
+  },
+  {
+    "id": "d2e989a1-8c8f-527a-99e0-7759efae019b",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 14,
+    "verse_start": 30,
+    "verse_end": null,
+    "reference": "Proverbs 14:30"
+  },
+  {
+    "id": "a1995998-8da8-51f9-80f9-19b6114c1487",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 6,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Galatians 6:14"
+  },
+  {
+    "id": "54ee320a-e633-5126-9bb2-993ade85c88c",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 1,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "1 Corinthians 1:31"
+  },
+  {
+    "id": "a0fbd751-e8d2-5ef7-88e5-cd7857ae1e06",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 9,
+    "verse_start": 23,
+    "verse_end": 24,
+    "reference": "Jeremiah 9:23-24"
+  },
+  {
+    "id": "3c4cc6d1-13af-50c2-9486-8b9dc19cb584",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 3,
+    "verse_start": 7,
+    "verse_end": 8,
+    "reference": "Philippians 3:7-8"
+  },
+  {
+    "id": "d7600acb-143e-537d-85dd-7e9c1813ecd4",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 6,
+    "verse_start": 10,
+    "verse_end": 18,
+    "reference": "Ephesians 6:10-18"
+  },
+  {
+    "id": "10ea00c2-027e-54fd-b230-a31a89182a2c",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 13,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Romans 13:12"
+  },
+  {
+    "id": "282db233-d32f-5b8f-a9b5-9195ba4cb185",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 18,
+    "verse_start": 18,
+    "verse_end": null,
+    "reference": "Matthew 18:18"
+  },
+  {
+    "id": "ee0b8fd5-5458-56c9-b85c-9533658673b2",
+    "book": "Luke",
+    "book_code": "LUK",
+    "chapter": 10,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Luke 10:19"
+  },
+  {
+    "id": "6111019e-88e5-5d2d-847a-6e8590991a73",
+    "book": "Galatians",
+    "book_code": "GAL",
+    "chapter": 3,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "Galatians 3:13"
+  },
+  {
+    "id": "fb22f92e-7366-5808-a3f1-6cfffe6071f4",
+    "book": "Numbers",
+    "book_code": "NUM",
+    "chapter": 23,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Numbers 23:8"
+  },
+  {
+    "id": "f1392ac2-15c6-51f9-97bf-01112c5cd319",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 2,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "2 Corinthians 2:11"
+  },
+  {
+    "id": "761c8cf0-d8ae-5334-bca1-af109d94a82f",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 4,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "James 4:7"
+  },
+  {
+    "id": "752dc450-1a68-5308-97e6-0199763ced1c",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 12,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Revelation 12:11"
+  },
+  {
+    "id": "15794d50-0eae-5633-8091-a54161402881",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 9,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Hebrews 9:14"
+  },
+  {
+    "id": "a05c892d-bbc2-5274-b45e-adffc44b1547",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 10,
+    "verse_start": 4,
+    "verse_end": 5,
+    "reference": "2 Corinthians 10:4-5"
+  },
+  {
+    "id": "e31bd69b-b1d9-51ef-9994-f8cff73bf5c6",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 54,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "Isaiah 54:17"
+  },
+  {
+    "id": "e898b730-31eb-5106-9d9c-21217fcd9236",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 91,
+    "verse_start": 11,
+    "verse_end": 12,
+    "reference": "Psalm 91:11-12"
+  },
+  {
+    "id": "15f632a1-e914-5f6d-ab80-8cfdd6a7021f",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 1,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Hebrews 1:14"
+  },
+  {
+    "id": "593448de-0d2d-551a-8dd4-5129d9144cd6",
+    "book": "1 Peter",
+    "book_code": "1PE",
+    "chapter": 5,
+    "verse_start": 8,
+    "verse_end": 9,
+    "reference": "1 Peter 5:8-9"
+  },
+  {
+    "id": "f67f3108-cb06-5373-95ba-89389ad7f5dc",
+    "book": "Zechariah",
+    "book_code": "ZEC",
+    "chapter": 3,
+    "verse_start": 2,
+    "verse_end": null,
+    "reference": "Zechariah 3:2"
+  },
+  {
+    "id": "c307a1ff-3846-5720-b19b-a7ec9504f6a9",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 10,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "2 Corinthians 10:5"
+  },
+  {
+    "id": "3e1f82f1-9f75-5122-bc77-619e6bcd8eaf",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 4,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Philippians 4:7"
+  },
+  {
+    "id": "83144c70-a774-58ea-87da-c5552b49c14e",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 91,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 91:1-2"
+  },
+  {
+    "id": "90464cb8-8504-5da4-a3da-2c773620ee92",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 10,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "1 Corinthians 10:13"
+  },
+  {
+    "id": "3cd62910-33a9-5d73-9e3f-bad8ea930716",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 1,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "James 1:12"
+  },
+  {
+    "id": "ae957d75-251a-5ff3-a809-c5df71900962",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 13,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Romans 13:14"
+  },
+  {
+    "id": "ab536813-c9d2-5eb8-a9cc-5a124b3a7529",
+    "book": "Titus",
+    "book_code": "TIT",
+    "chapter": 2,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Titus 2:12"
+  },
+  {
+    "id": "074de031-6cb9-5878-9c33-7a4e34e64145",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 139,
+    "verse_start": 23,
+    "verse_end": 24,
+    "reference": "Psalm 139:23-24"
+  },
+  {
+    "id": "8de846b0-6496-5da8-bf2f-c79b2c827ba7",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 4,
+    "verse_start": 13,
+    "verse_end": null,
+    "reference": "Hebrews 4:13"
+  },
+  {
+    "id": "3c074ad4-3c7c-573c-8d3a-f780d301616a",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 6,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Romans 6:14"
+  },
+  {
+    "id": "92a8900d-0976-5f5c-8a95-efda5fbce332",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 8,
+    "verse_start": 36,
+    "verse_end": null,
+    "reference": "John 8:36"
+  },
+  {
+    "id": "702467fc-f6dc-5256-b820-6020e9a100c9",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 34,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Psalm 34:19"
+  },
+  {
+    "id": "145c7e24-9c2d-5938-9952-122fde5e5ea9",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 101,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Psalm 101:3"
+  },
+  {
+    "id": "d85e42e3-9670-564c-ad20-129b2fde11a1",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 15,
+    "verse_start": 33,
+    "verse_end": null,
+    "reference": "1 Corinthians 15:33"
+  },
+  {
+    "id": "e076ede8-7c1d-5e52-b887-65cf202da709",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 5,
+    "verse_start": 28,
+    "verse_end": 29,
+    "reference": "Matthew 5:28-29"
+  },
+  {
+    "id": "8a4a4391-e1b6-5c7e-a8e9-f61d266595c9",
+    "book": "Job",
+    "book_code": "JOB",
+    "chapter": 31,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Job 31:1"
+  },
+  {
+    "id": "be0c2903-06bc-519c-91be-50d00465c4d7",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 19,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 19:1-2"
+  },
+  {
+    "id": "0b182728-68dc-5a2b-bf62-4d1e2e91bd9d",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 8,
+    "verse_start": 3,
+    "verse_end": 4,
+    "reference": "Psalm 8:3-4"
+  },
+  {
+    "id": "ee4e5623-7659-50d7-a426-1a8609537eee",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 104,
+    "verse_start": 24,
+    "verse_end": null,
+    "reference": "Psalm 104:24"
+  },
+  {
+    "id": "64b23bc2-8627-5836-a3c4-ed09ac5c26a6",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 1,
+    "verse_start": 31,
+    "verse_end": null,
+    "reference": "Genesis 1:31"
+  },
+  {
+    "id": "b37c2e24-986b-5e69-b998-025c253add9c",
+    "book": "Ephesians",
+    "book_code": "EPH",
+    "chapter": 2,
+    "verse_start": 4,
+    "verse_end": 5,
+    "reference": "Ephesians 2:4-5"
+  },
+  {
+    "id": "70543b3c-96b7-5d9c-986e-28fc8368d356",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 5,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Romans 5:8"
+  },
+  {
+    "id": "ea3d237f-db86-5e50-ad01-ad209f8092d0",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 7,
+    "verse_start": 25,
+    "verse_end": null,
+    "reference": "Hebrews 7:25"
+  },
+  {
+    "id": "fdcdaf62-181b-563d-a8fe-c04a61b9f4aa",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 3,
+    "verse_start": 16,
+    "verse_end": null,
+    "reference": "John 3:16"
+  },
+  {
+    "id": "3686026d-b1ac-553f-8251-f9b4d7420bdf",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 6,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Matthew 6:11"
+  },
+  {
+    "id": "4ee518b8-46dc-51a4-8a05-5e24f0609d2e",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 4,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Philippians 4:19"
+  },
+  {
+    "id": "10c7ae98-1475-5a3b-95f0-0112d24c4634",
+    "book": "Lamentations",
+    "book_code": "LAM",
+    "chapter": 3,
+    "verse_start": 22,
+    "verse_end": 23,
+    "reference": "Lamentations 3:22-23"
+  },
+  {
+    "id": "75ee3d6b-39bd-5007-b717-68303d61afe5",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 23,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Psalm 23:1"
+  },
+  {
+    "id": "aeb73ce2-0781-5bab-b8bc-cbea6e2bed2d",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 68,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Psalm 68:6"
+  },
+  {
+    "id": "977afa66-95e7-56d6-9ddf-a236e49c84bf",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 15,
+    "verse_start": 15,
+    "verse_end": null,
+    "reference": "John 15:15"
+  },
+  {
+    "id": "128ad749-6af4-58a1-ae79-59c0af58dafc",
+    "book": "James",
+    "book_code": "JAS",
+    "chapter": 1,
+    "verse_start": 2,
+    "verse_end": 3,
+    "reference": "James 1:2-3"
+  },
+  {
+    "id": "24e0207d-810b-5267-b6a2-1926112fdb7d",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 4,
+    "verse_start": 17,
+    "verse_end": null,
+    "reference": "2 Corinthians 4:17"
+  },
+  {
+    "id": "ad16ff80-7a09-5908-8bb6-ee00f1a87c68",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 30,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Psalm 30:5"
+  },
+  {
+    "id": "e3896344-f8d6-5d74-aa6b-a916458f6008",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 100,
+    "verse_start": 1,
+    "verse_end": 5,
+    "reference": "Psalm 100:1-5"
+  },
+  {
+    "id": "7393c83b-ad0b-55ff-b758-6c2befe730cc",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 103,
+    "verse_start": 1,
+    "verse_end": 5,
+    "reference": "Psalm 103:1-5"
+  },
+  {
+    "id": "c9ac5e6a-a919-59d4-982b-087b653a6756",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 34,
+    "verse_start": 1,
+    "verse_end": 3,
+    "reference": "Psalm 34:1-3"
+  },
+  {
+    "id": "8646f481-ae5e-54c8-a891-1f89a228be42",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 7,
+    "verse_start": 9,
+    "verse_end": null,
+    "reference": "Deuteronomy 7:9"
+  },
+  {
+    "id": "b2cf0afa-06da-54bd-b26a-a11bcffcac57",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 89,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 89:1-2"
+  },
+  {
+    "id": "c3d5b133-0bf5-565c-8253-0d18bbef17b2",
+    "book": "Numbers",
+    "book_code": "NUM",
+    "chapter": 23,
+    "verse_start": 19,
+    "verse_end": null,
+    "reference": "Numbers 23:19"
+  },
+  {
+    "id": "9f7bfed9-996a-5159-8687-2557879dc00d",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 34,
+    "verse_start": 4,
+    "verse_end": 6,
+    "reference": "Psalm 34:4-6"
+  },
+  {
+    "id": "8d032422-276f-5c87-bd4d-a5acd8f190b6",
+    "book": "1 John",
+    "book_code": "1JN",
+    "chapter": 5,
+    "verse_start": 14,
+    "verse_end": 15,
+    "reference": "1 John 5:14-15"
+  },
+  {
+    "id": "27e542f6-b09c-584c-becb-08b66506cf39",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 77,
+    "verse_start": 11,
+    "verse_end": 12,
+    "reference": "Psalm 77:11-12"
+  },
+  {
+    "id": "4870ba32-1050-5b83-9161-bc7b0131e6fd",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 40,
+    "verse_start": 1,
+    "verse_end": 3,
+    "reference": "Psalm 40:1-3"
+  },
+  {
+    "id": "da0896d1-87e8-5cac-8c33-0ebb650b961e",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 139,
+    "verse_start": 14,
+    "verse_end": null,
+    "reference": "Psalm 139:14"
+  },
+  {
+    "id": "28219df2-2b46-589e-afcb-ef21b28586c1",
+    "book": "1 Corinthians",
+    "book_code": "1CO",
+    "chapter": 6,
+    "verse_start": 19,
+    "verse_end": 20,
+    "reference": "1 Corinthians 6:19-20"
+  },
+  {
+    "id": "879e2a1d-a815-510d-ace2-393d9b39ce94",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 40,
+    "verse_start": 29,
+    "verse_end": 31,
+    "reference": "Isaiah 40:29-31"
+  },
+  {
+    "id": "1fac1945-e756-564c-a435-9fe8618e1fd2",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 28,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "Psalm 28:7"
+  },
+  {
+    "id": "eea161bc-3ed1-5976-a3d7-a27646be0cb8",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 119,
+    "verse_start": 105,
+    "verse_end": null,
+    "reference": "Psalm 119:105"
+  },
+  {
+    "id": "7e59c62d-66e2-54cf-ac31-7df56f6e147b",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 4,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Hebrews 4:12"
+  },
+  {
+    "id": "c4a36595-eb84-54ed-8fe4-5270b88d1ddf",
+    "book": "Deuteronomy",
+    "book_code": "DEU",
+    "chapter": 6,
+    "verse_start": 6,
+    "verse_end": 7,
+    "reference": "Deuteronomy 6:6-7"
+  },
+  {
+    "id": "7300d0aa-dd2a-54b2-a29c-c6d1ab239d51",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 55,
+    "verse_start": 8,
+    "verse_end": 9,
+    "reference": "Isaiah 55:8-9"
+  },
+  {
+    "id": "67c436f8-bbcc-5b2e-9886-774af4237b27",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 37,
+    "verse_start": 5,
+    "verse_end": null,
+    "reference": "Psalm 37:5"
+  },
+  {
+    "id": "d3a835cf-0594-5d3f-9da3-9e2dee695540",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 6,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Matthew 6:10"
+  },
+  {
+    "id": "bf7724a3-e381-51de-9491-6859b1b175b7",
+    "book": "Ecclesiastes",
+    "book_code": "ECC",
+    "chapter": 3,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Ecclesiastes 3:1"
+  },
+  {
+    "id": "fc00b92c-0d44-5cac-86cd-77c326a73737",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 46,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Isaiah 46:10"
+  },
+  {
+    "id": "b944ad61-b781-59d9-aacf-f8787b7ab867",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 55,
+    "verse_start": 12,
+    "verse_end": 14,
+    "reference": "Psalm 55:12-14"
+  },
+  {
+    "id": "1af24206-5592-5615-9a78-468bdb900718",
+    "book": "Genesis",
+    "book_code": "GEN",
+    "chapter": 50,
+    "verse_start": 20,
+    "verse_end": null,
+    "reference": "Genesis 50:20"
+  },
+  {
+    "id": "9c485874-b45f-56fb-bfcf-f1abb977e2ca",
+    "book": "Matthew",
+    "book_code": "MAT",
+    "chapter": 6,
+    "verse_start": 33,
+    "verse_end": null,
+    "reference": "Matthew 6:33"
+  },
+  {
+    "id": "0b96569a-d54d-5bec-a633-9cd961f49060",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 37,
+    "verse_start": 4,
+    "verse_end": 5,
+    "reference": "Psalm 37:4-5"
+  },
+  {
+    "id": "c01e859f-462a-5b01-951b-0647391ec071",
+    "book": "Jeremiah",
+    "book_code": "JER",
+    "chapter": 17,
+    "verse_start": 7,
+    "verse_end": 8,
+    "reference": "Jeremiah 17:7-8"
+  },
+  {
+    "id": "30083cbf-c402-5de6-b2a5-b03ce3f62cb8",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 118,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Psalm 118:8"
+  },
+  {
+    "id": "720e8a42-bc0c-5807-b4ae-ff78f1ef9121",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 11,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Hebrews 11:1"
+  },
+  {
+    "id": "26b8ae0d-06e4-5efd-95f9-0238ace66a6c",
+    "book": "2 Corinthians",
+    "book_code": "2CO",
+    "chapter": 5,
+    "verse_start": 7,
+    "verse_end": null,
+    "reference": "2 Corinthians 5:7"
+  },
+  {
+    "id": "5c01b2f4-6dc1-5ee8-b4dc-0b8179f74c04",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 4,
+    "verse_start": 11,
+    "verse_end": null,
+    "reference": "Revelation 4:11"
+  },
+  {
+    "id": "3989272c-98a2-520a-9a49-28664a54e0f3",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 95,
+    "verse_start": 1,
+    "verse_end": 6,
+    "reference": "Psalm 95:1-6"
+  },
+  {
+    "id": "6ea39464-b298-592d-82ef-40834950ba5b",
+    "book": "Philippians",
+    "book_code": "PHP",
+    "chapter": 2,
+    "verse_start": 9,
+    "verse_end": 11,
+    "reference": "Philippians 2:9-11"
+  },
+  {
+    "id": "a07ee634-8a89-5329-a825-b2748be324b5",
+    "book": "Revelation",
+    "book_code": "REV",
+    "chapter": 5,
+    "verse_start": 12,
+    "verse_end": null,
+    "reference": "Revelation 5:12"
+  },
+  {
+    "id": "29b28d1d-7003-554f-8fae-bce2d8f29276",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 150,
+    "verse_start": 1,
+    "verse_end": 6,
+    "reference": "Psalm 150:1-6"
+  },
+  {
+    "id": "f61df3bc-9c7c-5f53-83b0-9098a6ff91c1",
+    "book": "Exodus",
+    "book_code": "EXO",
+    "chapter": 34,
+    "verse_start": 6,
+    "verse_end": 7,
+    "reference": "Exodus 34:6-7"
+  },
+  {
+    "id": "7c1f8e20-8c23-568b-9a82-2f646bb38b87",
+    "book": "Isaiah",
+    "book_code": "ISA",
+    "chapter": 6,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Isaiah 6:3"
+  },
+  {
+    "id": "f9463dbc-6144-5508-b755-8d75fe6bc6b9",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 5,
+    "verse_start": 3,
+    "verse_end": null,
+    "reference": "Psalm 5:3"
+  },
+  {
+    "id": "d8bf6a29-a1a8-546e-81c0-ae125156e4e1",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 143,
+    "verse_start": 8,
+    "verse_end": null,
+    "reference": "Psalm 143:8"
+  },
+  {
+    "id": "24f1d9c2-60fd-5c22-a549-0765727c5fdb",
+    "book": "Habakkuk",
+    "book_code": "HAB",
+    "chapter": 3,
+    "verse_start": 17,
+    "verse_end": 18,
+    "reference": "Habakkuk 3:17-18"
+  },
+  {
+    "id": "2eba43fe-0256-5ab2-b96b-b76bec1f4a54",
+    "book": "Acts",
+    "book_code": "ACT",
+    "chapter": 16,
+    "verse_start": 25,
+    "verse_end": null,
+    "reference": "Acts 16:25"
+  },
+  {
+    "id": "32db919e-9e6a-5c44-9109-89a12639ba60",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 100,
+    "verse_start": 4,
+    "verse_end": null,
+    "reference": "Psalm 100:4"
+  },
+  {
+    "id": "44240363-7b07-51be-8e81-46c43d365342",
+    "book": "Hebrews",
+    "book_code": "HEB",
+    "chapter": 10,
+    "verse_start": 19,
+    "verse_end": 22,
+    "reference": "Hebrews 10:19-22"
+  },
+  {
+    "id": "1e620665-78de-50ec-8661-348cbb5ee09b",
+    "book": "Proverbs",
+    "book_code": "PRO",
+    "chapter": 18,
+    "verse_start": 10,
+    "verse_end": null,
+    "reference": "Proverbs 18:10"
+  },
+  {
+    "id": "4ffcb6f2-9f65-5635-8499-a3d74c81434a",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 8,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Psalm 8:1"
+  },
+  {
+    "id": "6723545e-22d3-5bd2-b433-d6e1e55e8fc7",
+    "book": "John",
+    "book_code": "JHN",
+    "chapter": 4,
+    "verse_start": 23,
+    "verse_end": 24,
+    "reference": "John 4:23-24"
+  },
+  {
+    "id": "d6567c24-b2ed-5fd8-b43f-10bfef28e895",
+    "book": "Romans",
+    "book_code": "ROM",
+    "chapter": 12,
+    "verse_start": 1,
+    "verse_end": null,
+    "reference": "Romans 12:1"
+  },
+  {
+    "id": "113de0fc-9ba6-5a69-94cd-bb40f078ae9e",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 63,
+    "verse_start": 6,
+    "verse_end": null,
+    "reference": "Psalm 63:6"
+  },
+  {
+    "id": "2d3a9cbb-8c33-50fc-8fe0-31aa0b42fb01",
+    "book": "Psalms",
+    "book_code": "PSA",
+    "chapter": 134,
+    "verse_start": 1,
+    "verse_end": 2,
+    "reference": "Psalm 134:1-2"
+  }
+]

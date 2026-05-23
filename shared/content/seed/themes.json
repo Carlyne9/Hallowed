@@ -1,0 +1,178 @@
+[
+  {
+    "id": "922ed1aa-e514-5bad-b9ce-be9b8ecaa769",
+    "name": "Thanksgiving",
+    "description": "",
+    "icon": "sun.max.fill",
+    "color_hex": "#F59E0B",
+    "sort_order": 1
+  },
+  {
+    "id": "66242bf0-a877-5259-9a81-86ca99a309b9",
+    "name": "The Holy Spirit",
+    "description": "",
+    "icon": "wind",
+    "color_hex": "#8B5CF6",
+    "sort_order": 2
+  },
+  {
+    "id": "c64bb7cc-d334-539a-9746-18f897f4b678",
+    "name": "Intercession",
+    "description": "",
+    "icon": "hands.and.sparkles.fill",
+    "color_hex": "#3B82F6",
+    "sort_order": 3
+  },
+  {
+    "id": "0c9d30ce-0d37-5bf6-8b57-3a76dd0bd739",
+    "name": "Confession & Repentance",
+    "description": "",
+    "icon": "heart.slash.fill",
+    "color_hex": "#EF4444",
+    "sort_order": 4
+  },
+  {
+    "id": "b63cd958-9047-5840-8374-eaf8b19382fe",
+    "name": "Worship & Adoration",
+    "description": "",
+    "icon": "music.note",
+    "color_hex": "#F59E0B",
+    "sort_order": 5
+  },
+  {
+    "id": "31c638c8-4621-5ea9-bf6f-ffd69b42acae",
+    "name": "Identity & Purpose",
+    "description": "",
+    "icon": "person.fill",
+    "color_hex": "#06B6D4",
+    "sort_order": 6
+  },
+  {
+    "id": "f19ad2f4-0959-5b36-ac46-52c06a179d0f",
+    "name": "Guidance & Wisdom",
+    "description": "",
+    "icon": "location.north.fill",
+    "color_hex": "#1D4ED8",
+    "sort_order": 7
+  },
+  {
+    "id": "ca838dfe-728b-52ed-bf30-3249dd0160e1",
+    "name": "Spiritual Warfare",
+    "description": "",
+    "icon": "shield.fill",
+    "color_hex": "#991B1B",
+    "sort_order": 8
+  },
+  {
+    "id": "fd7649b4-11d8-5bee-a9f4-ca17e0717c43",
+    "name": "Healing & Restoration",
+    "description": "",
+    "icon": "cross.fill",
+    "color_hex": "#10B981",
+    "sort_order": 9
+  },
+  {
+    "id": "3f28154d-ad71-53f9-98ff-a33cbb45b6e5",
+    "name": "The Nations & Mission",
+    "description": "",
+    "icon": "globe",
+    "color_hex": "#1E40AF",
+    "sort_order": 10
+  },
+  {
+    "id": "d4d10ea8-72fb-52c1-b862-b0dafa30ef7a",
+    "name": "Family & Relationships",
+    "description": "",
+    "icon": "house.fill",
+    "color_hex": "#F97316",
+    "sort_order": 11
+  },
+  {
+    "id": "b423387e-c539-570f-a671-fc17b5ef5478",
+    "name": "Ministry & Calling",
+    "description": "",
+    "icon": "building.columns.fill",
+    "color_hex": "#7C3AED",
+    "sort_order": 12
+  },
+  {
+    "id": "915690c9-c901-5be9-b41d-abe8b264bcff",
+    "name": "Blessing & Fruitfulness",
+    "description": "",
+    "icon": "sparkles",
+    "color_hex": "#D97706",
+    "sort_order": 13
+  },
+  {
+    "id": "f5666975-203a-5691-9789-21229ad3a321",
+    "name": "Lament",
+    "description": "",
+    "icon": "cloud.rain.fill",
+    "color_hex": "#6B7280",
+    "sort_order": 14
+  },
+  {
+    "id": "2ff0f3ba-ea05-5ef0-a88d-eb622e97bd7c",
+    "name": "Love",
+    "description": "",
+    "icon": "heart.fill",
+    "color_hex": "#EC4899",
+    "sort_order": 15
+  },
+  {
+    "id": "2c40e52f-a0dd-5d74-9a05-2f3535d61214",
+    "name": "Hope",
+    "description": "",
+    "icon": "sunrise.fill",
+    "color_hex": "#F97316",
+    "sort_order": 16
+  },
+  {
+    "id": "300538ba-b5b7-5878-af10-ea09d5885c4a",
+    "name": "Peace",
+    "description": "",
+    "icon": "leaf.fill",
+    "color_hex": "#059669",
+    "sort_order": 17
+  },
+  {
+    "id": "a6f3a7c9-68e9-559e-aa29-c3cd2d0efe6e",
+    "name": "Fear & Anxiety",
+    "description": "",
+    "icon": "hand.raised.fill",
+    "color_hex": "#60A5FA",
+    "sort_order": 18
+  },
+  {
+    "id": "61590d1f-93ba-5d63-aa6b-dd871cfcabc8",
+    "name": "Temptation",
+    "description": "",
+    "icon": "flame.fill",
+    "color_hex": "#B45309",
+    "sort_order": 19
+  },
+  {
+    "id": "d1aad5e3-f670-5006-ad44-4cb7e5ec1f32",
+    "name": "Trust",
+    "description": "",
+    "icon": "anchor.fill",
+    "color_hex": "#1E3A8A",
+    "sort_order": 20
+  },
+  {
+    "id": "277869db-b4a3-5e00-b4e6-221c31e60c76",
+    "name": "Anger",
+    "description": "",
+    "icon": "flame.fill",
+    "color_hex": "#DC2626",
+    "sort_order": 21
+  },
+  {
+    "id": "5c31d9fa-2ade-5429-aec4-c81094191557",
+    "name": "Pride",
+    "description": "",
+    "icon": "crown.fill",
+    "color_hex": "#6D28D9",
+    "sort_order": 22
+  }
+]
