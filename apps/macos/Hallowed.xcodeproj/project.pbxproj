@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		1A3FA60D5658DBBBE4773EE9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1D48403090802E04EDB71A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E9A0D1200A2B4C5D6E7F8101 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		1FC8243972F6EF6F4DFAD343 /* PeriodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodListView.swift; sourceTree = "<group>"; };
 		2481896C7447CA7B6A50F1E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2A66D9C6A9191BFD5AEFE2C1 /* Hallowed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hallowed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +172,7 @@
 			children = (
 				0313EC7E6107B5EB918BADCB /* Hallowed */,
 				6CF6CACBD164D2EDA0D21696 /* Products */,
+				E9A0D1200A2B4C5D6E7F8101 /* Secrets.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +392,7 @@
 		};
 		6702C175CE61D4BA44EAFFA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A0D1200A2B4C5D6E7F8101 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -410,12 +413,12 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;
-				xcconfig = Secrets.xcconfig;
 			};
 			name = Release;
 		};
 		97E15D0AF31A0BEFE0BC174B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A0D1200A2B4C5D6E7F8101 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -438,7 +441,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
-				xcconfig = Secrets.xcconfig;
 			};
 			name = Debug;
 		};
