@@ -6,9 +6,12 @@ struct HomeView: View {
 
     @State private var themes: [PrayerTheme] = []
     @State private var periods: [PrayerPeriod] = []
+    @State private var themesLoadError: String? = nil
+    @State private var periodsLoadError: String? = nil
     @State private var selectedSection: SidebarSection? = .themes
     @State private var sessionItem: SessionItem? = nil
     @State private var isLoadingSession: Bool = false
+    @State private var sessionStartError: String? = nil
 
     enum SidebarSection: String, Hashable, CaseIterable {
         case themes = "Themes"
@@ -120,6 +123,15 @@ struct HomeView: View {
             .buttonStyle(.plain)
             .disabled(isLoadingSession)
             .padding(16)
+
+            if let sessionStartError {
+                Text(sessionStartError)
+                    .font(.system(size: 11))
+                    .foregroundColor(.red)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 12)
+            }
         }
         .background(Color(hex: "F5F1EB"))
         .navigationSplitViewColumnWidth(min: 200, ideal: 220, max: 260)
@@ -131,7 +143,7 @@ struct HomeView: View {
     private var detail: some View {
         switch selectedSection {
         case .themes:
-            ThemeListView(themes: themes)
+            ThemeListView(themes: themes, loadError: themesLoadError)
         case .periods:
             PeriodListView()
         case .history:
@@ -161,17 +173,24 @@ struct HomeView: View {
                 }
 
                 // Stats row
-                HStack(spacing: 16) {
-                    StatCard(
-                        icon: "clock.fill",
-                        value: "\(activePeriodCount)",
-                        label: activePeriodCount == 1 ? "Active period" : "Active periods"
-                    )
-                    StatCard(
-                        icon: "books.vertical.fill",
-                        value: "\(themes.count)",
-                        label: themes.count == 1 ? "Prayer theme" : "Prayer themes"
-                    )
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 16) {
+                        statCards
+                    }
+                    VStack(spacing: 16) {
+                        statCards
+                    }
+                }
+
+                if let themesLoadError {
+                    Text("Theme load error: \(themesLoadError)")
+                        .font(.system(size: 12))
+                        .foregroundColor(.red)
+                }
+                if let periodsLoadError {
+                    Text("Periods load error: \(periodsLoadError)")
+                        .font(.system(size: 12))
+                        .foregroundColor(.red)
                 }
 
                 // Scripture card
@@ -231,9 +250,23 @@ struct HomeView: View {
 
                 Spacer()
             }
-            .padding(40)
+            .padding(32)
         }
         .background(Color(hex: "FAF8F5"))
+    }
+
+    @ViewBuilder
+    private var statCards: some View {
+        StatCard(
+            icon: "clock.fill",
+            value: "\(activePeriodCount)",
+            label: activePeriodCount == 1 ? "Active period" : "Active periods"
+        )
+        StatCard(
+            icon: "books.vertical.fill",
+            value: "\(themes.count)",
+            label: themes.count == 1 ? "Prayer theme" : "Prayer themes"
+        )
     }
 
     // MARK: - Helpers
@@ -252,26 +285,49 @@ struct HomeView: View {
     }
 
     private func loadData() async {
-        async let themesResult = try? appEnv.supabaseService.fetchThemes()
-        async let periodsResult = try? appEnv.supabaseService.fetchPeriods()
-        let (t, p) = await (themesResult, periodsResult)
-        themes = t ?? []
-        periods = p ?? []
+        themesLoadError = nil
+        periodsLoadError = nil
+
+        do {
+            themes = try await appEnv.supabaseService.fetchThemes()
+        } catch {
+            themes = []
+            themesLoadError = UserFacingError.message(for: error)
+        }
+
+        do {
+            periods = try await appEnv.supabaseService.fetchPeriods()
+        } catch {
+            periods = []
+            periodsLoadError = UserFacingError.message(for: error)
+        }
     }
 
     private func startRandomSession() {
-        guard !themes.isEmpty else { return }
+        guard !themes.isEmpty else {
+            sessionStartError = "No themes loaded yet."
+            return
+        }
         isLoadingSession = true
+        sessionStartError = nil
         Task {
             do {
                 let theme = themes.randomElement()!
                 let topics = try await appEnv.supabaseService.fetchTopics(for: theme.id)
-                guard let topic = topics.randomElement() else { return }
+                guard let topic = topics.randomElement() else {
+                    sessionStartError = "No topics found for this theme."
+                    isLoadingSession = false
+                    return
+                }
                 let prayers = try await appEnv.supabaseService.fetchPrayers(for: topic.id)
-                guard let prayer = prayers.randomElement() else { return }
+                guard let prayer = prayers.randomElement() else {
+                    sessionStartError = "No prayers found for this topic."
+                    isLoadingSession = false
+                    return
+                }
                 sessionItem = SessionItem(prayer: prayer, topic: topic, theme: theme)
             } catch {
-                // silently fail — user can retry
+                sessionStartError = UserFacingError.message(for: error)
             }
             isLoadingSession = false
         }
@@ -318,6 +374,8 @@ private struct HistoryView: View {
     @EnvironmentObject var appEnv: AppEnvironment
 
     @State private var sessions: [PrayerSession] = []
+    @State private var prayerTitles: [UUID: String] = [:]
+    @State private var topicTitles: [UUID: String] = [:]
     @State private var isLoading: Bool = false
     @State private var errorMessage: String? = nil
 
@@ -351,9 +409,13 @@ private struct HistoryView: View {
                     }
 
                     ForEach(sessions) { session in
-                        SessionRow(session: session)
-                            .listRowBackground(Color.white)
-                            .listRowSeparatorTint(Color(hex: "EDE5D8"))
+                        SessionRow(
+                            session: session,
+                            prayerTitle: session.prayerId.flatMap { prayerTitles[$0] },
+                            topicTitle: session.topicId.flatMap { topicTitles[$0] }
+                        )
+                        .listRowBackground(Color.white)
+                        .listRowSeparatorTint(Color(hex: "EDE5D8"))
                     }
                 }
                 .listStyle(.inset)
@@ -383,10 +445,24 @@ private struct HistoryView: View {
 
         Task {
             do {
-                sessions = try await appEnv.supabaseService.fetchRecentSessions(limit: 200)
+                let fetched = try await appEnv.supabaseService.fetchRecentSessions(limit: 200)
+                sessions = fetched
+
+                let prayerIds = Array(Set(fetched.compactMap(\.prayerId)))
+                let topicIds = Array(Set(fetched.compactMap(\.topicId)))
+
+                async let prayersTask = appEnv.supabaseService.fetchPrayers(ids: prayerIds)
+                async let topicsTask = appEnv.supabaseService.fetchTopics(ids: topicIds)
+
+                let prayers = try await prayersTask
+                let topics = try await topicsTask
+                prayerTitles = Dictionary(uniqueKeysWithValues: prayers.map { ($0.id, $0.title) })
+                topicTitles = Dictionary(uniqueKeysWithValues: topics.map { ($0.id, $0.title) })
             } catch {
                 sessions = []
-                errorMessage = "Could not load history: \(error.localizedDescription)"
+                prayerTitles = [:]
+                topicTitles = [:]
+                errorMessage = "Could not load history: \(UserFacingError.message(for: error))"
             }
             isLoading = false
         }
@@ -395,6 +471,8 @@ private struct HistoryView: View {
 
 private struct SessionRow: View {
     let session: PrayerSession
+    let prayerTitle: String?
+    let topicTitle: String?
 
     private var statusColor: Color {
         switch session.status {
@@ -435,6 +513,20 @@ private struct SessionRow: View {
                     .background(statusColor.opacity(0.15))
                     .foregroundColor(statusColor)
                     .clipShape(Capsule())
+            }
+
+            if let prayerTitle {
+                Text(prayerTitle)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(Color(hex: "2D2420"))
+                    .lineLimit(2)
+            }
+
+            if let topicTitle {
+                Text(topicTitle)
+                    .font(.system(size: 12))
+                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .lineLimit(1)
             }
 
             HStack(spacing: 14) {

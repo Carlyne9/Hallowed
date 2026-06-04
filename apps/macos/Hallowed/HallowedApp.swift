@@ -21,14 +21,19 @@ struct HallowedApp: App {
                 }
             }
             .environmentObject(appEnv)
-            .frame(minWidth: 800, minHeight: 600)
+            .frame(minWidth: 640, minHeight: 520)
             .task {
                 appDelegate.attach(appEnvironment: appEnv)
                 appEnv.startAuthListener()
             }
             .onOpenURL { url in
                 Task {
-                    try? await appEnv.supabaseService.client.auth.session(from: url)
+                    do {
+                        try await appEnv.supabaseService.client.auth.session(from: url)
+                        appEnv.authCallbackError = nil
+                    } catch {
+                        appEnv.authCallbackError = UserFacingError.message(for: error)
+                    }
                 }
             }
         }
@@ -70,6 +75,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
+        route(notification: notification)
         completionHandler([.banner, .sound, .badge])
     }
 
@@ -79,7 +85,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
                 pendingResponses.append(response)
                 return
             }
-            appEnvironment.handleNotificationResponse(response)
+            appEnvironment.handleNotification(response.notification)
+        }
+    }
+
+    private func route(notification: UNNotification) {
+        Task { @MainActor in
+            guard let appEnvironment else { return }
+            appEnvironment.handleNotification(notification)
         }
     }
 

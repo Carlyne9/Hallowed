@@ -20,7 +20,7 @@ targets:
   Hallowed:
     type: application
     platform: macOS
-    deploymentTarget: "13.0"
+    deploymentTarget: "14.0"
     sources:
       - path: Hallowed
     settings:
@@ -28,7 +28,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.hallowed.macos
         PRODUCT_NAME: Hallowed
         SWIFT_VERSION: 5.9
-        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
         CODE_SIGN_STYLE: Automatic
         INFOPLIST_FILE: Hallowed/Config/Info.plist
         CURRENT_PROJECT_VERSION: 1
@@ -38,13 +38,14 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       configs:
         Debug:
-          xcconfig: Secrets.xcconfig
           DEBUG_INFORMATION_FORMAT: dwarf
           SWIFT_OPTIMIZATION_LEVEL: "-Onone"
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
         Release:
-          xcconfig: Secrets.xcconfig
           SWIFT_OPTIMIZATION_LEVEL: "-O"
+    configFiles:
+      Debug: Secrets.xcconfig
+      Release: Secrets.xcconfig
     entitlements:
       path: Hallowed/Resources/Hallowed.entitlements
     dependencies:

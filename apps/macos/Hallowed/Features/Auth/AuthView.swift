@@ -9,6 +9,10 @@ struct AuthView: View {
     @State private var errorMessage: String? = nil
     @State private var magicLinkSent: Bool = false
 
+    private var displayedError: String? {
+        errorMessage ?? appEnv.authCallbackError
+    }
+
     var body: some View {
         ZStack {
             // Warm off-white background
@@ -136,8 +140,8 @@ struct AuthView: View {
                     }
 
                     // Error message
-                    if let errorMessage {
-                        Text(errorMessage)
+                    if let displayedError {
+                        Text(displayedError)
                             .font(.system(size: 13))
                             .foregroundColor(Color(red: 0.8, green: 0.2, blue: 0.2))
                             .multilineTextAlignment(.center)
@@ -172,7 +176,7 @@ struct AuthView: View {
             do {
                 try await appEnv.supabaseService.signInWithGoogle()
             } catch {
-                errorMessage = error.localizedDescription
+                errorMessage = UserFacingError.message(for: error)
             }
             isLoading = false
         }
@@ -188,7 +192,7 @@ struct AuthView: View {
                 try await appEnv.supabaseService.signInWithMagicLink(email: trimmedEmail)
                 magicLinkSent = true
             } catch {
-                errorMessage = error.localizedDescription
+                errorMessage = UserFacingError.message(for: error)
             }
             isLoading = false
         }

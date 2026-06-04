@@ -1,5 +1,33 @@
 import SwiftUI
 
+@MainActor
+final class PrayerSessionLifecycle: ObservableObject {
+    let id: UUID
+    let periodId: UUID?
+    let startedAt: Date
+    let shouldLogContentIDs: Bool
+
+    private var isFinished = false
+
+    init(
+        id: UUID = UUID(),
+        periodId: UUID? = nil,
+        startedAt: Date = Date(),
+        shouldLogContentIDs: Bool = true
+    ) {
+        self.id = id
+        self.periodId = periodId
+        self.startedAt = startedAt
+        self.shouldLogContentIDs = shouldLogContentIDs
+    }
+
+    func beginFinishing() -> Bool {
+        guard !isFinished else { return false }
+        isFinished = true
+        return true
+    }
+}
+
 struct SessionView: View {
 
     let prayer: Prayer
@@ -10,12 +38,30 @@ struct SessionView: View {
 
     @EnvironmentObject var appEnv: AppEnvironment
     @Environment(\.dismiss) private var dismiss
+    @StateObject private var lifecycle: PrayerSessionLifecycle
 
     @State private var scriptures: [Scripture] = []
     @State private var scriptureTexts: [UUID: String] = [:]
     @State private var isLoadingScriptures: Bool = true
-    @State private var sessionStartDate: Date = Date()
     @State private var remainingSeconds: Int = 0
+
+    init(
+        prayer: Prayer,
+        topic: PrayerTopic,
+        theme: PrayerTheme,
+        durationMinutes: Int,
+        lifecycle: PrayerSessionLifecycle? = nil,
+        onComplete: @escaping () -> Void
+    ) {
+        self.prayer = prayer
+        self.topic = topic
+        self.theme = theme
+        self.durationMinutes = durationMinutes
+        _lifecycle = StateObject(wrappedValue: lifecycle ?? PrayerSessionLifecycle())
+        self.onComplete = onComplete
+    }
+
+    private var strictMode: Bool { SessionPreferences.isStrictModeEnabled }
 
     private var timerLabel: String {
         guard durationMinutes > 0 else { return "Prayer time" }
@@ -57,7 +103,11 @@ struct SessionView: View {
                             .fixedSize(horizontal: false, vertical: true)
 
                         // Scriptures
-                        if !scriptures.isEmpty {
+                        if isLoadingScriptures {
+                            ProgressView()
+                                .controlSize(.small)
+                                .tint(accentColor)
+                        } else if !scriptures.isEmpty {
                             scriptureBlock
                         }
 
@@ -107,15 +157,17 @@ struct SessionView: View {
         .task { await loadScriptures() }
         // Timer starts immediately when session appears
         .task {
-            sessionStartDate = Date()
             guard durationMinutes > 0 else { return }
             remainingSeconds = durationMinutes * 60
             while remainingSeconds > 0 {
-                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                do {
+                    try await Task.sleep(nanoseconds: 1_000_000_000)
+                } catch {
+                    return
+                }
                 remainingSeconds = max(0, remainingSeconds - 1)
             }
-            logSession(status: .completed)
-            onComplete()
+            finishSession(status: .completed)
         }
     }
 
@@ -123,15 +175,18 @@ struct SessionView: View {
 
     private var topBar: some View {
         HStack {
-            // Close / skip
-            Button("Skip") {
-                logSession(status: .skipped)
-                onComplete()
-                dismiss()
+            if strictMode {
+                Text("Prayer session")
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(textMuted)
+            } else {
+                Button("Skip") {
+                    finishSession(status: .skipped)
+                }
+                .buttonStyle(.plain)
+                .font(.system(size: 13))
+                .foregroundColor(textMuted)
             }
-            .buttonStyle(.plain)
-            .font(.system(size: 13))
-            .foregroundColor(textMuted)
 
             Spacer()
 
@@ -147,10 +202,13 @@ struct SessionView: View {
 
             Spacer()
 
-            // Placeholder for symmetry
-            Text("Skip")
-                .font(.system(size: 13))
-                .foregroundColor(.clear)
+            if strictMode {
+                EmptyView()
+            } else {
+                Text("Skip")
+                    .font(.system(size: 13))
+                    .foregroundColor(.clear)
+            }
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 14)
@@ -217,9 +275,7 @@ struct SessionView: View {
                 Spacer()
 
                 Button(action: {
-                    logSession(status: .completed)
-                    onComplete()
-                    dismiss()
+                    finishSession(status: .completed)
                 }) {
                     HStack(spacing: 10) {
                         Text("Amen")
@@ -254,14 +310,24 @@ struct SessionView: View {
 
     private func loadScriptures() async {
         isLoadingScriptures = true
-        let map = (try? await appEnv.supabaseService.fetchScriptures(for: [prayer.id])) ?? [:]
-        scriptures = map[prayer.id] ?? []
+
+        do {
+            let map = try await appEnv.supabaseService.fetchScriptures(for: [prayer.id])
+            scriptures = map[prayer.id] ?? []
+        } catch {
+            scriptures = []
+            print("[SessionView] Could not load scripture references: \(UserFacingError.message(for: error))")
+            isLoadingScriptures = false
+            return
+        }
+
         isLoadingScriptures = false
+        let translationCode = await preferredTranslationCode()
 
         await withTaskGroup(of: (UUID, String?).self) { group in
             for scripture in scriptures {
                 group.addTask {
-                    let text = await BibleService.shared.verseText(for: scripture)
+                    let text = await BibleService.shared.verseText(for: scripture, translationCode: translationCode)
                     return (scripture.id, text)
                 }
             }
@@ -269,26 +335,46 @@ struct SessionView: View {
                 if let text { scriptureTexts[id] = text }
             }
         }
+
+        if !scriptures.isEmpty && scriptureTexts.isEmpty {
+            print("[SessionView] Verse text unavailable; showing scripture references only.")
+        }
     }
 
-    private func logSession(status: PrayerSession.SessionStatus) {
-        guard let userId = appEnv.currentUser?.id else { return }
-        let elapsed = Int(Date().timeIntervalSince(sessionStartDate))
-        let session = PrayerSession(
-            id: UUID(),
-            userId: userId,
-            periodId: nil,
-            prayerId: prayer.id,
-            topicId: topic.id,
-            startedAt: sessionStartDate,
-            endedAt: Date(),
-            durationS: elapsed,
-            status: status,
-            notes: nil
-        )
-        Task {
-            try? await appEnv.supabaseService.logSession(session)
+    private func preferredTranslationCode() async -> String {
+        guard let userId = appEnv.currentUser?.id else { return "NIV" }
+        return await appEnv.supabaseService.fetchPreferredTranslation(for: userId)
+    }
+
+    private func finishSession(status: PrayerSession.SessionStatus) {
+        guard lifecycle.beginFinishing() else { return }
+
+        if let userId = appEnv.currentUser?.id {
+            let elapsed = Int(Date().timeIntervalSince(lifecycle.startedAt))
+            let session = PrayerSession(
+                id: lifecycle.id,
+                userId: userId,
+                periodId: lifecycle.periodId,
+                prayerId: lifecycle.shouldLogContentIDs ? prayer.id : nil,
+                topicId: lifecycle.shouldLogContentIDs ? topic.id : nil,
+                startedAt: lifecycle.startedAt,
+                endedAt: Date(),
+                durationS: elapsed,
+                status: status,
+                notes: nil
+            )
+
+            Task {
+                do {
+                    try await appEnv.supabaseService.logSession(session)
+                } catch {
+                    print("[SessionView] Failed to log session: \(UserFacingError.message(for: error))")
+                }
+            }
         }
+
+        onComplete()
+        dismiss()
     }
 }
 

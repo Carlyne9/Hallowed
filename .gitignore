@@ -2,10 +2,13 @@
 apps/mobile/.env.local
 apps/mobile/.env
 apps/backend/.env
-apps/macos/**/**/Secrets.xcconfig
+apps/macos/Secrets.xcconfig
+apps/macos/**/Secrets.xcconfig
 
 # ── macOS / Xcode ─────────────────────────────────────────
 *.xcuserdata/
+**/xcuserdata/
+**/*.xcuserstate
 **/DerivedData/
 **/.build/
 **/Packages/
@@ -23,3 +26,4 @@ npm-debug.log*
 
 # ── Supabase ──────────────────────────────────────────────
 apps/backend/.supabase/
+apps/backend/supabase/.temp/

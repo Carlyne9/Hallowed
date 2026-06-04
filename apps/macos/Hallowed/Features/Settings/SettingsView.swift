@@ -1,5 +1,6 @@
 import SwiftUI
 import UserNotifications
+import ServiceManagement
 
 struct SettingsView: View {
 
@@ -8,6 +9,17 @@ struct SettingsView: View {
     @State private var notificationsEnabled: Bool = false
     @State private var isRequestingPermission: Bool = false
     @State private var isSigningOut: Bool = false
+    @State private var selectedTranslation: String = "NIV"
+    @State private var isLoadingTranslation: Bool = true
+    @State private var isSavingTranslation: Bool = false
+    @State private var translationSaveMessage: String?
+    @State private var strictSessionMode: Bool = SessionPreferences.isStrictModeEnabled
+    @State private var automaticTakeoverEnabled: Bool = AutomaticTakeoverPreferences.isEnabled
+    @State private var launchAtLoginEnabled: Bool = false
+    @State private var loginItemMessage: String?
+    @State private var isUpdatingLoginItem: Bool = false
+
+    private let translationOptions = ["NIV", "KJV", "ESV", "NLT", "MSG"]
 
     private var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
@@ -79,6 +91,94 @@ struct SettingsView: View {
                     }
                 }
 
+                // Automatic takeover section
+                SettingsSection(title: "Automatic Takeover", icon: "sparkles.rectangle.stack.fill") {
+                    VStack(alignment: .leading, spacing: 0) {
+                        SettingsRow(label: "Start Prayer Automatically", icon: "rectangle.inset.filled.and.person.filled") {
+                            Toggle("", isOn: $automaticTakeoverEnabled)
+                                .toggleStyle(.switch)
+                                .controlSize(.small)
+                                .onChange(of: automaticTakeoverEnabled) { _, enabled in
+                                    setAutomaticTakeover(enabled)
+                                }
+                        }
+                        Divider().padding(.leading, 16)
+                        SettingsRow(label: "Launch Hallowed at Login", icon: "power") {
+                            Toggle("", isOn: $launchAtLoginEnabled)
+                                .toggleStyle(.switch)
+                                .controlSize(.small)
+                                .onChange(of: launchAtLoginEnabled) { _, enabled in
+                                    if !isUpdatingLoginItem {
+                                        setLaunchAtLogin(enabled)
+                                    }
+                                }
+                        }
+                        Divider().padding(.leading, 16)
+                        Text(loginItemMessage ?? "When Hallowed is running, active prayer periods can begin without requiring a notification tap. Notifications remain as a fallback.")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                    }
+                }
+
+                // Scripture section
+                SettingsSection(title: "Scripture", icon: "book.closed.fill") {
+                    VStack(alignment: .leading, spacing: 0) {
+                        SettingsRow(label: "Translation", icon: "text.book.closed") {
+                            if isLoadingTranslation {
+                                ProgressView()
+                                    .controlSize(.small)
+                            } else {
+                                Picker("Translation", selection: $selectedTranslation) {
+                                    ForEach(translationOptions, id: \.self) { option in
+                                        Text(option).tag(option)
+                                    }
+                                }
+                                .labelsHidden()
+                                .frame(width: 110)
+                                .onChange(of: selectedTranslation) { _, newValue in
+                                    savePreferredTranslation(newValue)
+                                }
+                            }
+                        }
+                        if let message = translationSaveMessage {
+                            Divider().padding(.leading, 16)
+                            HStack(spacing: 8) {
+                                Image(systemName: isSavingTranslation ? "arrow.triangle.2.circlepath" : "checkmark.circle.fill")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(isSavingTranslation ? Color(hex: "8B7B6E") : Color(hex: "6E8B62"))
+                                Text(message)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(Color(hex: "8B7B6E"))
+                                Spacer()
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                        }
+                    }
+                }
+
+                // Prayer session section
+                SettingsSection(title: "Prayer Session", icon: "lock.shield.fill") {
+                    VStack(alignment: .leading, spacing: 0) {
+                        SettingsRow(label: "Strict mode", icon: "lock.fill") {
+                            Toggle("", isOn: $strictSessionMode)
+                                .toggleStyle(.switch)
+                                .controlSize(.small)
+                                .onChange(of: strictSessionMode) { _, enabled in
+                                    SessionPreferences.isStrictModeEnabled = enabled
+                                }
+                        }
+                        Divider().padding(.leading, 16)
+                        Text("Hides Skip, keeps the overlay on top, and discourages switching away during a session.")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                    }
+                }
+
                 // About section
                 SettingsSection(title: "About", icon: "info.circle.fill") {
                     VStack(alignment: .leading, spacing: 0) {
@@ -110,6 +210,8 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .task {
             await checkNotificationStatus()
+            await loadPreferredTranslation()
+            refreshLoginItemStatus()
         }
     }
 
@@ -160,6 +262,80 @@ struct SettingsView: View {
         let settings = await UNUserNotificationCenter.current().notificationSettings()
         notificationsEnabled = settings.authorizationStatus == .authorized
     }
+
+    private func setAutomaticTakeover(_ enabled: Bool) {
+        appEnv.setAutomaticTakeoverEnabled(enabled)
+        guard enabled, !launchAtLoginEnabled else { return }
+
+        isUpdatingLoginItem = true
+        Task {
+            do {
+                try SMAppService.mainApp.register()
+                refreshLoginItemStatus()
+                loginItemMessage = "Automatic takeover is enabled and Hallowed will launch at login."
+            } catch {
+                refreshLoginItemStatus()
+                loginItemMessage = "Automatic takeover works while Hallowed is open, but launch at login could not be enabled."
+            }
+            isUpdatingLoginItem = false
+        }
+    }
+
+    private func setLaunchAtLogin(_ enabled: Bool) {
+        isUpdatingLoginItem = true
+        Task {
+            do {
+                if enabled {
+                    try SMAppService.mainApp.register()
+                } else {
+                    try await SMAppService.mainApp.unregister()
+                }
+                refreshLoginItemStatus()
+                loginItemMessage = nil
+            } catch {
+                refreshLoginItemStatus()
+                loginItemMessage = enabled
+                    ? "Launch at login could not be enabled."
+                    : "Launch at login could not be disabled."
+            }
+            isUpdatingLoginItem = false
+        }
+    }
+
+    private func refreshLoginItemStatus() {
+        launchAtLoginEnabled = SMAppService.mainApp.status == .enabled
+    }
+
+    private func loadPreferredTranslation() async {
+        guard let userId = appEnv.currentUser?.id else {
+            isLoadingTranslation = false
+            return
+        }
+        let code = await appEnv.supabaseService.fetchPreferredTranslation(for: userId)
+        selectedTranslation = translationOptions.contains(code) ? code : "NIV"
+        isLoadingTranslation = false
+    }
+
+    private func savePreferredTranslation(_ code: String) {
+        guard let userId = appEnv.currentUser?.id else { return }
+        isSavingTranslation = true
+        translationSaveMessage = "Saving translation…"
+
+        Task {
+            do {
+                try await appEnv.supabaseService.updatePreferredTranslation(code, for: userId)
+                await MainActor.run {
+                    isSavingTranslation = false
+                    translationSaveMessage = "Translation saved"
+                }
+            } catch {
+                await MainActor.run {
+                    isSavingTranslation = false
+                    translationSaveMessage = "Could not save. Try again."
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Settings Section
@@ -198,6 +374,23 @@ private struct SettingsRow<Trailing: View>: View {
     @ViewBuilder let trailing: Trailing
 
     var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 12) {
+                leading
+                Spacer()
+                trailing
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                leading
+                trailing
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+    }
+
+    private var leading: some View {
         HStack(spacing: 12) {
             Image(systemName: icon)
                 .font(.system(size: 13))
@@ -207,13 +400,8 @@ private struct SettingsRow<Trailing: View>: View {
             Text(label)
                 .font(.system(size: 13))
                 .foregroundColor(Color(hex: "2D2420"))
-
-            Spacer()
-
-            trailing
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
     }
 }
 

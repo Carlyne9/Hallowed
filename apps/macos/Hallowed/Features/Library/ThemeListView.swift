@@ -3,16 +3,13 @@ import SwiftUI
 struct ThemeListView: View {
 
     let themes: [PrayerTheme]
+    let loadError: String?
 
     @EnvironmentObject var appEnv: AppEnvironment
 
     @State private var topicCounts: [UUID: Int] = [:]
+    @State private var topicCountLoadError: String? = nil
     @State private var selectedTheme: PrayerTheme? = nil
-
-    private let columns = [
-        GridItem(.flexible(), spacing: 16),
-        GridItem(.flexible(), spacing: 16)
-    ]
 
     var body: some View {
         NavigationStack {
@@ -20,19 +17,29 @@ struct ThemeListView: View {
                 if themes.isEmpty {
                     emptyState
                 } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: 16) {
-                            ForEach(themes) { theme in
-                                ThemeCard(
-                                    theme: theme,
-                                    topicCount: topicCounts[theme.id]
-                                )
-                                .onTapGesture {
-                                    selectedTheme = theme
+                    GeometryReader { proxy in
+                        ScrollView {
+                            if let topicCountLoadError {
+                                Text("Some topic counts could not load: \(topicCountLoadError)")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.red)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.horizontal, 24)
+                                    .padding(.top, 16)
+                            }
+                            LazyVGrid(columns: columns(for: proxy.size.width), spacing: 16) {
+                                ForEach(themes) { theme in
+                                    ThemeCard(
+                                        theme: theme,
+                                        topicCount: topicCounts[theme.id]
+                                    )
+                                    .onTapGesture {
+                                        selectedTheme = theme
+                                    }
                                 }
                             }
+                            .padding(24)
                         }
-                        .padding(24)
                     }
                 }
             }
@@ -47,6 +54,11 @@ struct ThemeListView: View {
         }
     }
 
+    private func columns(for width: CGFloat) -> [GridItem] {
+        let count = width < 520 ? 1 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: 16), count: count)
+    }
+
     // MARK: - Empty State
 
     private var emptyState: some View {
@@ -57,11 +69,19 @@ struct ThemeListView: View {
             Text("No themes yet")
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color(hex: "2D2420"))
-            Text("Prayer themes will appear here once the library is seeded.")
-                .font(.system(size: 13))
-                .foregroundColor(Color(hex: "8B7B6E"))
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: 280)
+            if let loadError {
+                Text("Could not load themes: \(loadError)")
+                    .font(.system(size: 13))
+                    .foregroundColor(.red)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 340)
+            } else {
+                Text("Prayer themes will appear here once the library is seeded.")
+                    .font(.system(size: 13))
+                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 280)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -69,16 +89,28 @@ struct ThemeListView: View {
     // MARK: - Data
 
     private func loadTopicCounts() async {
-        await withTaskGroup(of: (UUID, Int).self) { group in
+        topicCountLoadError = nil
+        var firstError: Error?
+
+        await withTaskGroup(of: (UUID, Int, Error?).self) { group in
             for theme in themes {
                 group.addTask {
-                    let count = try? await appEnv.supabaseService.fetchTopics(for: theme.id).count
-                    return (theme.id, count ?? 0)
+                    do {
+                        let count = try await appEnv.supabaseService.fetchTopics(for: theme.id).count
+                        return (theme.id, count, nil)
+                    } catch {
+                        return (theme.id, 0, error)
+                    }
                 }
             }
-            for await (id, count) in group {
+            for await (id, count, error) in group {
                 topicCounts[id] = count
+                if firstError == nil, let error { firstError = error }
             }
+        }
+
+        if let firstError {
+            topicCountLoadError = UserFacingError.message(for: firstError)
         }
     }
 }
@@ -166,7 +198,7 @@ private extension View {
         PrayerTheme(id: UUID(), name: "Intercession", icon: "hands.and.sparkles.fill", colorHex: "7B9EA6", sortOrder: 2),
         PrayerTheme(id: UUID(), name: "Confession", icon: "leaf.fill", colorHex: "7A8E5F", sortOrder: 3),
         PrayerTheme(id: UUID(), name: "Praise", icon: "music.note", colorHex: "9B7BB8", sortOrder: 4)
-    ])
+    ], loadError: nil)
     .environmentObject(AppEnvironment())
     .frame(width: 700, height: 500)
 }

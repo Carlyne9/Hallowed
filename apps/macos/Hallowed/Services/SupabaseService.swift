@@ -97,7 +97,7 @@ class SupabaseService {
         try await client
             .from("prayer_periods")
             .select()
-            .order("created_at")
+            .order("created_at", ascending: false)
             .execute()
             .value
     }
@@ -143,5 +143,69 @@ class SupabaseService {
             .limit(limit)
             .execute()
             .value
+    }
+
+    func fetchPrayers(ids: [UUID]) async throws -> [Prayer] {
+        guard !ids.isEmpty else { return [] }
+        return try await client
+            .from("prayers")
+            .select()
+            .in("id", values: ids.map(\.uuidString))
+            .execute()
+            .value
+    }
+
+    func fetchTopics(ids: [UUID]) async throws -> [PrayerTopic] {
+        guard !ids.isEmpty else { return [] }
+        return try await client
+            .from("prayer_topics")
+            .select()
+            .in("id", values: ids.map(\.uuidString))
+            .execute()
+            .value
+    }
+
+    func fetchPreferredTranslation(for userId: UUID) async -> String {
+        struct ProfileRow: Decodable {
+            let preferred_translation: String?
+        }
+
+        do {
+            let rows: [ProfileRow] = try await client
+                .from("profiles")
+                .select("preferred_translation")
+                .eq("id", value: userId.uuidString)
+                .limit(1)
+                .execute()
+                .value
+            return normalizedTranslationCode(rows.first?.preferred_translation)
+        } catch {
+            return "NIV"
+        }
+    }
+
+    func updatePreferredTranslation(_ code: String, for userId: UUID) async throws {
+        struct ProfileUpdate: Encodable {
+            let id: UUID
+            let preferred_translation: String
+        }
+
+        let normalized = normalizedTranslationCode(code)
+        let payload = ProfileUpdate(id: userId, preferred_translation: normalized)
+
+        try await client
+            .from("profiles")
+            .upsert(payload)
+            .execute()
+    }
+
+    private func normalizedTranslationCode(_ code: String?) -> String {
+        let normalized = code?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() ?? ""
+        switch normalized {
+        case "NIV", "KJV", "ESV", "NLT", "MSG":
+            return normalized
+        default:
+            return "NIV"
+        }
     }
 }

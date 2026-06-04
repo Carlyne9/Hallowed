@@ -40,6 +40,8 @@
 	<string>$(GOOGLE_WEB_CLIENT_ID)</string>
 	<key>GOOGLE_MACOS_CLIENT_ID</key>
 	<string>$(GOOGLE_MACOS_CLIENT_ID)</string>
+	<key>API_BIBLE_KEY</key>
+	<string>$(API_BIBLE_KEY)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

@@ -127,7 +127,7 @@ create table public.prayer_scripture_links (
 ```
 
 ### `prayer_periods`
-User-defined recurring prayer schedule.
+User-defined prayer schedule. Periods can be one-time on a specific date, recurring, theme-focused, custom-topic-focused, or open prayer without assigned prayer points.
 
 ```sql
 create type public.repeat_type as enum ('daily', 'weekdays', 'weekends', 'custom');
@@ -136,15 +136,20 @@ create table public.prayer_periods (
   id            uuid primary key default gen_random_uuid(),
   user_id       uuid not null references auth.users(id) on delete cascade,
   label         text,                           -- e.g. "Morning Prayer"
+  scheduled_date date,                          -- one-time prayer date; null means recurring
   time_of_day   time not null,                  -- e.g. 06:00:00
   duration_mins int not null default 15,
   repeat        public.repeat_type default 'daily',
   custom_days   int[],                          -- 0=Sun … 6=Sat, used when repeat='custom'
+  theme_id      uuid references public.prayer_themes(id) on delete set null,
+  custom_topics text[],
   is_active     boolean default true,
   created_at    timestamptz default now(),
   updated_at    timestamptz default now()
 );
 ```
+
+Migration `20260604000008_extend_prayer_periods.sql` adds the nullable `scheduled_date`, `theme_id`, and `custom_topics` columns to existing deployments.
 
 ### `prayer_sessions`
 Log of every prayer session (completed or skipped).
