@@ -260,6 +260,7 @@ final class AppEnvironment: ObservableObject {
                 topic: session.topic,
                 theme: session.theme,
                 durationMinutes: period.durationMins,
+                pacesPrayerPoints: session.pacesPrayerPoints,
                 periodId: period.id,
                 shouldLogContentIDs: session.shouldLogContentIDs,
                 appEnv: self
@@ -273,7 +274,11 @@ final class AppEnvironment: ObservableObject {
 
     private func makeSession(
         for period: PrayerPeriod
-    ) async throws -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool)? {
+    ) async throws -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool, pacesPrayerPoints: Bool)? {
+        if let exactSession = try await makeExactSession(period: period) {
+            return exactSession
+        }
+
         if let customTopics = period.customTopics, !customTopics.isEmpty {
             return makeCustomSession(period: period, topics: customTopics)
         }
@@ -283,8 +288,36 @@ final class AppEnvironment: ObservableObject {
         }
 
         return try await makeRandomSession(themeId: period.themeId).map {
-            (theme: $0.theme, topic: $0.topic, prayer: $0.prayer, shouldLogContentIDs: true)
+            (theme: $0.theme, topic: $0.topic, prayer: $0.prayer, shouldLogContentIDs: true, pacesPrayerPoints: true)
         }
+    }
+
+    private func makeExactSession(
+        period: PrayerPeriod
+    ) async throws -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool, pacesPrayerPoints: Bool)? {
+        guard let topicId = period.topicId,
+              let prayerId = period.prayerId else {
+            return nil
+        }
+
+        async let topicResult = supabaseService.fetchTopics(ids: [topicId])
+        async let prayerResult = supabaseService.fetchPrayers(ids: [prayerId])
+
+        let fetchedTopics = try await topicResult
+        let fetchedPrayers = try await prayerResult
+
+        guard let topic = fetchedTopics.first,
+              let prayer = fetchedPrayers.first else {
+            return nil
+        }
+
+        let themes = try await supabaseService.fetchThemes()
+        let resolvedThemeId = period.themeId ?? topic.themeId
+        guard let theme = themes.first(where: { $0.id == resolvedThemeId }) else {
+            return nil
+        }
+
+        return (theme: theme, topic: topic, prayer: prayer, shouldLogContentIDs: true, pacesPrayerPoints: true)
     }
 
     private func makeRandomSession(
@@ -307,7 +340,7 @@ final class AppEnvironment: ObservableObject {
 
     private func makeOpenPrayerSession(
         period: PrayerPeriod
-    ) -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool) {
+    ) -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool, pacesPrayerPoints: Bool) {
         let topicTitle = period.title
         let theme = PrayerTheme(
             id: UUID(),
@@ -332,13 +365,13 @@ final class AppEnvironment: ObservableObject {
             author: nil,
             isClassic: false
         )
-        return (theme, topic, prayer, false)
+        return (theme, topic, prayer, false, false)
     }
 
     private func makeCustomSession(
         period: PrayerPeriod,
         topics: [String]
-    ) -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool) {
+    ) -> (theme: PrayerTheme, topic: PrayerTopic, prayer: Prayer, shouldLogContentIDs: Bool, pacesPrayerPoints: Bool) {
         let theme = PrayerTheme(
             id: UUID(),
             name: "Prayer Focus",
@@ -362,6 +395,6 @@ final class AppEnvironment: ObservableObject {
             author: nil,
             isClassic: false
         )
-        return (theme, topic, prayer, false)
+        return (theme, topic, prayer, false, false)
     }
 }

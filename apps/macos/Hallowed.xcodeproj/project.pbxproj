@@ -16,6 +16,7 @@
 		3C6C9ED3D2268834055DB093 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F9FE4972D32D147B31F2 /* Prayer.swift */; };
 		40C892B786EE4103898BD507 /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7495EDE6860EE5F0BFBD68 /* Scripture.swift */; };
 		49F0D36B26B2F9F6BB3062B0 /* PrayerPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B70ECD9FBA83877A0911A /* PrayerPeriod.swift */; };
+		599D300E2FD227D600548A32 /* ChimeAlert in Frameworks */ = {isa = PBXBuildFile; productRef = 599D300D2FD227D600548A32 /* ChimeAlert */; };
 		60CC9D82CEA19CD693C2B937 /* TopicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA6E8FFB43D970BE84206D /* TopicDetailView.swift */; };
 		695ACA0C6B5DF9F87A8318E8 /* PrayerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB6D340DFB0A7531602877 /* PrayerTheme.swift */; };
 		6A719A3F5A6B54147735B200 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84B25DF2650CA80868C2F8 /* AppEnvironment.swift */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599D300E2FD227D600548A32 /* ChimeAlert in Frameworks */,
 				BF481C3C4E686D0616F1602E /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +153,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		599D300B2FD1B94100548A32 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_46AD2248-57D6-4ED6-9A3E-E836BD54216D" /* Secrets.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		6CF6CACBD164D2EDA0D21696 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 			children = (
 				0313EC7E6107B5EB918BADCB /* Hallowed */,
 				6CF6CACBD164D2EDA0D21696 /* Products */,
+				599D300B2FD1B94100548A32 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,14 +250,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		"TEMP_3B5EBCD3-C7B9-49A0-A4DD-C2836D5ABB3E" /* macos */ = {
-			isa = PBXGroup;
-			children = (
-				"TEMP_46AD2248-57D6-4ED6-9A3E-E836BD54216D" /* Secrets.xcconfig */,
-			);
-			path = macos;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,6 +268,7 @@
 			name = Hallowed;
 			packageProductDependencies = (
 				FAB62D8A62256F54FB043A68 /* Supabase */,
+				599D300D2FD227D600548A32 /* ChimeAlert */,
 			);
 			productName = Hallowed;
 			productReference = 2A66D9C6A9191BFD5AEFE2C1 /* Hallowed.app */;
@@ -295,6 +299,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				599D300C2FD227D600548A32 /* XCRemoteSwiftPackageReference "ChimeAlert" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6CF6CACBD164D2EDA0D21696 /* Products */;
@@ -551,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		599D300C2FD227D600548A32 /* XCRemoteSwiftPackageReference "ChimeAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uxderrick/ChimeAlert";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift";
@@ -562,6 +575,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		599D300D2FD227D600548A32 /* ChimeAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 599D300C2FD227D600548A32 /* XCRemoteSwiftPackageReference "ChimeAlert" */;
+			productName = ChimeAlert;
+		};
 		FAB62D8A62256F54FB043A68 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9557983F49DE1B3E9E7BB899 /* XCRemoteSwiftPackageReference "supabase-swift" */;

@@ -280,6 +280,7 @@ struct TopicDetailView: View {
             topic: selection.topic,
             theme: theme,
             durationMinutes: duration,
+            pacesPrayerPoints: true,
             appEnv: appEnv
         )
         sessionSelection = nil
@@ -305,7 +306,9 @@ struct TopicDetailView: View {
             repeatType: nil,
             customDays: nil,
             themeId: theme.id,
-            customTopics: [selection.prayer.title],
+            topicId: selection.topic.id,
+            prayerId: selection.prayer.id,
+            customTopics: nil,
             isActive: true
         )
 
@@ -494,6 +497,7 @@ private struct DurationPickerSheet: View {
 
         switch actionMode {
         case .now:
+            dismiss()
             onBegin(selectedDuration)
         case .later:
             isScheduling = true

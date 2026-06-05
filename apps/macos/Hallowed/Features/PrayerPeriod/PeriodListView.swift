@@ -199,6 +199,8 @@ struct PeriodListView: View {
                     repeatType: period.repeatType,
                     customDays: period.customDays,
                     themeId: period.themeId,
+                    topicId: period.topicId,
+                    prayerId: period.prayerId,
                     customTopics: period.customTopics,
                     isActive: isActive
                 )

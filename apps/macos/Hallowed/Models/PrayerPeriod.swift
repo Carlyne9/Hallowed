@@ -10,6 +10,8 @@ struct PrayerPeriod: Codable, Identifiable, Hashable, Sendable {
     let repeatType: RepeatType?
     let customDays: [Int]?
     let themeId: UUID?
+    let topicId: UUID?
+    let prayerId: UUID?
     let customTopics: [String]?
     let isActive: Bool
 
@@ -23,6 +25,8 @@ struct PrayerPeriod: Codable, Identifiable, Hashable, Sendable {
         case repeatType = "repeat"
         case customDays = "custom_days"
         case themeId = "theme_id"
+        case topicId = "topic_id"
+        case prayerId = "prayer_id"
         case customTopics = "custom_topics"
         case isActive = "is_active"
     }
@@ -79,6 +83,9 @@ struct PrayerPeriod: Codable, Identifiable, Hashable, Sendable {
     var focusSummary: String {
         if let customTopics, !customTopics.isEmpty {
             return customTopics.joined(separator: ", ")
+        }
+        if topicId != nil || prayerId != nil {
+            return "Specific prayer point"
         }
         if themeId != nil {
             return "Theme focus"

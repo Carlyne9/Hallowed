@@ -9,7 +9,6 @@ struct HomeView: View {
     @State private var themesLoadError: String? = nil
     @State private var periodsLoadError: String? = nil
     @State private var selectedSection: SidebarSection? = .themes
-    @State private var sessionItem: SessionItem? = nil
     @State private var isLoadingSession: Bool = false
     @State private var sessionStartError: String? = nil
 
@@ -29,28 +28,11 @@ struct HomeView: View {
         }
     }
 
-    struct SessionItem: Identifiable {
-        let id = UUID()
-        let prayer: Prayer
-        let topic: PrayerTopic
-        let theme: PrayerTheme
-    }
-
     var body: some View {
         NavigationSplitView {
             sidebar
         } detail: {
             detail
-        }
-        .sheet(item: $sessionItem) { item in
-            SessionView(
-                prayer: item.prayer,
-                topic: item.topic,
-                theme: item.theme,
-                durationMinutes: 0
-            ) {
-                sessionItem = nil
-            }
         }
         .task {
             await loadData()
@@ -325,7 +307,13 @@ struct HomeView: View {
                     isLoadingSession = false
                     return
                 }
-                sessionItem = SessionItem(prayer: prayer, topic: topic, theme: theme)
+                ScreenOverlayManager.shared.show(
+                    prayer: prayer,
+                    topic: topic,
+                    theme: theme,
+                    durationMinutes: 0,
+                    appEnv: appEnv
+                )
             } catch {
                 sessionStartError = UserFacingError.message(for: error)
             }

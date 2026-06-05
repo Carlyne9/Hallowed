@@ -598,6 +598,8 @@ struct PeriodEditorView: View {
             repeatType: scheduleMode == .recurring ? repeatType : nil,
             customDays: scheduleMode == .recurring && repeatType == .custom ? Array(selectedCustomDays).sorted() : nil,
             themeId: focusMode == .theme ? selectedThemeId : nil,
+            topicId: focusMode == .theme ? existingPeriod?.topicId : nil,
+            prayerId: focusMode == .theme ? existingPeriod?.prayerId : nil,
             customTopics: focusMode == .customTopics ? parsedCustomTopics : nil,
             isActive: isActive
         )

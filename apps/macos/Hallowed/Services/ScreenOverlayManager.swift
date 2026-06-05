@@ -12,6 +12,7 @@ class ScreenOverlayManager: ObservableObject {
         let topic: PrayerTopic
         let theme: PrayerTheme
         let durationMinutes: Int
+        let pacesPrayerPoints: Bool
         let lifecycle: PrayerSessionLifecycle
         let appEnv: AppEnvironment
         let onComplete: () -> Void
@@ -41,6 +42,7 @@ class ScreenOverlayManager: ObservableObject {
         topic: PrayerTopic,
         theme: PrayerTheme,
         durationMinutes: Int,
+        pacesPrayerPoints: Bool = false,
         periodId: UUID? = nil,
         shouldLogContentIDs: Bool = true,
         appEnv: AppEnvironment,
@@ -54,6 +56,7 @@ class ScreenOverlayManager: ObservableObject {
             topic: topic,
             theme: theme,
             durationMinutes: durationMinutes,
+            pacesPrayerPoints: pacesPrayerPoints,
             lifecycle: PrayerSessionLifecycle(
                 periodId: periodId,
                 shouldLogContentIDs: shouldLogContentIDs
@@ -112,6 +115,7 @@ class ScreenOverlayManager: ObservableObject {
                 topic: session.topic,
                 theme: session.theme,
                 durationMinutes: session.durationMinutes,
+                pacesPrayerPoints: session.pacesPrayerPoints,
                 lifecycle: session.lifecycle,
                 onComplete: {
                     session.onComplete()
