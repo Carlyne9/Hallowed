@@ -4,7 +4,10 @@ import ServiceManagement
 
 struct SettingsView: View {
 
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var appEnv: AppEnvironment
+
+    let showsCancelButton: Bool
 
     @State private var notificationsEnabled: Bool = false
     @State private var isRequestingPermission: Bool = false
@@ -12,7 +15,6 @@ struct SettingsView: View {
     @State private var selectedTranslation: String = "NIV"
     @State private var isLoadingTranslation: Bool = true
     @State private var isSavingTranslation: Bool = false
-    @State private var translationSaveMessage: String?
     @State private var strictSessionMode: Bool = SessionPreferences.isStrictModeEnabled
     @State private var automaticTakeoverEnabled: Bool = AutomaticTakeoverPreferences.isEnabled
     @State private var launchAtLoginEnabled: Bool = false
@@ -27,6 +29,10 @@ struct SettingsView: View {
 
     private var buildNumber: String {
         Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "—"
+    }
+
+    init(showsCancelButton: Bool = false) {
+        self.showsCancelButton = showsCancelButton
     }
 
     var body: some View {
@@ -44,7 +50,7 @@ struct SettingsView: View {
                                 SettingsRow(label: "Name", icon: "person") {
                                     Text(name)
                                         .font(.system(size: 13))
-                                        .foregroundColor(Color(hex: "2D2420"))
+                                        .foregroundColor(HallowedDesign.Experimental.text)
                                 }
                                 Divider().padding(.leading, 16)
                             }
@@ -53,7 +59,7 @@ struct SettingsView: View {
                             SettingsRow(label: "Email", icon: "envelope") {
                                 Text(user.email ?? "—")
                                     .font(.system(size: 13))
-                                    .foregroundColor(Color(hex: "8B7B6E"))
+                                    .foregroundColor(HallowedDesign.Experimental.muted)
                             }
                         }
 
@@ -116,7 +122,7 @@ struct SettingsView: View {
                         Divider().padding(.leading, 16)
                         Text(loginItemMessage ?? "When Hallowed is running, active prayer periods can begin without requiring a notification tap. Notifications remain as a fallback.")
                             .font(.system(size: 12))
-                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .foregroundColor(HallowedDesign.Experimental.muted)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 10)
                     }
@@ -142,20 +148,6 @@ struct SettingsView: View {
                                 }
                             }
                         }
-                        if let message = translationSaveMessage {
-                            Divider().padding(.leading, 16)
-                            HStack(spacing: 8) {
-                                Image(systemName: isSavingTranslation ? "arrow.triangle.2.circlepath" : "checkmark.circle.fill")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(isSavingTranslation ? Color(hex: "8B7B6E") : Color(hex: "6E8B62"))
-                                Text(message)
-                                    .font(.system(size: 12))
-                                    .foregroundColor(Color(hex: "8B7B6E"))
-                                Spacer()
-                            }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
-                        }
                     }
                 }
 
@@ -173,7 +165,7 @@ struct SettingsView: View {
                         Divider().padding(.leading, 16)
                         Text("Hides Skip, keeps the overlay on top, and discourages switching away during a session.")
                             .font(.system(size: 12))
-                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .foregroundColor(HallowedDesign.Experimental.muted)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 10)
                     }
@@ -185,19 +177,19 @@ struct SettingsView: View {
                         SettingsRow(label: "App", icon: "hands.and.sparkles.fill") {
                             Text("Hallowed")
                                 .font(.system(size: 13))
-                                .foregroundColor(Color(hex: "2D2420"))
+                                .foregroundColor(HallowedDesign.Experimental.text)
                         }
                         Divider().padding(.leading, 16)
                         SettingsRow(label: "Version", icon: "tag") {
                             Text("\(appVersion) (\(buildNumber))")
                                 .font(.system(size: 13))
-                                .foregroundColor(Color(hex: "8B7B6E"))
+                                .foregroundColor(HallowedDesign.Experimental.muted)
                         }
                         Divider().padding(.leading, 16)
                         SettingsRow(label: "Bundle", icon: "shippingbox") {
                             Text("com.hallowed.macos")
                                 .font(.system(size: 12, design: .monospaced))
-                                .foregroundColor(Color(hex: "8B7B6E"))
+                                .foregroundColor(HallowedDesign.Experimental.muted)
                         }
                     }
                 }
@@ -206,7 +198,9 @@ struct SettingsView: View {
             }
             .padding(32)
         }
-        .background(Color(hex: "FAF8F5"))
+        .background {
+            HallowedExperimentalBackground()
+        }
         .navigationTitle("Settings")
         .task {
             await checkNotificationStatus()
@@ -218,24 +212,37 @@ struct SettingsView: View {
     // MARK: - Page Header
 
     private var pageHeader: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 10) {
-                Image(systemName: "hands.and.sparkles.fill")
-                    .font(.system(size: 22))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color(hex: "8B6F4E"), Color(hex: "C49A6C")],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                Text("Hallowed")
-                    .font(.system(size: 22, weight: .light, design: .serif))
-                    .foregroundColor(Color(hex: "2D2420"))
+        HStack(alignment: .top, spacing: 16) {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Settings")
+                    .font(.system(size: 42, weight: .semibold, design: .serif))
+                    .foregroundColor(HallowedDesign.Experimental.text)
+                Text("Tune the quiet machinery behind prayer time.")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(HallowedDesign.Experimental.muted)
             }
-            Text("Settings")
-                .font(.system(size: 13))
-                .foregroundColor(Color(hex: "8B7B6E"))
+
+            Spacer()
+
+            if showsCancelButton {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Close")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 9)
+                        .background(HallowedDesign.Experimental.glass)
+                        .clipShape(Capsule())
+                        .overlay(
+                            Capsule()
+                                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+                        )
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Cancel settings")
+            }
         }
     }
 
@@ -319,19 +326,16 @@ struct SettingsView: View {
     private func savePreferredTranslation(_ code: String) {
         guard let userId = appEnv.currentUser?.id else { return }
         isSavingTranslation = true
-        translationSaveMessage = "Saving translation…"
 
         Task {
             do {
                 try await appEnv.supabaseService.updatePreferredTranslation(code, for: userId)
                 await MainActor.run {
                     isSavingTranslation = false
-                    translationSaveMessage = "Translation saved"
                 }
             } catch {
                 await MainActor.run {
                     isSavingTranslation = false
-                    translationSaveMessage = "Could not save. Try again."
                 }
             }
         }
@@ -347,20 +351,21 @@ private struct SettingsSection<Content: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label(title, systemImage: icon)
+            Text(title)
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(Color(hex: "B0A098"))
+                .foregroundColor(HallowedDesign.Experimental.muted)
                 .textCase(.uppercase)
-                .tracking(0.8)
+                .tracking(1.1)
 
             VStack(alignment: .leading, spacing: 0) {
                 content
             }
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .background(.ultraThinMaterial.opacity(0.82))
+            .background(HallowedDesign.Experimental.glass)
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color(hex: "E8DDD3"), lineWidth: 1)
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
             )
         }
     }
@@ -392,14 +397,9 @@ private struct SettingsRow<Trailing: View>: View {
 
     private var leading: some View {
         HStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 13))
-                .foregroundColor(Color(hex: "8B6F4E"))
-                .frame(width: 20)
-
             Text(label)
-                .font(.system(size: 13))
-                .foregroundColor(Color(hex: "2D2420"))
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(HallowedDesign.Experimental.text)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }

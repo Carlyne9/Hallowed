@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Hallowed",
+    "slug": "hallowed",
+    "scheme": "hallowed",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.hallowed.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.hallowed.app",
+      "permissions": [
+        "USE_FULL_SCREEN_INTENT",
+        "FOREGROUND_SERVICE",
+        "RECEIVE_BOOT_COMPLETED",
+        "WAKE_LOCK"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

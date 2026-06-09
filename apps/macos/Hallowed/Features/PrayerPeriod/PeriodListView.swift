@@ -16,7 +16,7 @@ struct PeriodListView: View {
             if isLoading {
                 ProgressView("Loading…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(hex: "FAF8F5"))
+                    .background(HallowedExperimentalBackground())
             } else if periods.isEmpty && errorMessage == nil {
                 emptyState
             } else if periods.isEmpty, let errorMessage {
@@ -25,7 +25,7 @@ struct PeriodListView: View {
                 list
             }
         }
-        .background(Color(hex: "FAF8F5"))
+        .background(HallowedExperimentalBackground())
         .navigationTitle("Prayer Periods")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -34,9 +34,19 @@ struct PeriodListView: View {
                     showEditor = true
                 } label: {
                     Image(systemName: "plus")
-                        .fontWeight(.semibold)
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .frame(width: 34, height: 34)
+                        .background(HallowedDesign.Experimental.glass)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+                        )
                 }
+                .buttonStyle(.plain)
                 .help("Add Prayer Period")
+                .accessibilityLabel("Add Prayer Period")
             }
         }
         .sheet(isPresented: $showEditor, onDismiss: {
@@ -91,8 +101,9 @@ struct PeriodListView: View {
                         periodPendingDeletion = period
                     }
                 )
-                .listRowBackground(Color.white)
-                .listRowSeparatorTint(Color(hex: "EDE5D8"))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 5, leading: 16, bottom: 5, trailing: 16))
                 .contextMenu {
                     Button {
                         editPeriod(period)
@@ -110,57 +121,52 @@ struct PeriodListView: View {
             .onDelete(perform: deletePeriods)
         }
         .listStyle(.inset)
+        .environment(\.defaultMinListRowHeight, 0)
         .scrollContentBackground(.hidden)
+        .background(Color.clear)
     }
 
     // MARK: - Empty State
 
     private func errorEmptyState(message: String) -> some View {
         VStack(spacing: 16) {
-            Image(systemName: "exclamationmark.triangle")
-                .font(.system(size: 40, weight: .light))
-                .foregroundColor(Color(hex: "E07B5A"))
             Text("Could not load prayer periods")
-                .font(.system(size: 16, weight: .medium))
-                .foregroundColor(Color(hex: "2D2420"))
+                .font(.system(size: 24, weight: .semibold, design: .serif))
+                .foregroundColor(HallowedDesign.Experimental.text)
             Text(message)
                 .font(.system(size: 13))
-                .foregroundColor(.red)
+                .foregroundColor(HallowedDesign.Experimental.rose)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 360)
             Button("Retry", action: loadPeriods)
                 .buttonStyle(.borderedProminent)
-                .tint(Color(hex: "8B6F4E"))
+                .tint(HallowedDesign.Experimental.amber)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private var emptyState: some View {
         VStack(spacing: 20) {
-            Image(systemName: "clock.badge.plus")
-                .font(.system(size: 44, weight: .light))
-                .foregroundColor(Color(hex: "C4B5A8"))
-
             VStack(spacing: 6) {
                 Text("No prayer periods")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundColor(Color(hex: "2D2420"))
-                Text("Add a recurring time to be reminded to pray.")
-                    .font(.system(size: 13))
-                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .font(.system(size: 26, weight: .semibold, design: .serif))
+                    .foregroundColor(HallowedDesign.Experimental.text)
+                Text("Set a quiet moment and Hallowed will hold it for you.")
+                    .font(HallowedDesign.Typography.label)
+                    .foregroundColor(HallowedDesign.Experimental.muted)
             }
 
             Button {
                 selectedPeriodForEditing = nil
                 showEditor = true
             } label: {
-                Label("Add Period", systemImage: "plus")
+                Text("Add Period")
                     .font(.system(size: 14, weight: .medium))
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
-                    .background(Color(hex: "8B6F4E"))
+                    .background(HallowedDesign.Experimental.amber)
                     .foregroundColor(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(Capsule())
             }
             .buttonStyle(.plain)
         }
@@ -276,22 +282,20 @@ private struct PeriodRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            // Left accent
             RoundedRectangle(cornerRadius: 3)
-                .fill(isActive ? Color(hex: "8B6F4E") : Color(hex: "D4C9BE"))
-                .frame(width: 4, height: 44)
+                .fill(isActive ? HallowedDesign.Experimental.amber : HallowedDesign.Experimental.lineStrong)
+                .frame(width: 3, height: 54)
 
-            // Info block
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 7) {
                 Text(period.label ?? "Prayer Period")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(Color(hex: "2D2420"))
+                    .font(.system(size: 17, weight: .semibold, design: .serif))
+                    .foregroundColor(HallowedDesign.Experimental.text)
 
-                FlowLayout(spacing: 10) {
-                    metadataLabel(period.displayTime, systemImage: "clock")
-                    metadataLabel("\(period.durationMins) min", systemImage: "timer")
-                    metadataLabel(period.repeatSummary, systemImage: "repeat")
-                    metadataLabel(period.focusSummary, systemImage: "scope")
+                FlowLayout(spacing: 12) {
+                    metadataLabel(period.displayTime)
+                    metadataLabel("\(period.durationMins) min")
+                    metadataLabel(period.repeatSummary)
+                    metadataLabel(period.focusSummary)
                 }
             }
 
@@ -305,27 +309,34 @@ private struct PeriodRow: View {
                 }
 
             Button(role: .destructive, action: onDelete) {
-                Image(systemName: "trash")
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundColor(Color(hex: "B94A36"))
-                    .frame(width: 28, height: 28)
-                    .background(Color(hex: "B94A36").opacity(0.08))
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                Text("Delete")
+                    .font(.system(size: 11, weight: .medium))
+                    .foregroundColor(HallowedDesign.Experimental.rose)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 7)
+                    .background(HallowedDesign.Experimental.rose.opacity(0.09))
+                    .clipShape(Capsule())
             }
             .buttonStyle(.plain)
             .help("Delete prayer period")
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 4)
+        .padding(.vertical, 16)
+        .padding(.horizontal, 18)
+        .background(HallowedDesign.Experimental.glass)
+        .clipShape(RoundedRectangle(cornerRadius: 24))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24)
+                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+        )
         .contentShape(Rectangle())
         .onTapGesture(perform: onEdit)
         .help("Click to edit prayer period")
     }
 
-    private func metadataLabel(_ text: String, systemImage: String) -> some View {
-        Label(text, systemImage: systemImage)
-            .font(.system(size: 12))
-            .foregroundColor(Color(hex: "8B7B6E"))
+    private func metadataLabel(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 11, weight: .medium))
+            .foregroundColor(HallowedDesign.Experimental.muted)
             .lineLimit(1)
     }
 }

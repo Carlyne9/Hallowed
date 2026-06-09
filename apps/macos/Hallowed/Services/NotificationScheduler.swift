@@ -80,12 +80,6 @@ class NotificationScheduler {
     // MARK: - Private Helpers
 
     private func makeRequests(for period: PrayerPeriod) -> [UNNotificationRequest] {
-        let content = UNMutableNotificationContent()
-        content.title = period.title
-        content.body = notificationBody(for: period)
-        content.sound = .default
-        content.userInfo = ["periodId": period.id.uuidString]
-
         if let scheduledDate = period.scheduledDateValue {
             var components = Calendar.current.dateComponents([.year, .month, .day], from: scheduledDate)
             components.hour = period.timeComponents.hour
@@ -96,51 +90,142 @@ class NotificationScheduler {
                 return []
             }
 
-            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-            let id = "prayer.period.\(period.id.uuidString).once"
-            return [UNNotificationRequest(identifier: id, content: content, trigger: trigger)]
+            var requests = [
+                request(
+                    id: "prayer.period.\(period.id.uuidString).once.start",
+                    period: period,
+                    components: components,
+                    repeats: false,
+                    kind: .start
+                ),
+            ]
+
+            if let reminderDate = Calendar.current.date(byAdding: .minute, value: -5, to: scheduledDateTime),
+               reminderDate > Date() {
+                let reminderComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminderDate)
+                requests.append(
+                    request(
+                        id: "prayer.period.\(period.id.uuidString).once.reminder",
+                        period: period,
+                        components: reminderComponents,
+                        repeats: false,
+                        kind: .reminder
+                    )
+                )
+            }
+
+            return requests
         }
 
         switch period.repeatType {
         case .daily?:
-            let trigger = UNCalendarNotificationTrigger(
-                dateMatching: period.timeComponents,
-                repeats: true
+            return repeatingRequests(
+                idBase: "prayer.period.\(period.id.uuidString).daily",
+                period: period,
+                components: period.timeComponents
             )
-            let id = "prayer.period.\(period.id.uuidString)"
-            return [UNNotificationRequest(identifier: id, content: content, trigger: trigger)]
 
         case .weekdays?:
-            return (2...6).map { weekday in
+            return (2...6).flatMap { weekday in
                 var components = period.timeComponents
                 components.weekday = weekday
-                let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-                let id = "prayer.period.\(period.id.uuidString).wd\(weekday)"
-                return UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                return repeatingRequests(
+                    idBase: "prayer.period.\(period.id.uuidString).wd\(weekday)",
+                    period: period,
+                    components: components
+                )
             }
 
         case .weekends?:
-            return [1, 7].map { weekday in
+            return [1, 7].flatMap { weekday in
                 var components = period.timeComponents
                 components.weekday = weekday
-                let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-                let id = "prayer.period.\(period.id.uuidString).wd\(weekday)"
-                return UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                return repeatingRequests(
+                    idBase: "prayer.period.\(period.id.uuidString).wd\(weekday)",
+                    period: period,
+                    components: components
+                )
             }
 
         case .custom?:
             // customDays uses 0=Sunday convention; UNCalendarNotificationTrigger uses weekday 1=Sunday
-            return (period.customDays ?? []).map { day in
+            return (period.customDays ?? []).flatMap { day in
                 let weekday = day + 1
                 var components = period.timeComponents
                 components.weekday = weekday
-                let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-                let id = "prayer.period.\(period.id.uuidString).wd\(weekday)"
-                return UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                return repeatingRequests(
+                    idBase: "prayer.period.\(period.id.uuidString).wd\(weekday)",
+                    period: period,
+                    components: components
+                )
             }
         case nil:
             return []
         }
+    }
+
+    private enum NotificationKind {
+        case reminder
+        case start
+    }
+
+    private func repeatingRequests(
+        idBase: String,
+        period: PrayerPeriod,
+        components: DateComponents
+    ) -> [UNNotificationRequest] {
+        [
+            request(
+                id: "\(idBase).reminder",
+                period: period,
+                components: reminderComponents(from: components),
+                repeats: true,
+                kind: .reminder
+            ),
+            request(
+                id: "\(idBase).start",
+                period: period,
+                components: components,
+                repeats: true,
+                kind: .start
+            ),
+        ]
+    }
+
+    private func request(
+        id: String,
+        period: PrayerPeriod,
+        components: DateComponents,
+        repeats: Bool,
+        kind: NotificationKind
+    ) -> UNNotificationRequest {
+        let content = UNMutableNotificationContent()
+        content.title = kind == .reminder ? "\(period.title) starts soon" : period.title
+        content.body = kind == .reminder ? reminderBody(for: period) : notificationBody(for: period)
+        content.sound = .default
+        content.userInfo = ["periodId": period.id.uuidString]
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: repeats)
+        return UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+    }
+
+    private func reminderComponents(from components: DateComponents) -> DateComponents {
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
+        let originalMinutes = hour * 60 + minute
+        let totalMinutes = (originalMinutes - 5 + 24 * 60) % (24 * 60)
+
+        var reminder = components
+        reminder.hour = totalMinutes / 60
+        reminder.minute = totalMinutes % 60
+        if originalMinutes < 5, let weekday = reminder.weekday {
+            reminder.weekday = weekday == 1 ? 7 : weekday - 1
+        }
+        return reminder
+    }
+
+    private func reminderBody(for period: PrayerPeriod) -> String {
+        "Your \(period.durationMins) minute prayer time begins in 5 minutes."
     }
 
     private func notificationBody(for period: PrayerPeriod) -> String {

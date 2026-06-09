@@ -1,9 +1,9 @@
 # Mobile App (iOS + Android)
 
-> Last updated: 2026-05-08 — initial scaffold
+> Last updated: 2026-06-08 — Expo Router shell scaffolded
 > Responsible agent: `mobile-agent`
 > Platforms: iOS 16+, Android 10+ (API 29+)
-> Tech: Expo (bare workflow), React Native, TypeScript, Supabase JS, expo-sqlite
+> Tech: Expo SDK 56, React Native, TypeScript, Supabase JS, expo-sqlite
 > Location: `apps/mobile/`
 
 ## Setup
@@ -232,20 +232,27 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 
 ## Status
 
-- [ ] Expo bare project initialized
-- [ ] Expo Router configured
+- [x] Expo app config and package manifest added
+- [x] Expo Router configured
+- [x] Mobile design tokens and reusable background/card/button primitives added
+- [x] Dependencies installed and Expo compatibility check passing
+- [x] TypeScript check passing
 - [ ] Supabase client + auth (Apple, Google)
 - [ ] Local expo-sqlite schema
 - [ ] Sync service (remote ↔ local)
 - [ ] Notification scheduling
 - [ ] Android full-screen overlay native module
-- [ ] Home tab (today's prayer, upcoming periods)
-- [ ] Library tab (themes/topics)
-- [ ] Schedule tab (prayer periods manager)
-- [ ] History tab
-- [ ] Prayer session full-screen modal
+- [x] Home tab (today's prayer, upcoming periods)
+- [x] Library tab (themes/topics)
+- [x] Schedule tab (prayer periods manager)
+- [x] History tab
+- [x] Prayer session full-screen modal
 - [ ] Randomizer
-- [ ] Settings screen
+- [x] Settings screen
 - [ ] App icons + splash screen
 - [ ] EAS Build configured (iOS + Android)
 - [ ] TestFlight + Play Store internal testing
+
+## Deferred Notes
+
+- Return to theme functionality after the mobile pivot: theme/topic behavior and illustration selection still need a dedicated pass.

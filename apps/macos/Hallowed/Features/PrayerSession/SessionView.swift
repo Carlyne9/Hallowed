@@ -78,13 +78,13 @@ struct SessionView: View {
         pacesPrayerPoints && durationMinutes > 0 && prayer.bullets.count > 1
     }
 
-    // Palette: deep warm dark
-    private let bgColor = Color(hex: "1C1612")
-    private let surfaceColor = Color(hex: "261E18")
-    private let accentColor = Color(hex: "C49A6C")
-    private let textPrimary = Color(hex: "F5EDE0")
-    private let textMuted = Color(hex: "8B7B6E")
-    private let dividerColor = Color(hex: "3D302A")
+    private let bgColor = HallowedDesign.Experimental.canvas
+    private let surfaceColor = HallowedDesign.Experimental.panel
+    private let accentColor = HallowedDesign.Experimental.amber
+    private let urgentColor = HallowedDesign.Experimental.rose
+    private let textPrimary = HallowedDesign.Experimental.text
+    private let textMuted = HallowedDesign.Experimental.muted
+    private let dividerColor = HallowedDesign.Experimental.line
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -109,18 +109,21 @@ struct SessionView: View {
                 )
                 .background(
                     LinearGradient(
-                        colors: [Color(hex: "261E18"), Color(hex: "1F1814")],
+                        colors: [
+                            HallowedDesign.Experimental.panel,
+                            Color(hex: "10131A")
+                        ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
                 )
-                .clipShape(RoundedRectangle(cornerRadius: 28))
+                .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.xxl))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 28)
+                    RoundedRectangle(cornerRadius: HallowedDesign.Radius.xxl)
                         .stroke(accentColor.opacity(0.28), lineWidth: 1)
                 )
                 .shadow(color: Color.black.opacity(0.34), radius: 34, x: 0, y: 22)
-                .shadow(color: accentColor.opacity(0.12), radius: 46, x: 0, y: 0)
+                .shadow(color: HallowedDesign.Experimental.blue.opacity(0.1), radius: 46, x: 0, y: 0)
             }
         }
         .frame(minWidth: 600, minHeight: 500)
@@ -140,8 +143,8 @@ struct SessionView: View {
 
             LinearGradient(
                 colors: [
-                    Color(hex: theme.colorHex).opacity(0.24),
-                    accentColor.opacity(0.16),
+                    HallowedDesign.Experimental.blue.opacity(0.18),
+                    accentColor.opacity(0.12),
                     Color.clear
                 ],
                 startPoint: .top,
@@ -151,7 +154,7 @@ struct SessionView: View {
             .frame(height: 300)
             .offset(y: -140)
 
-            PulsingPrayerBorder(color: Color(hex: theme.colorHex))
+            PulsingPrayerBorder(color: accentColor)
                 .ignoresSafeArea()
 
             VStack {
@@ -227,18 +230,11 @@ struct SessionView: View {
 
     private var breadcrumb: some View {
         HStack(spacing: 6) {
-            Image(systemName: theme.icon)
-                .font(.system(size: 11))
-                .foregroundColor(Color(hex: theme.colorHex))
             Text(theme.name)
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(Color(hex: theme.colorHex))
+                .foregroundColor(accentColor)
                 .textCase(.uppercase)
                 .tracking(0.8)
-
-            Image(systemName: "chevron.right")
-                .font(.system(size: 9, weight: .semibold))
-                .foregroundColor(textMuted)
 
             Text(topic.title)
                 .font(.system(size: 11, weight: .medium))
@@ -253,12 +249,15 @@ struct SessionView: View {
             let remaining = remainingSeconds(at: context.date)
             if !hasReachedTimedConclusion {
                 HStack(spacing: 8) {
-                    Image(systemName: durationMinutes > 0 ? "timer" : "clock")
-                        .font(.system(size: 13, weight: .semibold))
+                    HallowedWaveform(
+                        color: remaining <= 60 && durationMinutes > 0 ? urgentColor : accentColor,
+                        isActive: durationMinutes > 0
+                    )
+
                     Text(timerLabel(at: context.date))
                         .font(.system(size: 20, weight: .semibold).monospacedDigit())
                 }
-                .foregroundColor(remaining <= 60 && durationMinutes > 0 ? Color(hex: "E07B5A") : textMuted)
+                .foregroundColor(remaining <= 60 && durationMinutes > 0 ? urgentColor : textMuted)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
                 .background(accentColor.opacity(0.08))
@@ -296,7 +295,7 @@ struct SessionView: View {
 
                     // Prayer title
                     Text(prayer.title)
-                        .font(.system(size: 28, weight: .light, design: .serif))
+                    .font(.system(size: 34, weight: .semibold, design: .serif))
                         .foregroundColor(textPrimary)
                         .fixedSize(horizontal: false, vertical: true)
 
@@ -339,11 +338,6 @@ struct SessionView: View {
             Spacer(minLength: 24)
 
             VStack(spacing: 14) {
-                Image(systemName: "checkmark.seal.fill")
-                    .font(.system(size: 44, weight: .light))
-                    .foregroundColor(accentColor)
-                    .shadow(color: accentColor.opacity(0.28), radius: 18, x: 0, y: 8)
-
                 Text("Prayer time is complete")
                     .font(.system(size: 30, weight: .light, design: .serif))
                     .foregroundColor(textPrimary)
@@ -357,7 +351,7 @@ struct SessionView: View {
             }
 
             VStack(alignment: .leading, spacing: 12) {
-                Label("Declaration", systemImage: "sparkles")
+                Text("Declaration")
                     .font(.system(size: 11, weight: .semibold))
                     .foregroundColor(accentColor)
                     .textCase(.uppercase)
@@ -414,7 +408,7 @@ struct SessionView: View {
         HStack(alignment: .top, spacing: 16) {
             Circle()
                 .fill(accentColor)
-                .frame(width: 7, height: 7)
+                .frame(width: 4, height: 4)
                 .padding(.top, 13)
 
             Text(bullet)
@@ -446,14 +440,12 @@ struct SessionView: View {
                     HStack(spacing: 10) {
                         Text(hasReachedTimedConclusion ? "Amen, I receive this" : "Amen")
                             .font(.system(size: 16, weight: .semibold))
-                        Image(systemName: "hands.sparkles.fill")
-                            .font(.system(size: 14))
                     }
                     .padding(.horizontal, 40)
                     .padding(.vertical, 14)
                     .background(
                         LinearGradient(
-                            colors: [Color(hex: "8B6F4E"), Color(hex: "7A5F3E")],
+                            colors: [accentColor, Color(hex: "A15F26")],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )

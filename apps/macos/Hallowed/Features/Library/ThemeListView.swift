@@ -13,37 +13,49 @@ struct ThemeListView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
+            ZStack {
+                HallowedExperimentalBackground()
+
                 if themes.isEmpty {
                     emptyState
                 } else {
                     GeometryReader { proxy in
                         ScrollView {
-                            if let topicCountLoadError {
-                                Text("Some topic counts could not load: \(topicCountLoadError)")
-                                    .font(.system(size: 12))
-                                    .foregroundColor(.red)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.horizontal, 24)
-                                    .padding(.top, 16)
-                            }
-                            LazyVGrid(columns: columns(for: proxy.size.width), spacing: 16) {
-                                ForEach(themes) { theme in
-                                    ThemeCard(
-                                        theme: theme,
-                                        topicCount: topicCounts[theme.id]
-                                    )
-                                    .onTapGesture {
-                                        selectedTheme = theme
+                            VStack(alignment: .leading, spacing: 24) {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("Prayer library")
+                                        .font(.system(size: 38, weight: .semibold, design: .serif))
+                                        .foregroundColor(HallowedDesign.Experimental.text)
+                                    Text("Choose the room you want to enter. No noise, no rush.")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(HallowedDesign.Experimental.muted)
+                                }
+
+                                if let topicCountLoadError {
+                                    Text("Some topic counts could not load: \(topicCountLoadError)")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(HallowedDesign.Experimental.rose)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+
+                                LazyVGrid(columns: columns(for: proxy.size.width), spacing: 18) {
+                                    ForEach(Array(themes.enumerated()), id: \.element.id) { index, theme in
+                                        ThemeCard(
+                                            theme: theme,
+                                            topicCount: topicCounts[theme.id],
+                                            index: index + 1
+                                        )
+                                        .onTapGesture {
+                                            selectedTheme = theme
+                                        }
                                     }
                                 }
                             }
-                            .padding(24)
+                            .padding(32)
                         }
                     }
                 }
             }
-            .background(Color(hex: "FAF8F5"))
             .navigationTitle("Themes")
             .navigationDestination(item: $selectedTheme) { theme in
                 TopicDetailView(theme: theme)
@@ -56,29 +68,26 @@ struct ThemeListView: View {
 
     private func columns(for width: CGFloat) -> [GridItem] {
         let count = width < 520 ? 1 : 2
-        return Array(repeating: GridItem(.flexible(), spacing: 16), count: count)
+        return Array(repeating: GridItem(.flexible(), spacing: 18), count: count)
     }
 
     // MARK: - Empty State
 
     private var emptyState: some View {
         VStack(spacing: 16) {
-            Image(systemName: "books.vertical")
-                .font(.system(size: 40, weight: .light))
-                .foregroundColor(Color(hex: "C4B5A8"))
             Text("No themes yet")
-                .font(.system(size: 16, weight: .medium))
-                .foregroundColor(Color(hex: "2D2420"))
+                .font(.system(size: 24, weight: .semibold, design: .serif))
+                .foregroundColor(HallowedDesign.Experimental.text)
             if let loadError {
                 Text("Could not load themes: \(loadError)")
                     .font(.system(size: 13))
-                    .foregroundColor(.red)
+                    .foregroundColor(HallowedDesign.Experimental.rose)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: 340)
             } else {
                 Text("Prayer themes will appear here once the library is seeded.")
                     .font(.system(size: 13))
-                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .foregroundColor(HallowedDesign.Experimental.muted)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: 280)
             }
@@ -120,60 +129,54 @@ struct ThemeListView: View {
 private struct ThemeCard: View {
     let theme: PrayerTheme
     let topicCount: Int?
+    let index: Int
 
     @State private var isHovered: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            // Icon
-            Image(systemName: theme.icon)
-                .font(.system(size: 26, weight: .light))
-                .foregroundColor(Color(hex: theme.colorHex))
-                .frame(width: 50, height: 50)
-                .background(Color(hex: theme.colorHex).opacity(0.12))
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+        HallowedExperimentalCard(cornerRadius: 28, padding: 24) {
+            ZStack(alignment: .bottomTrailing) {
+                HallowedThemeIllustration(themeName: theme.name, icon: theme.icon)
+                    .frame(width: 118, height: 118)
+                    .offset(x: 12, y: 12)
 
-            Spacer()
+                VStack(alignment: .leading, spacing: 22) {
+                    HStack {
+                        Text(String(format: "%02d", index))
+                            .font(.system(size: 12, weight: .semibold).monospacedDigit())
+                            .foregroundColor(HallowedDesign.Experimental.faint)
+                        Spacer()
+                        Text(topicLabel)
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(HallowedDesign.Experimental.muted)
+                    }
 
-            // Name + count
-            VStack(alignment: .leading, spacing: 4) {
-                Text(theme.name)
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundColor(Color(hex: "2D2420"))
-                    .lineLimit(2)
+                    Spacer(minLength: 8)
 
-                if let count = topicCount {
-                    Text("\(count) \(count == 1 ? "topic" : "topics")")
+                    Text(theme.name)
+                        .font(.system(size: 26, weight: .semibold, design: .serif))
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .lineLimit(2)
+                        .frame(maxWidth: 230, alignment: .leading)
+
+                    Text("Open the collection")
                         .font(.system(size: 12))
-                        .foregroundColor(Color(hex: "8B7B6E"))
-                } else {
-                    Text("Loading…")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color(hex: "B0A098"))
+                        .foregroundColor(HallowedDesign.Experimental.faint)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
         }
-        .padding(18)
-        .frame(maxWidth: .infinity, minHeight: 140, alignment: .topLeading)
-        .background(isHovered ? Color(hex: "F0EAE1") : Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
-        .overlay(
-            RoundedRectangle(cornerRadius: 14)
-                .stroke(
-                    isHovered ? Color(hex: theme.colorHex).opacity(0.35) : Color(hex: "E8DDD3"),
-                    lineWidth: 1.5
-                )
-        )
-        .shadow(
-            color: Color(hex: "2D2420").opacity(isHovered ? 0.08 : 0.04),
-            radius: isHovered ? 10 : 4,
-            x: 0,
-            y: isHovered ? 4 : 2
-        )
-        .animation(.easeOut(duration: 0.15), value: isHovered)
+        .frame(maxWidth: .infinity, minHeight: 210, alignment: .topLeading)
+        .scaleEffect(isHovered ? 1.015 : 1)
+        .animation(.easeOut(duration: 0.18), value: isHovered)
         .onHover { hovering in isHovered = hovering }
-        .contentShape(RoundedRectangle(cornerRadius: 14))
+        .contentShape(RoundedRectangle(cornerRadius: 28))
         .cursor(.pointingHand)
+    }
+
+    private var topicLabel: String {
+        guard let topicCount else { return "Loading" }
+        return "\(topicCount) \(topicCount == 1 ? "topic" : "topics")"
     }
 }
 

@@ -7,6 +7,7 @@ struct HallowedApp: App {
 
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var appEnv = AppEnvironment()
+    @AppStorage("hallowed.appearanceMode") private var appearanceMode = "system"
 
     var body: some Scene {
         WindowGroup {
@@ -21,6 +22,7 @@ struct HallowedApp: App {
                 }
             }
             .environmentObject(appEnv)
+            .preferredColorScheme(preferredColorScheme)
             .frame(minWidth: 640, minHeight: 520)
             .task {
                 appDelegate.attach(appEnvironment: appEnv)
@@ -42,6 +44,14 @@ struct HallowedApp: App {
         Settings {
             SettingsView()
                 .environmentObject(appEnv)
+        }
+    }
+
+    private var preferredColorScheme: ColorScheme? {
+        switch appearanceMode {
+        case "light": return .light
+        case "dark": return .dark
+        default: return nil
         }
     }
 }

@@ -15,32 +15,19 @@ struct AuthView: View {
 
     var body: some View {
         ZStack {
-            // Warm off-white background
-            Color(hex: "FAF8F5")
-                .ignoresSafeArea()
+            HallowedExperimentalBackground()
 
             VStack(spacing: 0) {
                 Spacer()
 
-                // App icon + wordmark
-                VStack(spacing: 16) {
-                    Image(systemName: "hands.and.sparkles.fill")
-                        .font(.system(size: 52, weight: .light))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [Color(hex: "8B6F4E"), Color(hex: "C49A6C")],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
-
+                VStack(spacing: 12) {
                     Text("Hallowed")
-                        .font(.system(size: 40, weight: .light, design: .serif))
-                        .foregroundColor(Color(hex: "2D2420"))
+                        .font(.system(size: 48, weight: .semibold, design: .serif))
+                        .foregroundColor(HallowedDesign.Experimental.text)
 
                     Text("A daily place to pray")
                         .font(.system(size: 15, weight: .regular))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.muted)
                 }
 
                 Spacer().frame(height: 52)
@@ -50,20 +37,16 @@ struct AuthView: View {
 
                     // Google sign-in
                     Button(action: signInWithGoogle) {
-                        HStack(spacing: 10) {
-                            Image(systemName: "globe")
-                                .font(.system(size: 15, weight: .medium))
-                            Text("Sign in with Google")
-                                .font(.system(size: 15, weight: .medium))
-                        }
+                        Text("Sign in with Google")
+                            .font(.system(size: 15, weight: .medium))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
-                        .background(Color.white)
-                        .foregroundColor(Color(hex: "2D2420"))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .background(HallowedDesign.Experimental.glassStrong)
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(hex: "DDD5CB"), lineWidth: 1)
+                            RoundedRectangle(cornerRadius: HallowedDesign.Radius.md)
+                                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
                         )
                     }
                     .buttonStyle(.plain)
@@ -72,28 +55,25 @@ struct AuthView: View {
                     // Divider
                     HStack(spacing: 12) {
                         Rectangle()
-                            .fill(Color(hex: "DDD5CB"))
+                            .fill(HallowedDesign.Experimental.line)
                             .frame(height: 1)
                         Text("or")
                             .font(.system(size: 12))
-                            .foregroundColor(Color(hex: "B0A098"))
+                            .foregroundColor(HallowedDesign.Experimental.faint)
                         Rectangle()
-                            .fill(Color(hex: "DDD5CB"))
+                            .fill(HallowedDesign.Experimental.line)
                             .frame(height: 1)
                     }
 
                     // Magic link
                     if magicLinkSent {
                         VStack(spacing: 8) {
-                            Image(systemName: "envelope.badge.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(Color(hex: "8B6F4E"))
                             Text("Check your email")
                                 .font(.system(size: 15, weight: .medium))
-                                .foregroundColor(Color(hex: "2D2420"))
+                                .foregroundColor(HallowedDesign.Experimental.text)
                             Text("We sent a sign-in link to \(email)")
                                 .font(.system(size: 13))
-                                .foregroundColor(Color(hex: "8B7B6E"))
+                                .foregroundColor(HallowedDesign.Experimental.muted)
                                 .multilineTextAlignment(.center)
                         }
                         .padding(.vertical, 8)
@@ -104,11 +84,11 @@ struct AuthView: View {
                                 .font(.system(size: 14))
                                 .padding(.horizontal, 14)
                                 .padding(.vertical, 11)
-                                .background(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .background(HallowedDesign.Experimental.glassStrong)
+                                .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(hex: "DDD5CB"), lineWidth: 1)
+                                    RoundedRectangle(cornerRadius: HallowedDesign.Radius.md)
+                                        .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
                                 )
                                 .onSubmit(sendMagicLink)
 
@@ -126,13 +106,13 @@ struct AuthView: View {
                                 .padding(.vertical, 12)
                                 .background(
                                     LinearGradient(
-                                        colors: [Color(hex: "8B6F4E"), Color(hex: "7A5F3E")],
+                                        colors: [HallowedDesign.Experimental.amber, Color(hex: "A15F26")],
                                         startPoint: .topLeading,
                                         endPoint: .bottomTrailing
                                     )
                                 )
                                 .foregroundColor(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                             }
                             .buttonStyle(.plain)
                             .disabled(email.trimmingCharacters(in: .whitespaces).isEmpty || isLoading)
@@ -143,15 +123,16 @@ struct AuthView: View {
                     if let displayedError {
                         Text(displayedError)
                             .font(.system(size: 13))
-                            .foregroundColor(Color(red: 0.8, green: 0.2, blue: 0.2))
+                            .foregroundColor(HallowedDesign.Experimental.rose)
                             .multilineTextAlignment(.center)
                     }
                 }
                 .padding(32)
                 .background(
                     RoundedRectangle(cornerRadius: 16)
-                        .fill(Color(hex: "FFFFFF").opacity(0.8))
-                        .shadow(color: Color(hex: "2D2420").opacity(0.06), radius: 20, x: 0, y: 4)
+                        .fill(HallowedDesign.Experimental.glass)
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                        .shadow(color: Color.black.opacity(0.18), radius: 24, x: 0, y: 12)
                 )
                 .frame(maxWidth: 360)
 
@@ -160,7 +141,7 @@ struct AuthView: View {
                 // Footer
                 Text("By signing in, you agree to pray daily.")
                     .font(.system(size: 11))
-                    .foregroundColor(Color(hex: "B0A098"))
+                    .foregroundColor(HallowedDesign.Experimental.faint)
                     .padding(.bottom, 24)
             }
             .padding(.horizontal, 32)

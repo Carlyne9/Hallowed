@@ -53,11 +53,11 @@ struct PeriodEditorView: View {
         _isActive = State(initialValue: period?.isActive ?? true)
     }
 
-    private let timePresets: [(label: String, systemImage: String, hour: Int, minute: Int)] = [
-        ("Morning", "sunrise.fill", 6, 0),
-        ("Noon", "sun.max.fill", 12, 0),
-        ("Evening", "sunset.fill", 18, 0),
-        ("Bedtime", "moon.stars.fill", 21, 0),
+    private let timePresets: [(label: String, hour: Int, minute: Int)] = [
+        ("Morning", 6, 0),
+        ("Noon", 12, 0),
+        ("Evening", 18, 0),
+        ("Bedtime", 21, 0),
     ]
 
     private let quickTestOffsets: [(label: String, minutes: Int)] = [
@@ -80,23 +80,23 @@ struct PeriodEditorView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            Divider()
+            Divider().overlay(HallowedDesign.Experimental.line)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
-                    sectionCard("Prayer Title", systemImage: "text.quote") {
+                    sectionCard("Prayer Title") {
                         TextField("Healing for Mum, Morning devotion, Quiet prayer...", text: $title)
-                            .textFieldStyle(.roundedBorder)
+                            .hallowedExperimentalField()
                         helperText("This is the name shown in the list, notification, and prayer session.")
                     }
 
-                    sectionCard("Time", systemImage: "clock.fill") {
+                    sectionCard("Time") {
                         quickTimeGrid
-                        Divider()
+                        Divider().overlay(HallowedDesign.Experimental.line)
                         HStack {
                             Text("Specific time")
                                 .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(Color(hex: "5A4A3A"))
+                                .foregroundColor(HallowedDesign.Experimental.muted)
                             Spacer()
                             DatePicker("", selection: $selectedTime, displayedComponents: .hourAndMinute)
                                 .datePickerStyle(.field)
@@ -106,14 +106,14 @@ struct PeriodEditorView: View {
                         quickTestRow
                     }
 
-                    sectionCard("Day", systemImage: "calendar") {
+                    sectionCard("Day") {
                         choiceRow(ScheduleMode.allCases, selection: $scheduleMode) { $0.rawValue }
 
                         if scheduleMode == .oneTime {
                             HStack {
                                 Text("Prayer date")
                                     .font(.system(size: 12, weight: .medium))
-                                    .foregroundColor(Color(hex: "5A4A3A"))
+                                    .foregroundColor(HallowedDesign.Experimental.muted)
                                 Spacer()
                                 DatePicker("", selection: $selectedDate, displayedComponents: .date)
                                     .datePickerStyle(.field)
@@ -129,32 +129,30 @@ struct PeriodEditorView: View {
                         }
                     }
 
-                    sectionCard("Prayer Focus", systemImage: "scope") {
+                    sectionCard("Prayer Focus") {
                         choiceRow(FocusMode.allCases, selection: $focusMode) { $0.rawValue }
 
                         focusBody
                     }
 
-                    sectionCard("Duration", systemImage: "timer") {
+                    sectionCard("Duration") {
                         durationChips
                         Stepper(value: $durationMins, in: 1...180, step: 1) {
                             Text("\(durationMins) minutes")
                                 .font(.system(size: 14, weight: .medium))
-                                .foregroundColor(Color(hex: "2D2420"))
+                                .foregroundColor(HallowedDesign.Experimental.text)
                         }
                     }
 
-                    sectionCard("Preview", systemImage: "checkmark.seal.fill") {
+                    sectionCard("Preview") {
                         HStack(alignment: .top, spacing: 12) {
-                            Image(systemName: isActive ? "bell.and.waves.left.and.right.fill" : "bell.slash")
-                                .foregroundColor(Color(hex: "8B6F4E"))
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(summaryTitle)
                                     .font(.system(size: 14, weight: .semibold))
-                                    .foregroundColor(Color(hex: "2D2420"))
+                                    .foregroundColor(HallowedDesign.Experimental.text)
                                 Text(summarySubtitle)
                                     .font(.system(size: 12))
-                                    .foregroundColor(Color(hex: "8B7B6E"))
+                                    .foregroundColor(HallowedDesign.Experimental.muted)
                             }
                             Spacer()
                             Toggle("Active", isOn: $isActive)
@@ -166,7 +164,7 @@ struct PeriodEditorView: View {
                     if let errorMessage {
                         Text(errorMessage)
                             .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(Color(hex: "B94A36"))
+                            .foregroundColor(HallowedDesign.Experimental.rose)
                     }
                 }
                 .padding(24)
@@ -174,11 +172,11 @@ struct PeriodEditorView: View {
             }
             .scrollIndicators(.visible)
 
-            Divider()
+            Divider().overlay(HallowedDesign.Experimental.line)
             footer
         }
-        .background(Color(hex: "FAF8F5"))
-        .frame(minWidth: 420, idealWidth: 560, maxWidth: 640, minHeight: 560, idealHeight: 700, maxHeight: 760)
+        .background(HallowedExperimentalBackground())
+        .frame(minWidth: 420, idealWidth: 560, maxWidth: 680, minHeight: 560, idealHeight: 700, maxHeight: 800)
         .task { await loadThemes() }
         .onChange(of: repeatType) { _, newValue in
             if newValue == .custom, selectedCustomDays.isEmpty {
@@ -194,22 +192,13 @@ struct PeriodEditorView: View {
 
     private var header: some View {
         HStack(spacing: 14) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(Color(hex: "8B6F4E").opacity(0.12))
-                    .frame(width: 44, height: 44)
-                Image(systemName: existingPeriod == nil ? "calendar.badge.plus" : "pencil")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color(hex: "8B6F4E"))
-            }
-
             VStack(alignment: .leading, spacing: 3) {
                 Text(existingPeriod == nil ? "New Prayer Period" : "Edit Prayer Period")
-                    .font(.system(size: 18, weight: .semibold, design: .serif))
-                    .foregroundColor(Color(hex: "2D2420"))
+                    .font(.system(size: 24, weight: .semibold, design: .serif))
+                    .foregroundColor(HallowedDesign.Experimental.text)
                 Text(existingPeriod == nil ? "Set a prayer title, day, time, and optional focus." : "Change the title, day, time, duration, or focus.")
                     .font(.system(size: 12))
-                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .foregroundColor(HallowedDesign.Experimental.muted)
             }
 
             Spacer()
@@ -217,12 +206,17 @@ struct PeriodEditorView: View {
             Button {
                 dismiss()
             } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundColor(Color(hex: "5A4A3A"))
-                    .frame(width: 30, height: 30)
-                    .background(Color(hex: "EFE7DC"))
-                    .clipShape(Circle())
+                Text("Close")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(HallowedDesign.Experimental.text)
+                    .padding(.horizontal, 13)
+                    .padding(.vertical, 8)
+                    .background(HallowedDesign.Experimental.glass)
+                    .clipShape(Capsule())
+                    .overlay(
+                        Capsule()
+                            .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+                    )
             }
             .buttonStyle(.plain)
             .help("Close")
@@ -239,22 +233,19 @@ struct PeriodEditorView: View {
                 Button {
                     selectedTime = Self.defaultTime(hour: preset.hour, minute: preset.minute)
                 } label: {
-                    HStack(spacing: 9) {
-                        Image(systemName: preset.systemImage)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(preset.label)
                             .font(.system(size: 13, weight: .semibold))
-                        VStack(alignment: .leading, spacing: 1) {
-                            Text(preset.label)
-                                .font(.system(size: 13, weight: .semibold))
-                            Text(Self.timeLabel(hour: preset.hour, minute: preset.minute))
-                                .font(.system(size: 11))
-                                .opacity(0.75)
-                        }
+                        Text(Self.timeLabel(hour: preset.hour, minute: preset.minute))
+                            .font(.system(size: 11))
+                            .opacity(0.75)
                         Spacer()
                     }
                     .padding(11)
-                    .background(isTimeSelected(hour: preset.hour, minute: preset.minute) ? Color(hex: "8B6F4E") : Color(hex: "EFE7DC"))
-                    .foregroundColor(isTimeSelected(hour: preset.hour, minute: preset.minute) ? .white : Color(hex: "5A4A3A"))
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(isTimeSelected(hour: preset.hour, minute: preset.minute) ? HallowedDesign.Experimental.amber : HallowedDesign.Experimental.glass)
+                    .foregroundColor(isTimeSelected(hour: preset.hour, minute: preset.minute) ? .white : HallowedDesign.Experimental.muted)
+                    .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                 }
                 .buttonStyle(.plain)
             }
@@ -265,7 +256,7 @@ struct PeriodEditorView: View {
         HStack(spacing: 8) {
             Text("Test")
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(Color(hex: "B0A098"))
+                .foregroundColor(HallowedDesign.Experimental.faint)
                 .textCase(.uppercase)
                 .tracking(0.6)
             ForEach(quickTestOffsets, id: \.label) { preset in
@@ -289,7 +280,7 @@ struct PeriodEditorView: View {
 
             Text(repeatDescription)
                 .font(.system(size: 12))
-                .foregroundColor(Color(hex: "8B7B6E"))
+                .foregroundColor(HallowedDesign.Experimental.muted)
         }
     }
 
@@ -310,7 +301,7 @@ struct PeriodEditorView: View {
                     set: { selectedThemeId = $0 }
                 )) {
                     ForEach(themes) { theme in
-                        Label(theme.name, systemImage: theme.icon).tag(Optional(theme.id))
+                        Text(theme.name).tag(Optional(theme.id))
                     }
                 }
                 .labelsHidden()
@@ -318,7 +309,7 @@ struct PeriodEditorView: View {
             }
         case .customTopics:
             TextField("Finances, my children, healing, exams...", text: $customTopicsText, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
+                .hallowedExperimentalField()
                 .lineLimit(2...4)
             helperText("Separate topics with commas or new lines. These become your prayer prompts for this period.")
         }
@@ -340,8 +331,8 @@ struct PeriodEditorView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 9)
-                        .background(isSelected ? Color(hex: "8B6F4E") : Color(hex: "EFE7DC"))
-                        .foregroundColor(isSelected ? .white : Color(hex: "5A4A3A"))
+                        .background(isSelected ? HallowedDesign.Experimental.amber : HallowedDesign.Experimental.glass)
+                        .foregroundColor(isSelected ? .white : HallowedDesign.Experimental.muted)
                         .clipShape(RoundedRectangle(cornerRadius: 11))
                     }
                     .buttonStyle(.plain)
@@ -369,8 +360,8 @@ struct PeriodEditorView: View {
                         .font(.system(size: 12, weight: .semibold))
                         .padding(.horizontal, 12)
                         .padding(.vertical, 7)
-                        .background(durationMins == minutes ? Color(hex: "8B6F4E") : Color(hex: "EFE7DC"))
-                        .foregroundColor(durationMins == minutes ? .white : Color(hex: "5A4A3A"))
+                        .background(durationMins == minutes ? HallowedDesign.Experimental.amber : HallowedDesign.Experimental.glass)
+                        .foregroundColor(durationMins == minutes ? .white : HallowedDesign.Experimental.muted)
                         .clipShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -382,7 +373,11 @@ struct PeriodEditorView: View {
         HStack(spacing: 12) {
             Button("Cancel") { dismiss() }
                 .buttonStyle(.plain)
-                .foregroundColor(Color(hex: "5A4A3A"))
+                .foregroundColor(HallowedDesign.Experimental.muted)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(HallowedDesign.Experimental.glass)
+                .clipShape(Capsule())
 
             Spacer()
 
@@ -393,7 +388,7 @@ struct PeriodEditorView: View {
                         .tint(.white)
                         .frame(width: 120)
                 } else {
-                    Label(existingPeriod == nil ? "Save Period" : "Update Period", systemImage: "checkmark")
+                    Text(existingPeriod == nil ? "Save Period" : "Update Period")
                         .frame(width: 120)
                 }
             }
@@ -402,24 +397,24 @@ struct PeriodEditorView: View {
             .disabled(isSaving)
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
-            .background(Color(hex: "8B6F4E"))
+            .background(HallowedDesign.Experimental.amber)
             .foregroundColor(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 16)
-        .background(Color(hex: "FAF8F5"))
+        .background(.ultraThinMaterial.opacity(0.72))
+        .background(HallowedDesign.Experimental.panel.opacity(0.88))
     }
 
     private func sectionCard<Content: View>(
         _ title: String,
-        systemImage: String,
         @ViewBuilder content: () -> Content
     ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label(title, systemImage: systemImage)
+            Text(title)
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(Color(hex: "B0A098"))
+                .foregroundColor(HallowedDesign.Experimental.faint)
                 .textCase(.uppercase)
                 .tracking(0.8)
 
@@ -428,11 +423,12 @@ struct PeriodEditorView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .background(.ultraThinMaterial.opacity(0.7))
+            .background(HallowedDesign.Experimental.glass)
+            .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.lg))
             .overlay(
-                RoundedRectangle(cornerRadius: 14)
-                    .stroke(Color(hex: "E8DDD3"), lineWidth: 1)
+                RoundedRectangle(cornerRadius: HallowedDesign.Radius.lg)
+                    .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
             )
         }
     }
@@ -440,7 +436,7 @@ struct PeriodEditorView: View {
     private func helperText(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12))
-            .foregroundColor(Color(hex: "8B7B6E"))
+            .foregroundColor(HallowedDesign.Experimental.muted)
     }
 
     private func choiceRow<Option: Hashable>(
@@ -459,8 +455,8 @@ struct PeriodEditorView: View {
                         .frame(minWidth: 86)
                         .padding(.vertical, 9)
                         .padding(.horizontal, 10)
-                        .background(isSelected ? Color(hex: "8B6F4E") : Color(hex: "EFE7DC"))
-                        .foregroundColor(isSelected ? .white : Color(hex: "5A4A3A"))
+                        .background(isSelected ? HallowedDesign.Experimental.amber : HallowedDesign.Experimental.glass)
+                        .foregroundColor(isSelected ? .white : HallowedDesign.Experimental.muted)
                         .clipShape(RoundedRectangle(cornerRadius: 11))
                 }
                 .buttonStyle(.plain)
@@ -698,6 +694,23 @@ private struct FlowLayout: Layout {
         }
 
         return (items, CGSize(width: availableWidth, height: cursor.y + rowHeight))
+    }
+}
+
+private extension View {
+    func hallowedExperimentalField() -> some View {
+        self
+            .textFieldStyle(.plain)
+            .font(.system(size: 13, weight: .medium))
+            .foregroundColor(HallowedDesign.Experimental.text)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(HallowedDesign.Experimental.glassStrong)
+            .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
+            .overlay(
+                RoundedRectangle(cornerRadius: HallowedDesign.Radius.md)
+                    .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+            )
     }
 }
 

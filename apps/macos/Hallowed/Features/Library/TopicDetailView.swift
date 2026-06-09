@@ -18,6 +18,8 @@ struct TopicDetailView: View {
     @State private var sessionSelection: SessionSelection? = nil
     @State private var selectedDuration: Int = 15
 
+    private var accentColor: Color { HallowedDesign.Experimental.amber }
+
     private struct SessionSelection: Identifiable {
         let topic: PrayerTopic
         let prayer: Prayer
@@ -40,32 +42,32 @@ struct TopicDetailView: View {
                         .frame(width: min(300, max(220, proxy.size.width * 0.32)))
 
                     Divider()
+                        .overlay(HallowedDesign.Experimental.line)
 
                     detailPane
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
-        .background(Color(hex: "FAF8F5"))
+        .background(HallowedExperimentalBackground())
         .navigationTitle(selectedTopic?.title ?? theme.name)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button(action: returnAction) {
                     Image(systemName: "chevron.left")
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(Color(hex: "5A4A3A"))
-                        .frame(width: 30, height: 30)
-                        .background(Color(hex: "EFE7DC"))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .frame(width: 34, height: 34)
+                        .background(HallowedDesign.Experimental.glass)
                         .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+                        )
                 }
                 .buttonStyle(.plain)
                 .help(selectedTopic == nil ? "Back to themes" : "Back to topics")
-            }
-
-            ToolbarItem(placement: .navigation) {
-                Image(systemName: theme.icon)
-                    .foregroundColor(Color(hex: theme.colorHex))
             }
         }
         .task {
@@ -75,7 +77,7 @@ struct TopicDetailView: View {
             DurationPickerSheet(
                 topicTitle: selection.topic.title,
                 prayerTitle: selection.prayer.title,
-                themeColor: Color(hex: theme.colorHex),
+                themeColor: accentColor,
                 selectedDuration: $selectedDuration
             ) { duration in
                 startSession(duration: duration, selection: selection)
@@ -122,22 +124,19 @@ struct TopicDetailView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if topics.isEmpty {
                 VStack(spacing: 12) {
-                    Image(systemName: "tray")
-                        .font(.system(size: 28, weight: .light))
-                        .foregroundColor(Color(hex: "C4B5A8"))
                     if let topicsLoadError {
                         Text("Could not load topics")
                             .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(Color(hex: "2D2420"))
+                            .foregroundColor(HallowedDesign.Experimental.text)
                         Text(topicsLoadError)
                             .font(.system(size: 12))
-                            .foregroundColor(.red)
+                            .foregroundColor(HallowedDesign.Experimental.rose)
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: 300)
                     } else {
                         Text("No topics")
                             .font(.system(size: 14))
-                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .foregroundColor(HallowedDesign.Experimental.muted)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -147,10 +146,10 @@ struct TopicDetailView: View {
                         ForEach(topics) { topic in
                             TopicRow(
                                 topic: topic,
-                                theme: theme,
+                                accentColor: accentColor,
                                 isSelected: selectedTopic?.id == topic.id
                             )
-                            .contentShape(RoundedRectangle(cornerRadius: 12))
+                            .contentShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                             .onTapGesture {
                                 selectedTopic = topic
                             }
@@ -161,7 +160,7 @@ struct TopicDetailView: View {
                 .scrollContentBackground(.hidden)
             }
         }
-        .background(Color(hex: "F5F1EB"))
+        .background(HallowedDesign.Experimental.panel.opacity(0.92))
         .onChange(of: selectedTopic) { _, newTopic in
             guard let newTopic else { return }
             Task { await loadPrayers(for: newTopic) }
@@ -175,64 +174,61 @@ struct TopicDetailView: View {
         if isLoadingPrayers {
             ProgressView("Loading prayers…")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(hex: "FAF8F5"))
+                .background(HallowedExperimentalBackground())
         } else if prayers.isEmpty {
             VStack(spacing: 12) {
-                Image(systemName: "text.book.closed")
-                    .font(.system(size: 32, weight: .light))
-                    .foregroundColor(Color(hex: "C4B5A8"))
                 if let prayersLoadError {
                     Text("Could not load prayers")
                         .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(Color(hex: "2D2420"))
+                        .foregroundColor(HallowedDesign.Experimental.text)
                     Text(prayersLoadError)
                         .font(.system(size: 12))
-                        .foregroundColor(.red)
+                        .foregroundColor(HallowedDesign.Experimental.rose)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: 320)
                 } else {
                     Text("No prayers for this topic yet")
                         .font(.system(size: 14))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.muted)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(hex: "FAF8F5"))
+            .background(HallowedExperimentalBackground())
         } else {
             GeometryReader { proxy in
                 ScrollView {
                     VStack(alignment: .leading, spacing: proxy.size.width < 460 ? 22 : 32) {
                         // Topic header
                         VStack(alignment: .leading, spacing: 6) {
-                            Label(theme.name, systemImage: theme.icon)
+                            Text(theme.name)
                                 .font(.system(size: 11, weight: .semibold))
-                                .foregroundColor(Color(hex: theme.colorHex))
+                                .foregroundColor(accentColor)
                                 .textCase(.uppercase)
                                 .tracking(0.8)
 
                             Text(topic.title)
-                                .font(.system(size: proxy.size.width < 460 ? 21 : 24, weight: .light, design: .serif))
-                                .foregroundColor(Color(hex: "2D2420"))
+                                .font(.system(size: proxy.size.width < 460 ? 26 : 34, weight: .semibold, design: .serif))
+                                .foregroundColor(HallowedDesign.Experimental.text)
                                 .fixedSize(horizontal: false, vertical: true)
 
                             if let description = topic.description {
                                 Text(description)
                                     .font(.system(size: 13))
-                                    .foregroundColor(Color(hex: "8B7B6E"))
+                                    .foregroundColor(HallowedDesign.Experimental.muted)
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                         }
 
                         Text("Choose the prayer point you want to pray right now.")
                             .font(.system(size: 13, weight: .medium))
-                            .foregroundColor(Color(hex: "8B7B6E"))
+                            .foregroundColor(HallowedDesign.Experimental.muted)
 
                         // Prayer cards — user can choose a specific point to pray.
                         ForEach(prayers) { prayer in
                             PrayerCard(
                                 prayer: prayer,
                                 scriptures: scriptures[prayer.id] ?? [],
-                                themeColor: Color(hex: theme.colorHex),
+                                themeColor: accentColor,
                                 isCompact: proxy.size.width < 460,
                                 onPray: {
                                     sessionSelection = SessionSelection(topic: topic, prayer: prayer)
@@ -242,22 +238,19 @@ struct TopicDetailView: View {
                     }
                     .padding(proxy.size.width < 460 ? 18 : 32)
                 }
-                .background(Color(hex: "FAF8F5"))
+                .background(HallowedExperimentalBackground())
             }
         }
     }
 
     private var topicPlaceholder: some View {
         VStack(spacing: 16) {
-            Image(systemName: theme.icon)
-                .font(.system(size: 40, weight: .light))
-                .foregroundColor(Color(hex: theme.colorHex).opacity(0.4))
             Text("Select a topic")
-                .font(.system(size: 16, weight: .light, design: .serif))
-                .foregroundColor(Color(hex: "8B7B6E"))
+                .font(.system(size: 22, weight: .semibold, design: .serif))
+                .foregroundColor(HallowedDesign.Experimental.muted)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: "FAF8F5"))
+        .background(HallowedExperimentalBackground())
     }
 
     // MARK: - Data Loading
@@ -364,72 +357,96 @@ private struct DurationPickerSheet: View {
     @State private var errorMessage: String? = nil
 
     var body: some View {
-        VStack(spacing: 24) {
-            // Header
-            HStack(alignment: .top, spacing: 12) {
-                VStack(spacing: 6) {
+        VStack(alignment: .center, spacing: 24) {
+            ZStack(alignment: .topTrailing) {
+                VStack(spacing: 7) {
                     Text(actionMode == .now ? "How long would you like to pray?" : "When should Hallowed remind you?")
-                        .font(.system(size: 18, weight: .light, design: .serif))
-                        .foregroundColor(Color(hex: "2D2420"))
+                        .font(.system(size: 22, weight: .semibold, design: .serif))
+                        .foregroundColor(HallowedDesign.Experimental.text)
                         .multilineTextAlignment(.center)
+                        .frame(maxWidth: 330)
                     Text(topicTitle)
                         .font(.system(size: 13))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.muted)
                         .multilineTextAlignment(.center)
                     Text(prayerTitle)
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(Color(hex: "8B6F4E"))
+                        .foregroundColor(themeColor)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.horizontal, 72)
 
                 Button {
                     dismiss()
                 } label: {
                     Image(systemName: "xmark")
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(Color(hex: "5A4A3A"))
-                        .frame(width: 28, height: 28)
-                        .background(Color(hex: "EFE7DC"))
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundColor(HallowedDesign.Experimental.text)
+                        .frame(width: 34, height: 34)
+                        .background(HallowedDesign.Experimental.glass)
                         .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+                        )
                 }
                 .buttonStyle(.plain)
                 .help("Cancel")
             }
 
-            Picker("Action", selection: $actionMode) {
+            HStack(spacing: 4) {
                 ForEach(ActionMode.allCases, id: \.self) { mode in
-                    Text(mode.rawValue).tag(mode)
+                    let isSelected = actionMode == mode
+                    Button {
+                        actionMode = mode
+                    } label: {
+                        Text(mode.rawValue)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(isSelected ? .white : HallowedDesign.Experimental.muted)
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 9)
+                            .background(isSelected ? themeColor : HallowedDesign.Experimental.glass)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
                 }
             }
-            .pickerStyle(.segmented)
-            .labelsHidden()
+            .padding(4)
+            .background(HallowedDesign.Experimental.glass)
+            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 13, style: .continuous)
+                    .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
+            )
 
             // Preset buttons
-            FlowLayout(spacing: 10) {
+            HStack(spacing: 10) {
                 ForEach(presets, id: \.self) { minutes in
                     Button(action: { selectedDuration = minutes }) {
                         Text("\(minutes)m")
                             .font(.system(size: 14, weight: selectedDuration == minutes ? .semibold : .regular))
                             .frame(width: 52, height: 44)
-                            .background(selectedDuration == minutes ? themeColor : Color(hex: "F0EAE1"))
-                            .foregroundColor(selectedDuration == minutes ? .white : Color(hex: "5A4A3A"))
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .background(selectedDuration == minutes ? themeColor : HallowedDesign.Experimental.glass)
+                            .foregroundColor(selectedDuration == minutes ? .white : HallowedDesign.Experimental.muted)
+                            .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                     }
                     .buttonStyle(.plain)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .center)
 
             // Custom stepper
             HStack(spacing: 12) {
                 Text("Custom:")
                     .font(.system(size: 13))
-                    .foregroundColor(Color(hex: "8B7B6E"))
+                    .foregroundColor(HallowedDesign.Experimental.muted)
                 Stepper("\(selectedDuration) min", value: $selectedDuration, in: 1...120)
                     .font(.system(size: 13))
                     .frame(width: 160)
             }
+            .frame(maxWidth: .infinity, alignment: .center)
 
             if actionMode == .later {
                 VStack(alignment: .leading, spacing: 10) {
@@ -443,22 +460,22 @@ private struct DurationPickerSheet: View {
 
                     Text("This creates a one-time reminder for this prayer point.")
                         .font(.system(size: 12))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.muted)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(14)
-                .background(Color(hex: "FDF9F5"))
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .background(HallowedDesign.Experimental.glass)
+                .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color(hex: "E8DDD3"), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: HallowedDesign.Radius.md)
+                        .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
                 )
             }
 
             if let errorMessage {
                 Text(errorMessage)
                     .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(Color(hex: "B94A36"))
+                    .foregroundColor(HallowedDesign.Experimental.rose)
                     .multilineTextAlignment(.center)
             }
 
@@ -469,27 +486,29 @@ private struct DurationPickerSheet: View {
                         ProgressView()
                             .controlSize(.small)
                             .tint(.white)
-                    } else {
-                        Image(systemName: actionMode == .now ? "hands.sparkles.fill" : "calendar.badge.clock")
                     }
                     Text(actionMode == .now ? "Begin \(selectedDuration)-minute prayer" : "Schedule prayer")
                         .fontWeight(.semibold)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 13)
+                .padding(.vertical, 16)
                 .background(themeColor)
                 .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
             }
             .buttonStyle(.plain)
             .disabled(isScheduling)
 
             Button("Cancel") { dismiss() }
                 .buttonStyle(.plain)
-                .foregroundColor(Color(hex: "5A4A3A"))
+                .foregroundColor(HallowedDesign.Experimental.muted)
         }
         .padding(32)
         .frame(minWidth: 300, idealWidth: 380, maxWidth: 440)
+        .tint(themeColor)
+        .background {
+            HallowedExperimentalBackground()
+        }
     }
 
     private func primaryAction() {
@@ -518,25 +537,25 @@ private struct DurationPickerSheet: View {
 
 private struct TopicRow: View {
     let topic: PrayerTopic
-    let theme: PrayerTheme
+    let accentColor: Color
     let isSelected: Bool
 
     var body: some View {
         HStack(spacing: 10) {
             RoundedRectangle(cornerRadius: 2)
-                .fill(isSelected ? Color(hex: theme.colorHex) : Color.clear)
+                .fill(isSelected ? accentColor : Color.clear)
                 .frame(width: 4)
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(topic.title)
                     .font(.system(size: 13, weight: .semibold))
-                    .foregroundColor(Color(hex: "2D2420"))
+                    .foregroundColor(isSelected ? HallowedDesign.Experimental.text : HallowedDesign.Experimental.muted)
                     .lineLimit(2)
 
                 if let description = topic.description {
                     Text(description)
                         .font(.system(size: 11))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.faint)
                         .lineLimit(2)
                 }
             }
@@ -545,11 +564,11 @@ private struct TopicRow: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 11)
-        .background(isSelected ? Color.white : Color.clear)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .background(isSelected ? HallowedDesign.Experimental.glassStrong : Color.clear)
+        .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
         .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(isSelected ? Color(hex: "E8DDD3") : Color.clear, lineWidth: 1)
+            RoundedRectangle(cornerRadius: HallowedDesign.Radius.md)
+                .stroke(isSelected ? HallowedDesign.Experimental.line : Color.clear, lineWidth: 1)
         )
     }
 }
@@ -565,57 +584,52 @@ private struct PrayerCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: isCompact ? 14 : 16) {
-            // Header
             VStack(alignment: .leading, spacing: 6) {
                 Text(prayer.title)
-                    .font(.system(size: isCompact ? 16 : 18, weight: .medium, design: .serif))
-                    .foregroundColor(Color(hex: "2D2420"))
+                    .font(.system(size: isCompact ? 18 : 22, weight: .semibold, design: .serif))
+                    .foregroundColor(HallowedDesign.Experimental.text)
                     .fixedSize(horizontal: false, vertical: true)
 
                 if let author = prayer.author {
                     Text("— \(author)")
                         .font(.system(size: 12, weight: .regular))
-                        .foregroundColor(Color(hex: "8B7B6E"))
+                        .foregroundColor(HallowedDesign.Experimental.faint)
                         .italic()
                 }
             }
 
             Divider()
-                .background(Color(hex: "E8DDD3"))
+                .overlay(HallowedDesign.Experimental.line)
 
-            // Body / bullets
             VStack(alignment: .leading, spacing: 10) {
                 ForEach(prayer.bullets, id: \.self) { bullet in
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "circle.fill")
-                            .font(.system(size: 5))
-                            .foregroundColor(Color(hex: "C49A6C"))
-                            .padding(.top, 5)
-                        Text(bullet)
-                            .font(.system(size: 14, weight: .regular))
-                            .foregroundColor(Color(hex: "3D3028"))
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+                    Text(bullet)
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundColor(HallowedDesign.Experimental.muted)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
 
-            // Scriptures
             if !scriptures.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
-                    Label("Scriptures", systemImage: "book.closed.fill")
+                    Text("Scriptures")
                         .font(.system(size: 10, weight: .semibold))
-                        .foregroundColor(Color(hex: "B0A098"))
+                        .foregroundColor(HallowedDesign.Experimental.faint)
                         .textCase(.uppercase)
                         .tracking(0.6)
                     FlowLayout(spacing: 6) {
                         ForEach(scriptures) { scripture in
                             Text(scripture.reference)
                                 .font(.system(size: 12))
-                                .foregroundColor(Color(hex: "8B6F4E"))
+                                .foregroundColor(HallowedDesign.Experimental.text)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
-                                .background(Color(hex: "F5EDE0"))
+                                .background(themeColor.opacity(0.12))
                                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(themeColor.opacity(0.18), lineWidth: 1)
+                                )
                                 .lineLimit(1)
                         }
                     }
@@ -624,26 +638,23 @@ private struct PrayerCard: View {
             }
 
             Button(action: onPray) {
-                HStack(spacing: 8) {
-                    Image(systemName: "hands.sparkles.fill")
-                    Text("Pray This Point")
-                        .fontWeight(.semibold)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(themeColor)
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                Text("Pray This Point")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 11)
+                    .background(themeColor)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.md))
             }
             .buttonStyle(.plain)
             .padding(.top, 4)
         }
         .padding(isCompact ? 16 : 20)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .background(HallowedDesign.Experimental.glass)
+        .clipShape(RoundedRectangle(cornerRadius: HallowedDesign.Radius.lg))
         .overlay(
-            RoundedRectangle(cornerRadius: 14)
-                .stroke(Color(hex: "E8DDD3"), lineWidth: 1)
+            RoundedRectangle(cornerRadius: HallowedDesign.Radius.lg)
+                .stroke(HallowedDesign.Experimental.line, lineWidth: 1)
         )
     }
 }
